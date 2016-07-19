@@ -37,7 +37,7 @@ public struct QorumLogs {
 
     /// Change the array element with another UIColor. 0 is info gray, 5 is purple, rest are log levels
     public static var colorsForLogLevels: [QLColor] = [
-        QLColor(r: 120, g: 120, b: 120), //0
+        QLColor(r: 255, g: 190, b: 0), //0
         QLColor(r: 0, g: 180, b: 180),  //1
         QLColor(r: 0, g: 150, b: 0),  //2
         QLColor(r: 255, g: 190, b: 0), //3

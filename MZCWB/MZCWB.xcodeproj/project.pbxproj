@@ -7,13 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		27140D681D3E5397003224EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27140D671D3E5397003224EF /* AppDelegate.swift */; };
-		27140D6A1D3E5397003224EF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27140D691D3E5397003224EF /* ViewController.swift */; };
-		27140D6D1D3E5397003224EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27140D6B1D3E5397003224EF /* Main.storyboard */; };
 		27140D6F1D3E5397003224EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27140D6E1D3E5397003224EF /* Assets.xcassets */; };
 		27140D721D3E5397003224EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27140D701D3E5397003224EF /* LaunchScreen.storyboard */; };
 		27140D7D1D3E5397003224EF /* MZCWBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27140D7C1D3E5397003224EF /* MZCWBTests.swift */; };
 		27140D881D3E5397003224EF /* MZCWBUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27140D871D3E5397003224EF /* MZCWBUITests.swift */; };
+		27D5C6151D3E6A3E00854F55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D5C6141D3E6A3E00854F55 /* AppDelegate.swift */; };
 		41E040E84DB278CE083153CE /* Pods_MZCWB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 959D910E3A2A2B82AF4C424C /* Pods_MZCWB.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,9 +35,6 @@
 /* Begin PBXFileReference section */
 		1602D8B090804EAE840C7D47 /* Pods-MZCWB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MZCWB.release.xcconfig"; path = "Pods/Target Support Files/Pods-MZCWB/Pods-MZCWB.release.xcconfig"; sourceTree = "<group>"; };
 		27140D641D3E5397003224EF /* MZCWB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MZCWB.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		27140D671D3E5397003224EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		27140D691D3E5397003224EF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		27140D6C1D3E5397003224EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		27140D6E1D3E5397003224EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		27140D711D3E5397003224EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		27140D731D3E5397003224EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +44,7 @@
 		27140D831D3E5397003224EF /* MZCWBUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MZCWBUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		27140D871D3E5397003224EF /* MZCWBUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MZCWBUITests.swift; sourceTree = "<group>"; };
 		27140D891D3E5397003224EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27D5C6141D3E6A3E00854F55 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		959D910E3A2A2B82AF4C424C /* Pods_MZCWB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MZCWB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D380474B28758B530DCB20D0 /* Pods-MZCWB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MZCWB.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MZCWB/Pods-MZCWB.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,12 +100,8 @@
 		27140D661D3E5397003224EF /* MZCWB */ = {
 			isa = PBXGroup;
 			children = (
-				27140D671D3E5397003224EF /* AppDelegate.swift */,
-				27140D691D3E5397003224EF /* ViewController.swift */,
-				27140D6B1D3E5397003224EF /* Main.storyboard */,
-				27140D6E1D3E5397003224EF /* Assets.xcassets */,
-				27140D701D3E5397003224EF /* LaunchScreen.storyboard */,
-				27140D731D3E5397003224EF /* Info.plist */,
+				27D5C6121D3E6A3E00854F55 /* Classes */,
+				27D5C6111D3E6A3300854F55 /* Supporting Files */,
 			);
 			path = MZCWB;
 			sourceTree = "<group>";
@@ -130,6 +122,72 @@
 				27140D891D3E5397003224EF /* Info.plist */,
 			);
 			path = MZCWBUITests;
+			sourceTree = "<group>";
+		};
+		27D5C6111D3E6A3300854F55 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				27140D6E1D3E5397003224EF /* Assets.xcassets */,
+				27140D701D3E5397003224EF /* LaunchScreen.storyboard */,
+				27140D731D3E5397003224EF /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		27D5C6121D3E6A3E00854F55 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				27F9CEE11D3E6F3900556B68 /* Home-首页 */,
+				27F9CEE21D3E6F3900556B68 /* Me-我 */,
+				27F9CEE31D3E6F3900556B68 /* Message-消息 */,
+				27F9CEE41D3E6F3900556B68 /* Plaza-广场 */,
+				27F9CEE51D3E6F3900556B68 /* SendTwitter-发微博 */,
+				27D5C6131D3E6A3E00854F55 /* Other */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		27D5C6131D3E6A3E00854F55 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				27D5C6141D3E6A3E00854F55 /* AppDelegate.swift */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		27F9CEE11D3E6F3900556B68 /* Home-首页 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Home-首页";
+			sourceTree = "<group>";
+		};
+		27F9CEE21D3E6F3900556B68 /* Me-我 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Me-我";
+			sourceTree = "<group>";
+		};
+		27F9CEE31D3E6F3900556B68 /* Message-消息 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Message-消息";
+			sourceTree = "<group>";
+		};
+		27F9CEE41D3E6F3900556B68 /* Plaza-广场 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Plaza-广场";
+			sourceTree = "<group>";
+		};
+		27F9CEE51D3E6F3900556B68 /* SendTwitter-发微博 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "SendTwitter-发微博";
 			sourceTree = "<group>";
 		};
 		7AEB6D62D51651FBA1070852 /* Pods */ = {
@@ -258,7 +316,6 @@
 			files = (
 				27140D721D3E5397003224EF /* LaunchScreen.storyboard in Resources */,
 				27140D6F1D3E5397003224EF /* Assets.xcassets in Resources */,
-				27140D6D1D3E5397003224EF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,8 +388,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27140D6A1D3E5397003224EF /* ViewController.swift in Sources */,
-				27140D681D3E5397003224EF /* AppDelegate.swift in Sources */,
+				27D5C6151D3E6A3E00854F55 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,14 +424,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		27140D6B1D3E5397003224EF /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				27140D6C1D3E5397003224EF /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		27140D701D3E5397003224EF /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
