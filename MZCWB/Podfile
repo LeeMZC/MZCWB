@@ -1,0 +1,4 @@
+target :’MZCWB’ do
+use_frameworks!
+pod 'QorumLogs'
+end
