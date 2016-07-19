@@ -1,0 +1,6 @@
+framework module Pods_MZCWB {
+  umbrella header "Pods-MZCWB-umbrella.h"
+
+  export *
+  module * { export * }
+}

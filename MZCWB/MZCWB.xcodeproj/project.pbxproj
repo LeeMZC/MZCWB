@@ -14,6 +14,7 @@
 		27140D721D3E5397003224EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27140D701D3E5397003224EF /* LaunchScreen.storyboard */; };
 		27140D7D1D3E5397003224EF /* MZCWBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27140D7C1D3E5397003224EF /* MZCWBTests.swift */; };
 		27140D881D3E5397003224EF /* MZCWBUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27140D871D3E5397003224EF /* MZCWBUITests.swift */; };
+		41E040E84DB278CE083153CE /* Pods_MZCWB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 959D910E3A2A2B82AF4C424C /* Pods_MZCWB.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1602D8B090804EAE840C7D47 /* Pods-MZCWB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MZCWB.release.xcconfig"; path = "Pods/Target Support Files/Pods-MZCWB/Pods-MZCWB.release.xcconfig"; sourceTree = "<group>"; };
 		27140D641D3E5397003224EF /* MZCWB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MZCWB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27140D671D3E5397003224EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27140D691D3E5397003224EF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +49,8 @@
 		27140D831D3E5397003224EF /* MZCWBUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MZCWBUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		27140D871D3E5397003224EF /* MZCWBUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MZCWBUITests.swift; sourceTree = "<group>"; };
 		27140D891D3E5397003224EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		959D910E3A2A2B82AF4C424C /* Pods_MZCWB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MZCWB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D380474B28758B530DCB20D0 /* Pods-MZCWB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MZCWB.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MZCWB/Pods-MZCWB.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41E040E84DB278CE083153CE /* Pods_MZCWB.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +86,8 @@
 				27140D7B1D3E5397003224EF /* MZCWBTests */,
 				27140D861D3E5397003224EF /* MZCWBUITests */,
 				27140D651D3E5397003224EF /* Products */,
+				7AEB6D62D51651FBA1070852 /* Pods */,
+				CA60460C1E95CA3760E7B146 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +132,23 @@
 			path = MZCWBUITests;
 			sourceTree = "<group>";
 		};
+		7AEB6D62D51651FBA1070852 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D380474B28758B530DCB20D0 /* Pods-MZCWB.debug.xcconfig */,
+				1602D8B090804EAE840C7D47 /* Pods-MZCWB.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CA60460C1E95CA3760E7B146 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				959D910E3A2A2B82AF4C424C /* Pods_MZCWB.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +156,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 27140D8C1D3E5397003224EF /* Build configuration list for PBXNativeTarget "MZCWB" */;
 			buildPhases = (
+				3CDE11E7BA7D675779E7B194 /* 📦 Check Pods Manifest.lock */,
 				27140D601D3E5397003224EF /* Sources */,
 				27140D611D3E5397003224EF /* Frameworks */,
 				27140D621D3E5397003224EF /* Resources */,
+				11A1A5C072DBA55E2B2F1746 /* 📦 Embed Pods Frameworks */,
+				79769CE01FB18685BBE02B56 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -250,6 +277,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		11A1A5C072DBA55E2B2F1746 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MZCWB/Pods-MZCWB-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3CDE11E7BA7D675779E7B194 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		79769CE01FB18685BBE02B56 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MZCWB/Pods-MZCWB-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		27140D601D3E5397003224EF /* Sources */ = {
@@ -397,6 +472,7 @@
 		};
 		27140D8D1D3E5397003224EF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D380474B28758B530DCB20D0 /* Pods-MZCWB.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
@@ -410,6 +486,7 @@
 		};
 		27140D8E1D3E5397003224EF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1602D8B090804EAE840C7D47 /* Pods-MZCWB.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
@@ -486,6 +563,7 @@
 				27140D8E1D3E5397003224EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		27140D8F1D3E5397003224EF /* Build configuration list for PBXNativeTarget "MZCWBTests" */ = {
 			isa = XCConfigurationList;
@@ -494,6 +572,7 @@
 				27140D911D3E5397003224EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		27140D921D3E5397003224EF /* Build configuration list for PBXNativeTarget "MZCWBUITests" */ = {
 			isa = XCConfigurationList;
@@ -502,6 +581,7 @@
 				27140D941D3E5397003224EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
