@@ -8,6 +8,9 @@
 
 import UIKit
 import QorumLogs
+
+
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -15,7 +18,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        QorumLogs.enabled = true;
+        // 1.创建window
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        window?.backgroundColor = UIColor.whiteColor()
+        // 2.设置根控制器
+        window?.rootViewController = MZCTabBarController()
+        // 3.显示window
+        window?.makeKeyAndVisible()
         
         return true
     }

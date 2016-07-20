@@ -11,7 +11,23 @@
 		27140D721D3E5397003224EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27140D701D3E5397003224EF /* LaunchScreen.storyboard */; };
 		27140D7D1D3E5397003224EF /* MZCWBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27140D7C1D3E5397003224EF /* MZCWBTests.swift */; };
 		27140D881D3E5397003224EF /* MZCWBUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27140D871D3E5397003224EF /* MZCWBUITests.swift */; };
+		27B17B641D3FCE7800110BB7 /* MZCSetupUIMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B17B631D3FCE7800110BB7 /* MZCSetupUIMessage.swift */; };
 		27D5C6151D3E6A3E00854F55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D5C6141D3E6A3E00854F55 /* AppDelegate.swift */; };
+		27E2DCB21D3F48DC0080D995 /* MZCHomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E2DCB11D3F48DC0080D995 /* MZCHomeTableViewController.swift */; };
+		27E2DCB41D3F48EC0080D995 /* MZCMeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E2DCB31D3F48EC0080D995 /* MZCMeTableViewController.swift */; };
+		27E2DCB61D3F48FA0080D995 /* MZCMessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E2DCB51D3F48FA0080D995 /* MZCMessageTableViewController.swift */; };
+		27E2DCB81D3F490A0080D995 /* MZCPlazaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E2DCB71D3F490A0080D995 /* MZCPlazaTableViewController.swift */; };
+		27E2DCBA1D3F491E0080D995 /* MZCSendTwitterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E2DCB91D3F491E0080D995 /* MZCSendTwitterTableViewController.swift */; };
+		27E2DCBC1D3F49660080D995 /* MZCTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E2DCBB1D3F49660080D995 /* MZCTabBarController.swift */; };
+		27E2DCBF1D3F60B50080D995 /* MainVCSettings.json in Resources */ = {isa = PBXBuildFile; fileRef = 27E2DCBE1D3F60B50080D995 /* MainVCSettings.json */; };
+		27E2DCC11D3F60BD0080D995 /* NullViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E2DCC01D3F60BD0080D995 /* NullViewController.swift */; };
+		27E2DCC51D3F813F0080D995 /* MZCTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E2DCC41D3F813F0080D995 /* MZCTabBarView.swift */; };
+		27E2DCC81D3FAA420080D995 /* MZCLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E2DCC61D3FAA420080D995 /* MZCLoginViewController.swift */; };
+		27E2DCC91D3FAA420080D995 /* MZCLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27E2DCC71D3FAA420080D995 /* MZCLoginViewController.xib */; };
+		27E2DCCD1D3FC63E0080D995 /* MZCSetupUILoginBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E2DCCC1D3FC63E0080D995 /* MZCSetupUILoginBase.swift */; };
+		27E2DCCF1D3FC75C0080D995 /* MZCSetupUIHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E2DCCE1D3FC75C0080D995 /* MZCSetupUIHome.swift */; };
+		27E2DCD31D3FCB2F0080D995 /* MZCSetupUIPlaza.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E2DCD21D3FCB2F0080D995 /* MZCSetupUIPlaza.swift */; };
+		27E2DCD51D3FCB3B0080D995 /* MZCSetupUIMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E2DCD41D3FCB3B0080D995 /* MZCSetupUIMe.swift */; };
 		41E040E84DB278CE083153CE /* Pods_MZCWB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 959D910E3A2A2B82AF4C424C /* Pods_MZCWB.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,7 +60,23 @@
 		27140D831D3E5397003224EF /* MZCWBUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MZCWBUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		27140D871D3E5397003224EF /* MZCWBUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MZCWBUITests.swift; sourceTree = "<group>"; };
 		27140D891D3E5397003224EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27B17B631D3FCE7800110BB7 /* MZCSetupUIMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCSetupUIMessage.swift; sourceTree = "<group>"; };
 		27D5C6141D3E6A3E00854F55 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		27E2DCB11D3F48DC0080D995 /* MZCHomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCHomeTableViewController.swift; sourceTree = "<group>"; };
+		27E2DCB31D3F48EC0080D995 /* MZCMeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCMeTableViewController.swift; sourceTree = "<group>"; };
+		27E2DCB51D3F48FA0080D995 /* MZCMessageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCMessageTableViewController.swift; sourceTree = "<group>"; };
+		27E2DCB71D3F490A0080D995 /* MZCPlazaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCPlazaTableViewController.swift; sourceTree = "<group>"; };
+		27E2DCB91D3F491E0080D995 /* MZCSendTwitterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCSendTwitterTableViewController.swift; sourceTree = "<group>"; };
+		27E2DCBB1D3F49660080D995 /* MZCTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCTabBarController.swift; sourceTree = "<group>"; };
+		27E2DCBE1D3F60B50080D995 /* MainVCSettings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MainVCSettings.json; sourceTree = "<group>"; };
+		27E2DCC01D3F60BD0080D995 /* NullViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NullViewController.swift; sourceTree = "<group>"; };
+		27E2DCC41D3F813F0080D995 /* MZCTabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCTabBarView.swift; sourceTree = "<group>"; };
+		27E2DCC61D3FAA420080D995 /* MZCLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCLoginViewController.swift; sourceTree = "<group>"; };
+		27E2DCC71D3FAA420080D995 /* MZCLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MZCLoginViewController.xib; sourceTree = "<group>"; };
+		27E2DCCC1D3FC63E0080D995 /* MZCSetupUILoginBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCSetupUILoginBase.swift; sourceTree = "<group>"; };
+		27E2DCCE1D3FC75C0080D995 /* MZCSetupUIHome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCSetupUIHome.swift; sourceTree = "<group>"; };
+		27E2DCD21D3FCB2F0080D995 /* MZCSetupUIPlaza.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCSetupUIPlaza.swift; sourceTree = "<group>"; };
+		27E2DCD41D3FCB3B0080D995 /* MZCSetupUIMe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCSetupUIMe.swift; sourceTree = "<group>"; };
 		959D910E3A2A2B82AF4C424C /* Pods_MZCWB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MZCWB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D380474B28758B530DCB20D0 /* Pods-MZCWB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MZCWB.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MZCWB/Pods-MZCWB.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -137,11 +169,11 @@
 		27D5C6121D3E6A3E00854F55 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				27F9CEE11D3E6F3900556B68 /* Home-首页 */,
-				27F9CEE21D3E6F3900556B68 /* Me-我 */,
-				27F9CEE31D3E6F3900556B68 /* Message-消息 */,
-				27F9CEE41D3E6F3900556B68 /* Plaza-广场 */,
-				27F9CEE51D3E6F3900556B68 /* SendTwitter-发微博 */,
+				27E2DC9D1D3F48A00080D995 /* Home-首页 */,
+				27E2DCA11D3F48A00080D995 /* Me-我 */,
+				27E2DCA51D3F48A00080D995 /* Message-消息 */,
+				27E2DCA91D3F48A00080D995 /* Plaza-广场 */,
+				27E2DCAD1D3F48A00080D995 /* SendTwitter-发微博 */,
 				27D5C6131D3E6A3E00854F55 /* Other */,
 			);
 			path = Classes;
@@ -150,44 +182,212 @@
 		27D5C6131D3E6A3E00854F55 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				27E2DCBD1D3F60B50080D995 /* Resource */,
+				27E2DC971D3F29B50080D995 /* Controller */,
+				27E2DC991D3F29B50080D995 /* View */,
 				27D5C6141D3E6A3E00854F55 /* AppDelegate.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
 		};
-		27F9CEE11D3E6F3900556B68 /* Home-首页 */ = {
+		27E2DC971D3F29B50080D995 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				27E2DCCB1D3FC5F70080D995 /* SetupLoginUIStratagy */,
+				27E2DCC01D3F60BD0080D995 /* NullViewController.swift */,
+				27E2DCBB1D3F49660080D995 /* MZCTabBarController.swift */,
+				27E2DCC61D3FAA420080D995 /* MZCLoginViewController.swift */,
+				27E2DCC71D3FAA420080D995 /* MZCLoginViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		27E2DC991D3F29B50080D995 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				27E2DCC41D3F813F0080D995 /* MZCTabBarView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		27E2DC9D1D3F48A00080D995 /* Home-首页 */ = {
+			isa = PBXGroup;
+			children = (
+				27E2DC9E1D3F48A00080D995 /* Controller */,
+				27E2DC9F1D3F48A00080D995 /* Mode */,
+				27E2DCA01D3F48A00080D995 /* View */,
 			);
 			path = "Home-首页";
 			sourceTree = "<group>";
 		};
-		27F9CEE21D3E6F3900556B68 /* Me-我 */ = {
+		27E2DC9E1D3F48A00080D995 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				27E2DCB11D3F48DC0080D995 /* MZCHomeTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		27E2DC9F1D3F48A00080D995 /* Mode */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mode;
+			sourceTree = "<group>";
+		};
+		27E2DCA01D3F48A00080D995 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		27E2DCA11D3F48A00080D995 /* Me-我 */ = {
+			isa = PBXGroup;
+			children = (
+				27E2DCA21D3F48A00080D995 /* Controller */,
+				27E2DCA31D3F48A00080D995 /* Mode */,
+				27E2DCA41D3F48A00080D995 /* View */,
 			);
 			path = "Me-我";
 			sourceTree = "<group>";
 		};
-		27F9CEE31D3E6F3900556B68 /* Message-消息 */ = {
+		27E2DCA21D3F48A00080D995 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				27E2DCB31D3F48EC0080D995 /* MZCMeTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		27E2DCA31D3F48A00080D995 /* Mode */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mode;
+			sourceTree = "<group>";
+		};
+		27E2DCA41D3F48A00080D995 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		27E2DCA51D3F48A00080D995 /* Message-消息 */ = {
+			isa = PBXGroup;
+			children = (
+				27E2DCA61D3F48A00080D995 /* Controller */,
+				27E2DCA71D3F48A00080D995 /* Mode */,
+				27E2DCA81D3F48A00080D995 /* View */,
 			);
 			path = "Message-消息";
 			sourceTree = "<group>";
 		};
-		27F9CEE41D3E6F3900556B68 /* Plaza-广场 */ = {
+		27E2DCA61D3F48A00080D995 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				27E2DCB51D3F48FA0080D995 /* MZCMessageTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		27E2DCA71D3F48A00080D995 /* Mode */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mode;
+			sourceTree = "<group>";
+		};
+		27E2DCA81D3F48A00080D995 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		27E2DCA91D3F48A00080D995 /* Plaza-广场 */ = {
+			isa = PBXGroup;
+			children = (
+				27E2DCAA1D3F48A00080D995 /* Controller */,
+				27E2DCAB1D3F48A00080D995 /* Mode */,
+				27E2DCAC1D3F48A00080D995 /* View */,
 			);
 			path = "Plaza-广场";
 			sourceTree = "<group>";
 		};
-		27F9CEE51D3E6F3900556B68 /* SendTwitter-发微博 */ = {
+		27E2DCAA1D3F48A00080D995 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				27E2DCB71D3F490A0080D995 /* MZCPlazaTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		27E2DCAB1D3F48A00080D995 /* Mode */ = {
 			isa = PBXGroup;
 			children = (
 			);
+			path = Mode;
+			sourceTree = "<group>";
+		};
+		27E2DCAC1D3F48A00080D995 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		27E2DCAD1D3F48A00080D995 /* SendTwitter-发微博 */ = {
+			isa = PBXGroup;
+			children = (
+				27E2DCAE1D3F48A00080D995 /* Controller */,
+				27E2DCAF1D3F48A00080D995 /* Mode */,
+				27E2DCB01D3F48A00080D995 /* View */,
+			);
 			path = "SendTwitter-发微博";
+			sourceTree = "<group>";
+		};
+		27E2DCAE1D3F48A00080D995 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				27E2DCB91D3F491E0080D995 /* MZCSendTwitterTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		27E2DCAF1D3F48A00080D995 /* Mode */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mode;
+			sourceTree = "<group>";
+		};
+		27E2DCB01D3F48A00080D995 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		27E2DCBD1D3F60B50080D995 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				27E2DCBE1D3F60B50080D995 /* MainVCSettings.json */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		27E2DCCB1D3FC5F70080D995 /* SetupLoginUIStratagy */ = {
+			isa = PBXGroup;
+			children = (
+				27E2DCCC1D3FC63E0080D995 /* MZCSetupUILoginBase.swift */,
+				27E2DCCE1D3FC75C0080D995 /* MZCSetupUIHome.swift */,
+				27B17B631D3FCE7800110BB7 /* MZCSetupUIMessage.swift */,
+				27E2DCD21D3FCB2F0080D995 /* MZCSetupUIPlaza.swift */,
+				27E2DCD41D3FCB3B0080D995 /* MZCSetupUIMe.swift */,
+			);
+			path = SetupLoginUIStratagy;
 			sourceTree = "<group>";
 		};
 		7AEB6D62D51651FBA1070852 /* Pods */ = {
@@ -272,6 +472,7 @@
 		27140D5C1D3E5397003224EF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = MZC;
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "马纵驰";
@@ -315,7 +516,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				27140D721D3E5397003224EF /* LaunchScreen.storyboard in Resources */,
+				27E2DCC91D3FAA420080D995 /* MZCLoginViewController.xib in Resources */,
 				27140D6F1D3E5397003224EF /* Assets.xcassets in Resources */,
+				27E2DCBF1D3F60B50080D995 /* MainVCSettings.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,7 +591,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27B17B641D3FCE7800110BB7 /* MZCSetupUIMessage.swift in Sources */,
+				27E2DCBA1D3F491E0080D995 /* MZCSendTwitterTableViewController.swift in Sources */,
+				27E2DCB81D3F490A0080D995 /* MZCPlazaTableViewController.swift in Sources */,
 				27D5C6151D3E6A3E00854F55 /* AppDelegate.swift in Sources */,
+				27E2DCB41D3F48EC0080D995 /* MZCMeTableViewController.swift in Sources */,
+				27E2DCCD1D3FC63E0080D995 /* MZCSetupUILoginBase.swift in Sources */,
+				27E2DCC11D3F60BD0080D995 /* NullViewController.swift in Sources */,
+				27E2DCC51D3F813F0080D995 /* MZCTabBarView.swift in Sources */,
+				27E2DCD31D3FCB2F0080D995 /* MZCSetupUIPlaza.swift in Sources */,
+				27E2DCB21D3F48DC0080D995 /* MZCHomeTableViewController.swift in Sources */,
+				27E2DCC81D3FAA420080D995 /* MZCLoginViewController.swift in Sources */,
+				27E2DCD51D3FCB3B0080D995 /* MZCSetupUIMe.swift in Sources */,
+				27E2DCCF1D3FC75C0080D995 /* MZCSetupUIHome.swift in Sources */,
+				27E2DCB61D3F48FA0080D995 /* MZCMessageTableViewController.swift in Sources */,
+				27E2DCBC1D3F49660080D995 /* MZCTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
