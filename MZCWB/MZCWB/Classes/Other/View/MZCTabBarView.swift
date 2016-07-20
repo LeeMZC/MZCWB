@@ -29,9 +29,7 @@ class MZCTabBarView: UITabBar {
     }()
     
     override func layoutSubviews() {
-        
-        let x : CGFloat = 0.0;
-        let y : CGFloat = 0.0;
+
         let w : CGFloat = self.bounds.size.width / 5
         let h : CGFloat = self.bounds.size.height
         
@@ -39,11 +37,15 @@ class MZCTabBarView: UITabBar {
         for i in 0..<self.subviews.count {
             let view = self.subviews[i]
             
+            var x : CGFloat
+            
             if i >= 2{
-                view.frame = CGRectMake(x + (w * CGFloat(i + 1)) , y, w, h)
+                x = w * CGFloat(i + 1)
             }else{
-                view.frame = CGRectMake(x + (w * CGFloat(i)) , y, w, h)
+                x = w * CGFloat(i)
             }
+            
+            view.frame = CGRectMake(x, 0.0, w, h)
         }
         
         let buttonX = self.bounds.size.width / 2
