@@ -14,7 +14,6 @@ class MZCSetupUIMessage: NSObject {
 
 extension MZCSetupUIMessage : MZCSetupUILoginBase{
     func setupUI(loginViewController: MZCLoginViewController) {
-        loginViewController.showTitle.text = "登录后，别人评论你的微博，发给你的消息，都会在这里收到通知"
-        loginViewController.iconImageView.image = UIImage.init(named: "visitordiscover_image_message")
+        loginViewController.setupUI("visitordiscover_image_message", title: "登录后，别人评论你的微博，发给你的消息，都会在这里收到通知")
     }
 }

@@ -10,12 +10,7 @@ import UIKit
 import QorumLogs
 class MZCSetupUIHome: NSObject , MZCSetupUILoginBase{
     func setupUI(loginViewController: MZCLoginViewController) {
-        
-        loginViewController.showTitle.text = "关注一些人，回这里看看有什么惊喜"
-        loginViewController.rotationImageView.hidden = false
-        
-        loginViewController.startAnimation()
-        
+        loginViewController.setupUI("visitordiscover_feed_image_house", title: "关注一些人，回这里看看有什么惊喜" )
     }
 }
 

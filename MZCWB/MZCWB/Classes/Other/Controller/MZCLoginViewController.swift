@@ -18,18 +18,20 @@ enum MZCViewControllerType: Int {
 class MZCLoginViewController: UIViewController {
     
     // 转盘
-    @IBOutlet weak var rotationImageView: UIImageView!
+    @IBOutlet private weak var rotationImageView: UIImageView!
     // 图标
-    @IBOutlet weak var iconImageView: UIImageView!
+    @IBOutlet private weak var iconImageView: UIImageView!
     // 文本标签
-    @IBOutlet weak var showTitle: UILabel!
+    @IBOutlet private weak var showTitle: UILabel!
 
-    var delegate: MZCSetupUILoginBase?
+    private var delegate: MZCSetupUILoginBase?
+    
+    private var type : MZCViewControllerType?
     
     //MARK:- 初始化类型
     convenience init(type : MZCViewControllerType){
         self.init()
-        
+        self.type = type
         switch type {
         case MZCViewControllerType.MZCHome:
             self.delegate = MZCSetupUIHome()
@@ -64,6 +66,16 @@ class MZCLoginViewController: UIViewController {
     
     @IBAction func loginDidOnClick(sender: UIButton) {
         QL1("")
+    }
+    
+    func setupUI(icon : String , title : String){
+        showTitle.text = title
+        iconImageView.image = UIImage.init(named: icon)
+        
+        if self.type == MZCViewControllerType.MZCHome {
+            rotationImageView.hidden = false
+            self.startAnimation()
+        }
     }
     
 }

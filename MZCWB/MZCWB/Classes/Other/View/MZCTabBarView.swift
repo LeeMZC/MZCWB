@@ -7,7 +7,49 @@
 //
 
 import UIKit
-
+import QorumLogs
 class MZCTabBarView: UITabBar {
     
+    lazy var button : UIButton = {
+        
+        let addButton = UIButton()
+        
+        // 2.设置前景图片
+        addButton.setImage(UIImage(named: "tabbar_compose_icon_add"), forState: UIControlState.Normal)
+        addButton.setImage(UIImage(named: "tabbar_compose_icon_add_highlighted"), forState: UIControlState.Highlighted)
+        // 3.设置背景图片
+        addButton.setBackgroundImage(UIImage(named: "tabbar_compose_button"), forState: UIControlState.Normal)
+        addButton.setBackgroundImage(UIImage(named: "tabbar_compose_button_highlighted"), forState: UIControlState.Highlighted)
+        
+        // 4.调整按钮尺寸
+        addButton.sizeToFit()
+        
+        self.addSubview(addButton)
+        return addButton
+    }()
+    
+    override func layoutSubviews() {
+        
+        let x : CGFloat = 0.0;
+        let y : CGFloat = 0.0;
+        let w : CGFloat = self.bounds.size.width / 5
+        let h : CGFloat = self.bounds.size.height
+        
+        
+        for i in 0..<self.subviews.count {
+            let view = self.subviews[i]
+            
+            if i >= 2{
+                view.frame = CGRectMake(x + (w * CGFloat(i + 1)) , y, w, h)
+            }else{
+                view.frame = CGRectMake(x + (w * CGFloat(i)) , y, w, h)
+            }
+        }
+        
+        let buttonX = self.bounds.size.width / 2
+        let buttonY = self.bounds.size.height / 2
+        self.button.bounds = CGRectMake(0, 0, w, h)
+        self.button.center = CGPointMake(buttonX, buttonY)
+        
+    }
 }

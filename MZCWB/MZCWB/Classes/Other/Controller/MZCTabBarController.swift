@@ -19,16 +19,18 @@ class MZCTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.greenColor()
+        
+//        isLogin ? setupUI() : setupLoginUI()
+        setupLoginUI()
+        
+        setValue(MZCTabBarView(), forKey: "tabBar")
+        
         //字体颜色
         tabBar.tintColor = UIColor.orangeColor()
-        
-        
-        isLogin ? setupUI() : setupLoginUI()
-
     }
     
     //MARK:- layz datas
-    var datas : Array<Dictionary<String,String>>? {
+    private var datas : Array<Dictionary<String,String>>? {
         
         guard let dataPaht = NSBundle.mainBundle().pathForResource("MainVCSettings", ofType: "json") else{
             return nil
@@ -128,7 +130,7 @@ class MZCTabBarController: UITabBarController {
         add4ChildViewController(vcArr)
     }
     
-    func add4ChildViewController(vcArr : Array<UIViewController>) {
+    private func add4ChildViewController(vcArr : Array<UIViewController>) {
         
         addChildViewController(vcArr[0], title: "首页", imgName: "tabbar_home")
         
