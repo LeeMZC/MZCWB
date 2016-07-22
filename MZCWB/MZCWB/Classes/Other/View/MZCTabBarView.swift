@@ -10,19 +10,27 @@ import UIKit
 import QorumLogs
 class MZCTabBarView: UITabBar {
     
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        backgroundImage = UIImage(named: "tabbar_background")
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    
+    
     lazy var button : UIButton = {
         
-        let addButton = UIButton()
+        let addButton = UIButton(imgName: "tabbar_compose_icon_add", titleString: nil, target: nil, action: nil)
         
-        // 2.设置前景图片
-        addButton.setImage(UIImage(named: "tabbar_compose_icon_add"), forState: UIControlState.Normal)
-        addButton.setImage(UIImage(named: "tabbar_compose_icon_add_highlighted"), forState: UIControlState.Highlighted)
-        // 3.设置背景图片
+        // 设置背景图片
         addButton.setBackgroundImage(UIImage(named: "tabbar_compose_button"), forState: UIControlState.Normal)
         addButton.setBackgroundImage(UIImage(named: "tabbar_compose_button_highlighted"), forState: UIControlState.Highlighted)
         
-        // 4.调整按钮尺寸
-        addButton.sizeToFit()
+        
         
         self.addSubview(addButton)
         return addButton

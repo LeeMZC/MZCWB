@@ -14,19 +14,20 @@ class MZCTabBarController: UITabBarController {
 //        self.view = MZCTabBarView()
 //    }
     
-    private var isLogin = false;
+    private var isLogin = true;
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.greenColor()
         
-//        isLogin ? setupUI() : setupLoginUI()
-        setupLoginUI()
+        
+        isLogin ? setupUI() : setupLoginUI()
+        
         
         setValue(MZCTabBarView(), forKey: "tabBar")
         
         //字体颜色
         tabBar.tintColor = UIColor.orangeColor()
+        
     }
     
     //MARK:- layz datas
