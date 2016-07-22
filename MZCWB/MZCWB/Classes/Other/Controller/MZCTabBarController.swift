@@ -19,14 +19,10 @@ class MZCTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        barButtonItemConfig()
         
         isLogin ? setupUI() : setupLoginUI()
         
-        
-        setValue(MZCTabBarView(), forKey: "tabBar")
-        
-        //字体颜色
-        tabBar.tintColor = UIColor.orangeColor()
         
     }
     
@@ -52,25 +48,55 @@ class MZCTabBarController: UITabBarController {
         }
     }
     
-    //MARK:- 添加子控制器
+    private func barButtonItemConfig(){
+        
+        let tabBar = UITabBar.appearance()
+        tabBar.tintColor = UIColor.orangeColor()
+    }
+    
+    //MARK:login登录界面
+    private func setupLoginUI(){
+        let homeViewController = MZCLoginViewController(type: MZCViewControllerType.MZCHome)
+        let messageViewController = MZCLoginViewController(type: MZCViewControllerType.MZCMessage)
+        let plazaViewController = MZCLoginViewController(type: MZCViewControllerType.MZCPlaza)
+        let meViewController = MZCLoginViewController(type: MZCViewControllerType.MZCMe)
+        
+        let vcArr = [homeViewController,messageViewController,plazaViewController,meViewController]
+        
+        add4ChildViewController(vcArr)
+    }
+    
+    //MARK:- 设置登录后UI
     private func setupUI() {
         
         guard let tempDatas = self.datas else{
-            
-            
-            let homeViewController = createClass("MZCHomeTableViewController")
-            let messageViewController = createClass("MZCMessageTableViewController")
-            let plazaViewController = createClass("MZCPlazaTableViewController")
-            let meViewController = createClass("MZCMeTableViewController")
-            
-            let vcArr = [homeViewController,messageViewController,plazaViewController,meViewController]
-            
-            add4ChildViewController(vcArr)
-            
+            addDefaultSubController()
             return
         }
         
-        for dict in tempDatas {
+        addNetWorkDataController(tempDatas)
+        
+        setupTabBarController()
+        
+    }
+    
+    private func setupTabBarController(){
+        setValue(MZCTabBarView(), forKey: "tabBar")
+    }
+    
+    private func addDefaultSubController(){
+        let homeViewController = createClass("MZCHomeTableViewController")
+        let messageViewController = createClass("MZCMessageTableViewController")
+        let plazaViewController = createClass("MZCPlazaTableViewController")
+        let meViewController = createClass("MZCMeTableViewController")
+        
+        let vcArr = [homeViewController,messageViewController,plazaViewController,meViewController]
+        
+        add4ChildViewController(vcArr)
+    }
+    
+    private func addNetWorkDataController(datas : Array<Dictionary<String,String>>){
+        for dict in datas {
             
             guard let clsName = dict["vcName"] else{
                 return
@@ -89,21 +115,11 @@ class MZCTabBarController: UITabBarController {
     }
     
     
-    private func addChildViewController(viewController: UIViewController,title : String,imgName : String ) {
-        
-        //标题
-        viewController.title = title
-        //图片
-        viewController.tabBarItem.image = UIImage.init(named: imgName)
-        //选中图片
-        viewController.tabBarItem.selectedImage = UIImage.init(named: imgName + "_highlighted")
-        
-        let nav = UINavigationController(rootViewController: viewController)
-        
-        addChildViewController(nav)
-        
-    }
-    
+}
+
+
+//MARK:- 添加控制器扩展
+extension MZCTabBarController{
     //MARK: 根据类名创建对象
     private func createClass(className : String) -> UIViewController{
         guard let bundleName = NSBundle.mainBundle().infoDictionary!["CFBundleExecutable"] as? String else{
@@ -119,17 +135,7 @@ class MZCTabBarController: UITabBarController {
         return viewController.init()
     }
     
-    //MARK:login登录界面
-    private func setupLoginUI(){
-        let homeViewController = MZCLoginViewController(type: MZCViewControllerType.MZCHome)
-        let messageViewController = MZCLoginViewController(type: MZCViewControllerType.MZCMessage)
-        let plazaViewController = MZCLoginViewController(type: MZCViewControllerType.MZCPlaza)
-        let meViewController = MZCLoginViewController(type: MZCViewControllerType.MZCMe)
-        
-        let vcArr = [homeViewController,messageViewController,plazaViewController,meViewController]
-        
-        add4ChildViewController(vcArr)
-    }
+    
     
     private func add4ChildViewController(vcArr : Array<UIViewController>) {
         
@@ -141,5 +147,19 @@ class MZCTabBarController: UITabBarController {
         
         addChildViewController(vcArr[3], title: "我", imgName: "tabbar_profile")
     }
-
+    
+    private func addChildViewController(viewController: UIViewController,title : String,imgName : String ) {
+        
+        //标题
+        viewController.title = title
+        //图片
+        viewController.tabBarItem.image = UIImage.init(named: imgName)
+        //选中图片
+        viewController.tabBarItem.selectedImage = UIImage.init(named: imgName + "_highlighted")
+        
+        let nav = MZCNavigationController(rootViewController: viewController)
+        
+        addChildViewController(nav)
+        
+    }
 }

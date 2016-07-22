@@ -40,13 +40,32 @@ class MZCHomeTableViewController: UITableViewController {
         return 0
     }
     
-    // MARK:- 按钮点击回调
+    
+    //MARK:- 过场动画代理对象
+    private lazy var presentAnimation : MZCBaseTransition = {
+        //1. 创建转场对象
+        let mainScreenframe = UIScreen.mainScreen().bounds
+        let width = mainScreenframe.size.width / 2
+        let height = mainScreenframe.size.height / 3
+        let x = (mainScreenframe.size.width - width) / 2
+        
+        let frame = CGRectMake(x, 64,width , height)
+        return MZCHomePopTransition(presentFrame: frame)
+    }()
+
+}
+
+// MARK:- 事件
+extension MZCHomeTableViewController{
     @objc private func leftDidOnClick(){
         QL1("")
     }
     
     @objc private func rightDidOnClick(){
-        QL1("")
+        
+        let scanViewController = UINavigationController(rootViewController: MZCScanNavViewController())
+        
+        presentViewController(scanViewController, animated: true, completion: nil)
     }
     
     @objc private func titleDidOnClick(titleBtn aDeTitleBtn : MZCHomeTitleButton){
@@ -62,17 +81,4 @@ class MZCHomeTableViewController: UITableViewController {
         presentViewController(presentationView, animated: true, completion: nil)
         
     }
-    
-    private lazy var presentAnimation : MZCBaseTransition = {
-        //1. 创建转场对象
-        let mainScreenframe = UIScreen.mainScreen().bounds
-        let width = mainScreenframe.size.width / 2
-        let height = mainScreenframe.size.height / 3
-        let x = (mainScreenframe.size.width - width) / 2
-        
-        let frame = CGRectMake(x, 64,width , height)
-        return MZCHomePopTransition(presentFrame: frame)
-    }()
-
 }
-
