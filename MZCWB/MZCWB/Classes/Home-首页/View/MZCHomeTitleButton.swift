@@ -8,17 +8,26 @@
 
 import UIKit
 import QorumLogs
+
 class MZCHomeTitleButton: UIButton {
     
     private let spacing = 20
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        setupNotificationCenter()
+        
         setupUI()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+    }
+    
+    private func setupNotificationCenter(){
+        // 3.注册通知
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MZCHomeTitleButton.titleChange), name: MZCHomeTitleButtonDidChange, object: nil)
     }
     
     private func setupUI(){
@@ -35,5 +44,32 @@ class MZCHomeTitleButton: UIButton {
         super.layoutSubviews()
         titleLabel?.frame.origin.x = 0.0
         imageView?.frame.origin.x = (titleLabel?.frame.size.width )! + (CGFloat)(spacing / 2)
+    }
+    
+    func imgAnimation(){
+        guard let tempImgView = imageView else{
+            return
+        }
+        
+        selected = !selected
+        let timer = 0.5
+        if selected {
+            UIView.animateWithDuration(timer, animations: {
+                tempImgView.transform = CGAffineTransformMakeRotation(CGFloat(M_PI))
+            })
+        }else{
+            UIView.animateWithDuration(timer, animations: {
+                tempImgView.transform = CGAffineTransformIdentity
+            })
+        }
+    }
+    
+    func titleChange(){
+        imgAnimation()
+    }
+    
+    deinit{
+        // 移除通知
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
 }

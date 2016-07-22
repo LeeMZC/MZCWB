@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MZCBaseTransition: UIViewController, UIViewControllerTransitioningDelegate ,  UIViewControllerAnimatedTransitioning{
+class MZCBaseTransition: NSObject, UIViewControllerTransitioningDelegate ,  UIViewControllerAnimatedTransitioning{
 
     private var isPresent = false
     private var presentFrame : CGRect?
@@ -28,7 +28,7 @@ class MZCBaseTransition: UIViewController, UIViewControllerTransitioningDelegate
         return MZCPresentationController(frame:tempFrame, presentedViewController: presented, presentingViewController: presenting)
     }
     
-    //    //显示时调用
+    //显示时调用
     func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning?{
         return self
     }

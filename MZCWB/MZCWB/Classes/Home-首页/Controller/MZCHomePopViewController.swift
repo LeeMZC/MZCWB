@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MZCHomePopViewController: MZCBaseTransition {
+class MZCHomePopViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()

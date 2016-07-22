@@ -10,10 +10,26 @@ import UIKit
 
 class MZCHomePopTransition: MZCBaseTransition {
     
+
+    //显示时调用
+    override func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning?{
+        
+        NSNotificationCenter.defaultCenter().postNotificationName(MZCHomeTitleButtonDidChange, object: nil)
+        return self
+    }
+    
+    //消失时调用
+    override func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning?{
+        
+        NSNotificationCenter.defaultCenter().postNotificationName(MZCHomeTitleButtonDidChange, object: nil)
+        
+        return self
+    }
+    
     override func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval{
         return 0.5
     }
-    
+
     /// 执行展现动画 override
     override func willPresentedController(transitionContext: UIViewControllerContextTransitioning)
     {

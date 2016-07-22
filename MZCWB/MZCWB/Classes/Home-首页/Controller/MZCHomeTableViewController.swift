@@ -49,7 +49,8 @@ class MZCHomeTableViewController: UITableViewController {
         QL1("")
     }
     
-    @objc private func titleDidOnClick(titleBtn aDeTitleBtn : UIButton){
+    @objc private func titleDidOnClick(titleBtn aDeTitleBtn : MZCHomeTitleButton){
+        
         //1. 创建视图
         let presentationView = MZCHomePopViewController()
         //2. 设置视图转场代理

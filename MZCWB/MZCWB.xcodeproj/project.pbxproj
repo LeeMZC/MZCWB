@@ -11,17 +11,18 @@
 		27140D721D3E5397003224EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27140D701D3E5397003224EF /* LaunchScreen.storyboard */; };
 		27140D7D1D3E5397003224EF /* MZCWBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27140D7C1D3E5397003224EF /* MZCWBTests.swift */; };
 		27140D881D3E5397003224EF /* MZCWBUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27140D871D3E5397003224EF /* MZCWBUITests.swift */; };
-		273E17BB1D40DD960067E31D /* MZCHomePopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273E17B91D40DD960067E31D /* MZCHomePopViewController.swift */; };
-		273E17BC1D40DD960067E31D /* MZCHomePopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 273E17BA1D40DD960067E31D /* MZCHomePopViewController.xib */; };
 		2741B3F01D4273D6003DAD8B /* MZCPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2741B3EF1D4273D6003DAD8B /* MZCPresentationController.swift */; };
-		2741B3F21D427515003DAD8B /* MZCHomePopTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2741B3F11D427515003DAD8B /* MZCHomePopTransition.swift */; };
+		2741B3FC1D4285B7003DAD8B /* MZCGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2741B3FB1D4285B7003DAD8B /* MZCGlobal.swift */; };
+		2741B3FF1D4287ED003DAD8B /* MZCHomePopTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2741B3FE1D4287ED003DAD8B /* MZCHomePopTransition.swift */; };
+		2741B4041D42882F003DAD8B /* MZCHomePopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2741B4011D42882F003DAD8B /* MZCHomePopViewController.swift */; };
+		2741B4051D42882F003DAD8B /* MZCHomePopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2741B4021D42882F003DAD8B /* MZCHomePopViewController.xib */; };
+		2741B4061D42882F003DAD8B /* MZCHomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2741B4031D42882F003DAD8B /* MZCHomeTableViewController.swift */; };
 		275512E11D4089F3002508E8 /* UIBarButtonItem+MZCExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275512E01D4089F3002508E8 /* UIBarButtonItem+MZCExtension.swift */; };
 		275512E31D408BA8002508E8 /* UIButton+MZCExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275512E21D408BA8002508E8 /* UIButton+MZCExtension.swift */; };
 		275512EA1D40929D002508E8 /* MZCHomeTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275512E91D40929D002508E8 /* MZCHomeTitleButton.swift */; };
 		27B17B641D3FCE7800110BB7 /* MZCSetupUIMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B17B631D3FCE7800110BB7 /* MZCSetupUIMessage.swift */; };
 		27C5943A1D42625A00806D5E /* MZCBaseTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C594391D42625A00806D5E /* MZCBaseTransition.swift */; };
 		27D5C6151D3E6A3E00854F55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D5C6141D3E6A3E00854F55 /* AppDelegate.swift */; };
-		27E2DCB21D3F48DC0080D995 /* MZCHomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E2DCB11D3F48DC0080D995 /* MZCHomeTableViewController.swift */; };
 		27E2DCB41D3F48EC0080D995 /* MZCMeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E2DCB31D3F48EC0080D995 /* MZCMeTableViewController.swift */; };
 		27E2DCB61D3F48FA0080D995 /* MZCMessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E2DCB51D3F48FA0080D995 /* MZCMessageTableViewController.swift */; };
 		27E2DCB81D3F490A0080D995 /* MZCPlazaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E2DCB71D3F490A0080D995 /* MZCPlazaTableViewController.swift */; };
@@ -68,17 +69,18 @@
 		27140D831D3E5397003224EF /* MZCWBUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MZCWBUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		27140D871D3E5397003224EF /* MZCWBUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MZCWBUITests.swift; sourceTree = "<group>"; };
 		27140D891D3E5397003224EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		273E17B91D40DD960067E31D /* MZCHomePopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCHomePopViewController.swift; sourceTree = "<group>"; };
-		273E17BA1D40DD960067E31D /* MZCHomePopViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MZCHomePopViewController.xib; sourceTree = "<group>"; };
 		2741B3EF1D4273D6003DAD8B /* MZCPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCPresentationController.swift; sourceTree = "<group>"; };
-		2741B3F11D427515003DAD8B /* MZCHomePopTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCHomePopTransition.swift; sourceTree = "<group>"; };
+		2741B3FB1D4285B7003DAD8B /* MZCGlobal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCGlobal.swift; sourceTree = "<group>"; };
+		2741B3FE1D4287ED003DAD8B /* MZCHomePopTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCHomePopTransition.swift; sourceTree = "<group>"; };
+		2741B4011D42882F003DAD8B /* MZCHomePopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCHomePopViewController.swift; sourceTree = "<group>"; };
+		2741B4021D42882F003DAD8B /* MZCHomePopViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MZCHomePopViewController.xib; sourceTree = "<group>"; };
+		2741B4031D42882F003DAD8B /* MZCHomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCHomeTableViewController.swift; sourceTree = "<group>"; };
 		275512E01D4089F3002508E8 /* UIBarButtonItem+MZCExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+MZCExtension.swift"; sourceTree = "<group>"; };
 		275512E21D408BA8002508E8 /* UIButton+MZCExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+MZCExtension.swift"; sourceTree = "<group>"; };
 		275512E91D40929D002508E8 /* MZCHomeTitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCHomeTitleButton.swift; sourceTree = "<group>"; };
 		27B17B631D3FCE7800110BB7 /* MZCSetupUIMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCSetupUIMessage.swift; sourceTree = "<group>"; };
 		27C594391D42625A00806D5E /* MZCBaseTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCBaseTransition.swift; sourceTree = "<group>"; };
 		27D5C6141D3E6A3E00854F55 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		27E2DCB11D3F48DC0080D995 /* MZCHomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCHomeTableViewController.swift; sourceTree = "<group>"; };
 		27E2DCB31D3F48EC0080D995 /* MZCMeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCMeTableViewController.swift; sourceTree = "<group>"; };
 		27E2DCB51D3F48FA0080D995 /* MZCMessageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCMessageTableViewController.swift; sourceTree = "<group>"; };
 		27E2DCB71D3F490A0080D995 /* MZCPlazaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCPlazaTableViewController.swift; sourceTree = "<group>"; };
@@ -172,6 +174,24 @@
 			path = MZCWBUITests;
 			sourceTree = "<group>";
 		};
+		2741B3FD1D4287ED003DAD8B /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				2741B3FE1D4287ED003DAD8B /* MZCHomePopTransition.swift */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		2741B4001D42882F003DAD8B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2741B4011D42882F003DAD8B /* MZCHomePopViewController.swift */,
+				2741B4021D42882F003DAD8B /* MZCHomePopViewController.xib */,
+				2741B4031D42882F003DAD8B /* MZCHomeTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		275512DF1D4089BA002508E8 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,6 +250,7 @@
 				27E2DC971D3F29B50080D995 /* Controller */,
 				27E2DC991D3F29B50080D995 /* View */,
 				27D5C6141D3E6A3E00854F55 /* AppDelegate.swift */,
+				2741B3FB1D4285B7003DAD8B /* MZCGlobal.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -257,21 +278,11 @@
 		27E2DC9D1D3F48A00080D995 /* Home-首页 */ = {
 			isa = PBXGroup;
 			children = (
-				27E2DC9E1D3F48A00080D995 /* Controller */,
+				2741B3FD1D4287ED003DAD8B /* Other */,
+				2741B4001D42882F003DAD8B /* Controller */,
 				275512E81D40928E002508E8 /* View */,
 			);
 			path = "Home-首页";
-			sourceTree = "<group>";
-		};
-		27E2DC9E1D3F48A00080D995 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				27E2DCB11D3F48DC0080D995 /* MZCHomeTableViewController.swift */,
-				273E17B91D40DD960067E31D /* MZCHomePopViewController.swift */,
-				2741B3F11D427515003DAD8B /* MZCHomePopTransition.swift */,
-				273E17BA1D40DD960067E31D /* MZCHomePopViewController.xib */,
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 		27E2DCA11D3F48A00080D995 /* Me-我 */ = {
@@ -548,10 +559,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				27140D721D3E5397003224EF /* LaunchScreen.storyboard in Resources */,
-				273E17BC1D40DD960067E31D /* MZCHomePopViewController.xib in Resources */,
 				27E2DCC91D3FAA420080D995 /* MZCLoginViewController.xib in Resources */,
 				27140D6F1D3E5397003224EF /* Assets.xcassets in Resources */,
 				27E2DCBF1D3F60B50080D995 /* MainVCSettings.json in Resources */,
+				2741B4051D42882F003DAD8B /* MZCHomePopViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -624,12 +635,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2741B3F21D427515003DAD8B /* MZCHomePopTransition.swift in Sources */,
 				27B17B641D3FCE7800110BB7 /* MZCSetupUIMessage.swift in Sources */,
-				273E17BB1D40DD960067E31D /* MZCHomePopViewController.swift in Sources */,
+				2741B3FF1D4287ED003DAD8B /* MZCHomePopTransition.swift in Sources */,
+				2741B4061D42882F003DAD8B /* MZCHomeTableViewController.swift in Sources */,
 				275512E11D4089F3002508E8 /* UIBarButtonItem+MZCExtension.swift in Sources */,
 				27E2DCBA1D3F491E0080D995 /* MZCSendTwitterTableViewController.swift in Sources */,
 				27E2DCB81D3F490A0080D995 /* MZCPlazaTableViewController.swift in Sources */,
+				2741B3FC1D4285B7003DAD8B /* MZCGlobal.swift in Sources */,
 				27C5943A1D42625A00806D5E /* MZCBaseTransition.swift in Sources */,
 				27D5C6151D3E6A3E00854F55 /* AppDelegate.swift in Sources */,
 				275512E31D408BA8002508E8 /* UIButton+MZCExtension.swift in Sources */,
@@ -639,8 +651,8 @@
 				27E2DCC51D3F813F0080D995 /* MZCTabBarView.swift in Sources */,
 				2741B3F01D4273D6003DAD8B /* MZCPresentationController.swift in Sources */,
 				27E2DCD31D3FCB2F0080D995 /* MZCSetupUIPlaza.swift in Sources */,
-				27E2DCB21D3F48DC0080D995 /* MZCHomeTableViewController.swift in Sources */,
 				27E2DCC81D3FAA420080D995 /* MZCLoginViewController.swift in Sources */,
+				2741B4041D42882F003DAD8B /* MZCHomePopViewController.swift in Sources */,
 				27E2DCD51D3FCB3B0080D995 /* MZCSetupUIMe.swift in Sources */,
 				275512EA1D40929D002508E8 /* MZCHomeTitleButton.swift in Sources */,
 				27E2DCCF1D3FC75C0080D995 /* MZCSetupUIHome.swift in Sources */,
