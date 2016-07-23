@@ -8,12 +8,18 @@
 
 import UIKit
 import QorumLogs
+import AVFoundation
 class MZCScanViewController: UIViewController {
 
     @IBOutlet weak var scanTabBar: UITabBar!
     //记录上一次点击的item
     private var oldSelectItem : UITabBarItem?
     
+    private let titleEdgeInsets = 20.0
+    
+    private lazy var qrCode = MZCQRCode()
+    
+    //MARK:-
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -25,7 +31,7 @@ class MZCScanViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    private let titleEdgeInsets = 20.0
+    
 
     private func setupUI(){
         
@@ -33,7 +39,8 @@ class MZCScanViewController: UIViewController {
         
         setupTabBar()
         
-        setupScanAniView()
+        setupQRCode()
+        
         
     }
     
@@ -64,7 +71,10 @@ class MZCScanViewController: UIViewController {
         oldSelectItem = scanTabBar.selectedItem
     }
     
-    
+    override func viewDidAppear(animated: Bool) {
+        
+        setupScanAniView()
+    }
     
     //MARK:- scanAniView
     private func setupScanAniView(){
@@ -74,12 +84,22 @@ class MZCScanViewController: UIViewController {
     
     private lazy var scanAniView : MZCScanAniView = {
         let scanAniView = MZCScanAniView.scanAniView()
-        
         self.view.addSubview(scanAniView)
-        scanAniView.setNeedsLayout()
         return scanAniView
     }()
+
     
+    private  func setupQRCode(){
+        
+        // 5.设置监听监听输出解析到的数据
+        qrCode.output.setMetadataObjectsDelegate(self, queue: dispatch_get_main_queue())
+        
+        // 6.添加预览图层
+        view.layer.insertSublayer(qrCode.previewLayer, atIndex: 0)
+        qrCode.previewLayer.frame = view.bounds
+        
+        qrCode.startRunning()
+    }
 }
 
 //MARK:- event
@@ -105,5 +125,16 @@ extension MZCScanViewController : UITabBarDelegate{
         oldSelectItem = item
         scanAniView.imgHight = scanTabBar.items?.first == item ? 200 : 100
         scanAniView.startAni()
+    }
+}
+
+//MARK:- 二维码扫描
+extension MZCScanViewController : AVCaptureMetadataOutputObjectsDelegate{
+
+    
+    /// 只要扫描到结果就会调用
+    func captureOutput(captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [AnyObject]!, fromConnection connection: AVCaptureConnection!)
+    {
+       print(metadataObjects.last?.stringValue)
     }
 }
