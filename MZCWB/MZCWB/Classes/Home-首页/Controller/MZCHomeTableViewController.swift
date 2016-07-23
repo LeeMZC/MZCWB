@@ -63,7 +63,7 @@ extension MZCHomeTableViewController{
     
     @objc private func rightDidOnClick(){
         
-        let scanViewController = UINavigationController(rootViewController: MZCScanNavViewController())
+        let scanViewController = UINavigationController(rootViewController: MZCScanViewController())
         
         presentViewController(scanViewController, animated: true, completion: nil)
     }

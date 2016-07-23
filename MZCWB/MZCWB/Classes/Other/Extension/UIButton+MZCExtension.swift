@@ -9,18 +9,21 @@
 import UIKit
 
 extension UIButton{
-    convenience init(imgName:String , titleString : String?, target: AnyObject?, action: Selector){
+    convenience init(imgName : String? , titleString : String?, target: AnyObject?, action: Selector){
         self.init()
-        self.setImage(UIImage.init(named: imgName), forState: UIControlState.Normal)
-        self.setImage(UIImage.init(named: imgName + "_highlighted"), forState: UIControlState.Highlighted)
         
-        if target != nil {
-            self.addTarget(target!, action: action, forControlEvents: UIControlEvents.TouchUpInside)
+        if let tempImgName = imgName {
+            self.setImage(UIImage.init(named: tempImgName), forState: UIControlState.Normal)
+            self.setImage(UIImage.init(named: tempImgName + "_highlighted"), forState: UIControlState.Highlighted)
         }
         
-        if titleString != nil {
-            titleLabel?.text = titleString
+        if let tempTitleString = titleString {
+            setTitle(tempTitleString, forState: UIControlState.Normal)
+            setTitle(tempTitleString, forState: UIControlState.Highlighted)
         }
+        
+        
+        self.addTarget(target!, action: action, forControlEvents: UIControlEvents.TouchUpInside)
         
     }
 }

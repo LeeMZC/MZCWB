@@ -14,6 +14,7 @@ class MZCTabBarView: UITabBar {
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundImage = UIImage(named: "tabbar_background")
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -24,7 +25,7 @@ class MZCTabBarView: UITabBar {
     
     lazy var button : UIButton = {
         
-        let addButton = UIButton(imgName: "tabbar_compose_icon_add", titleString: nil, target: nil, action: nil)
+        let addButton = UIButton(imgName: "tabbar_compose_icon_add", titleString: nil, target: self, action: #selector(MZCTabBarView.centerDidOnclick))
         
         // 设置背景图片
         addButton.setBackgroundImage(UIImage(named: "tabbar_compose_button"), forState: UIControlState.Normal)
@@ -60,6 +61,12 @@ class MZCTabBarView: UITabBar {
         let buttonY = self.bounds.size.height / 2
         self.button.bounds = CGRectMake(0, 0, w, h)
         self.button.center = CGPointMake(buttonX, buttonY)
+        
+    }
+}
+
+extension MZCTabBarView {
+    @objc private func centerDidOnclick(){
         
     }
 }

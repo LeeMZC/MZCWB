@@ -17,12 +17,12 @@
 		2741B4041D42882F003DAD8B /* MZCHomePopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2741B4011D42882F003DAD8B /* MZCHomePopViewController.swift */; };
 		2741B4051D42882F003DAD8B /* MZCHomePopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2741B4021D42882F003DAD8B /* MZCHomePopViewController.xib */; };
 		2741B4061D42882F003DAD8B /* MZCHomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2741B4031D42882F003DAD8B /* MZCHomeTableViewController.swift */; };
-		2741B4111D42AAB5003DAD8B /* MZCScanNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2741B40F1D42AAB5003DAD8B /* MZCScanNavViewController.swift */; };
 		275512E11D4089F3002508E8 /* UIBarButtonItem+MZCExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275512E01D4089F3002508E8 /* UIBarButtonItem+MZCExtension.swift */; };
 		275512E31D408BA8002508E8 /* UIButton+MZCExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275512E21D408BA8002508E8 /* UIButton+MZCExtension.swift */; };
 		275512EA1D40929D002508E8 /* MZCHomeTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275512E91D40929D002508E8 /* MZCHomeTitleButton.swift */; };
-		2797922E1D42AD8200EB604D /* MZCScanView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2797922D1D42AD8200EB604D /* MZCScanView.xib */; };
 		279792301D42B28000EB604D /* MZCNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2797922F1D42B28000EB604D /* MZCNavigationController.swift */; };
+		2797923F1D42CC6E00EB604D /* MZCScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2797923D1D42CC6E00EB604D /* MZCScanViewController.swift */; };
+		279792401D42CC6E00EB604D /* MZCScanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2797923E1D42CC6E00EB604D /* MZCScanViewController.xib */; };
 		27B17B641D3FCE7800110BB7 /* MZCSetupUIMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B17B631D3FCE7800110BB7 /* MZCSetupUIMessage.swift */; };
 		27C5943A1D42625A00806D5E /* MZCBaseTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C594391D42625A00806D5E /* MZCBaseTransition.swift */; };
 		27D5C6151D3E6A3E00854F55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D5C6141D3E6A3E00854F55 /* AppDelegate.swift */; };
@@ -40,6 +40,8 @@
 		27E2DCCF1D3FC75C0080D995 /* MZCSetupUIHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E2DCCE1D3FC75C0080D995 /* MZCSetupUIHome.swift */; };
 		27E2DCD31D3FCB2F0080D995 /* MZCSetupUIPlaza.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E2DCD21D3FCB2F0080D995 /* MZCSetupUIPlaza.swift */; };
 		27E2DCD51D3FCB3B0080D995 /* MZCSetupUIMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E2DCD41D3FCB3B0080D995 /* MZCSetupUIMe.swift */; };
+		27FFCE8F1D43531A00775DF4 /* MZCScanAniView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FFCE8E1D43531A00775DF4 /* MZCScanAniView.swift */; };
+		27FFCE911D4353C800775DF4 /* MZCScanAniView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27FFCE901D4353C800775DF4 /* MZCScanAniView.xib */; };
 		41E040E84DB278CE083153CE /* Pods_MZCWB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 959D910E3A2A2B82AF4C424C /* Pods_MZCWB.framework */; };
 /* End PBXBuildFile section */
 
@@ -78,12 +80,12 @@
 		2741B4011D42882F003DAD8B /* MZCHomePopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCHomePopViewController.swift; sourceTree = "<group>"; };
 		2741B4021D42882F003DAD8B /* MZCHomePopViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MZCHomePopViewController.xib; sourceTree = "<group>"; };
 		2741B4031D42882F003DAD8B /* MZCHomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCHomeTableViewController.swift; sourceTree = "<group>"; };
-		2741B40F1D42AAB5003DAD8B /* MZCScanNavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCScanNavViewController.swift; sourceTree = "<group>"; };
 		275512E01D4089F3002508E8 /* UIBarButtonItem+MZCExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+MZCExtension.swift"; sourceTree = "<group>"; };
 		275512E21D408BA8002508E8 /* UIButton+MZCExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+MZCExtension.swift"; sourceTree = "<group>"; };
 		275512E91D40929D002508E8 /* MZCHomeTitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCHomeTitleButton.swift; sourceTree = "<group>"; };
-		2797922D1D42AD8200EB604D /* MZCScanView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MZCScanView.xib; sourceTree = "<group>"; };
 		2797922F1D42B28000EB604D /* MZCNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCNavigationController.swift; sourceTree = "<group>"; };
+		2797923D1D42CC6E00EB604D /* MZCScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCScanViewController.swift; sourceTree = "<group>"; };
+		2797923E1D42CC6E00EB604D /* MZCScanViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MZCScanViewController.xib; sourceTree = "<group>"; };
 		27B17B631D3FCE7800110BB7 /* MZCSetupUIMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCSetupUIMessage.swift; sourceTree = "<group>"; };
 		27C594391D42625A00806D5E /* MZCBaseTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCBaseTransition.swift; sourceTree = "<group>"; };
 		27D5C6141D3E6A3E00854F55 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +103,8 @@
 		27E2DCCE1D3FC75C0080D995 /* MZCSetupUIHome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCSetupUIHome.swift; sourceTree = "<group>"; };
 		27E2DCD21D3FCB2F0080D995 /* MZCSetupUIPlaza.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCSetupUIPlaza.swift; sourceTree = "<group>"; };
 		27E2DCD41D3FCB3B0080D995 /* MZCSetupUIMe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCSetupUIMe.swift; sourceTree = "<group>"; };
+		27FFCE8E1D43531A00775DF4 /* MZCScanAniView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCScanAniView.swift; sourceTree = "<group>"; };
+		27FFCE901D4353C800775DF4 /* MZCScanAniView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MZCScanAniView.xib; sourceTree = "<group>"; };
 		959D910E3A2A2B82AF4C424C /* Pods_MZCWB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MZCWB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D380474B28758B530DCB20D0 /* Pods-MZCWB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MZCWB.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MZCWB/Pods-MZCWB.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -211,7 +215,8 @@
 		2741B4081D42A982003DAD8B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				2741B40F1D42AAB5003DAD8B /* MZCScanNavViewController.swift */,
+				2797923D1D42CC6E00EB604D /* MZCScanViewController.swift */,
+				2797923E1D42CC6E00EB604D /* MZCScanViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -226,7 +231,8 @@
 		2741B40A1D42A982003DAD8B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2797922D1D42AD8200EB604D /* MZCScanView.xib */,
+				27FFCE8E1D43531A00775DF4 /* MZCScanAniView.swift */,
+				27FFCE901D4353C800775DF4 /* MZCScanAniView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -600,8 +606,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				27140D721D3E5397003224EF /* LaunchScreen.storyboard in Resources */,
+				27FFCE911D4353C800775DF4 /* MZCScanAniView.xib in Resources */,
+				279792401D42CC6E00EB604D /* MZCScanViewController.xib in Resources */,
 				27E2DCC91D3FAA420080D995 /* MZCLoginViewController.xib in Resources */,
-				2797922E1D42AD8200EB604D /* MZCScanView.xib in Resources */,
 				27140D6F1D3E5397003224EF /* Assets.xcassets in Resources */,
 				27E2DCBF1D3F60B50080D995 /* MainVCSettings.json in Resources */,
 				2741B4051D42882F003DAD8B /* MZCHomePopViewController.xib in Resources */,
@@ -687,15 +694,16 @@
 				2741B3FC1D4285B7003DAD8B /* MZCGlobal.swift in Sources */,
 				27C5943A1D42625A00806D5E /* MZCBaseTransition.swift in Sources */,
 				27D5C6151D3E6A3E00854F55 /* AppDelegate.swift in Sources */,
+				2797923F1D42CC6E00EB604D /* MZCScanViewController.swift in Sources */,
 				275512E31D408BA8002508E8 /* UIButton+MZCExtension.swift in Sources */,
 				27E2DCB41D3F48EC0080D995 /* MZCMeTableViewController.swift in Sources */,
 				27E2DCCD1D3FC63E0080D995 /* MZCSetupUILoginBase.swift in Sources */,
-				2741B4111D42AAB5003DAD8B /* MZCScanNavViewController.swift in Sources */,
 				27E2DCC11D3F60BD0080D995 /* NullViewController.swift in Sources */,
 				27E2DCC51D3F813F0080D995 /* MZCTabBarView.swift in Sources */,
 				2741B3F01D4273D6003DAD8B /* MZCPresentationController.swift in Sources */,
 				27E2DCD31D3FCB2F0080D995 /* MZCSetupUIPlaza.swift in Sources */,
 				27E2DCC81D3FAA420080D995 /* MZCLoginViewController.swift in Sources */,
+				27FFCE8F1D43531A00775DF4 /* MZCScanAniView.swift in Sources */,
 				2741B4041D42882F003DAD8B /* MZCHomePopViewController.swift in Sources */,
 				27E2DCD51D3FCB3B0080D995 /* MZCSetupUIMe.swift in Sources */,
 				275512EA1D40929D002508E8 /* MZCHomeTitleButton.swift in Sources */,
