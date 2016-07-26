@@ -45,6 +45,8 @@ class MZCLoginViewController: UIViewController {
         
     }
     
+    
+    
     //MARK:- 旋转动画
     func startAnimation() {
         let anim = CABasicAnimation(keyPath: "transform.rotation")
@@ -56,16 +58,19 @@ class MZCLoginViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+        QL1("")
         self.delegate?.setupUI(self)
+        setupNav()
     }
     
     //MARK:- 点击事件
     @IBAction func registerDidOnClick(sender: UIButton) {
-        QL1("")
+        
     }
     
     @IBAction func loginDidOnClick(sender: UIButton) {
-        QL1("")
+        
+        
     }
     
     func setupUI(icon : String , title : String){
@@ -76,6 +81,16 @@ class MZCLoginViewController: UIViewController {
             rotationImageView.hidden = false
             self.startAnimation()
         }
+    }
+    
+    func setupNav(){
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "登录", style: UIBarButtonItemStyle.Done, target: self, action: #selector(MZCLoginViewController.loginOnClick))
+    }
+    
+    func loginOnClick(){
+        let threadLoginWebViewController = MZCTokenLoginWebViewController()
+        let nav = UINavigationController(rootViewController: threadLoginWebViewController)
+        presentViewController(nav, animated: true, completion: nil)
     }
     
 }

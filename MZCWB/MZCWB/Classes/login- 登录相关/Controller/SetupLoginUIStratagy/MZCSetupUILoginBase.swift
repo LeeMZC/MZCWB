@@ -10,4 +10,5 @@ import UIKit
 
 protocol MZCSetupUILoginBase : NSObjectProtocol{
     func setupUI(loginViewController : MZCLoginViewController)
+
 }

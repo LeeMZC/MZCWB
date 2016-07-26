@@ -22,6 +22,7 @@ class MZCScanViewController: UIViewController {
     //MARK:-
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupUI()
         // Do any additional setup after loading the view.
     }
@@ -32,7 +33,6 @@ class MZCScanViewController: UIViewController {
     }
     
     
-
     private func setupUI(){
         
         setupNavItem()
@@ -41,11 +41,11 @@ class MZCScanViewController: UIViewController {
         
         setupQRCode()
         
-        
     }
     
     //MARK:- Nav
     private func setupNavItem(){
+        
         let leftButton = UIButton(imgName: nil, titleString: "退出", target: self, action: #selector(MZCScanViewController.leftDidOnclick))
         buttonFrameAndColor(leftButton)
         leftButton.titleEdgeInsets.right = CGFloat(titleEdgeInsets)

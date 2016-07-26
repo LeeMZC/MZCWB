@@ -1,4 +1,11 @@
 target :’MZCWB’ do
 use_frameworks!
 pod 'QorumLogs'
+pod 'AFNetworking'
+pod 'SVProgressHUD'
+pod 'SDWebImage'
+pod 'SnapKit'
+pod 'Alamofire'
+pod 'SwiftyJSON'
+pod 'YYWebImage'
 end

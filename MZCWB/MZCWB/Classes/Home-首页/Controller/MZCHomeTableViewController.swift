@@ -18,6 +18,7 @@ class MZCHomeTableViewController: UITableViewController {
     
     //MARK:- 设置navigationUI
     private func setupNavUI(){
+        QL1("")
         navigationItem.leftBarButtonItem = UIBarButtonItem(imgName: "navigationbar_friendattention", target: self, action: #selector(MZCHomeTableViewController.leftDidOnClick));
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(imgName: "navigationbar_pop", target: self, action: #selector(MZCHomeTableViewController.rightDidOnClick));
@@ -58,11 +59,11 @@ class MZCHomeTableViewController: UITableViewController {
 // MARK:- 事件
 extension MZCHomeTableViewController{
     @objc private func leftDidOnClick(){
-        QL1("")
+        
     }
     
     @objc private func rightDidOnClick(){
-        
+                
         let scanViewController = UINavigationController(rootViewController: MZCScanViewController())
         
         presentViewController(scanViewController, animated: true, completion: nil)

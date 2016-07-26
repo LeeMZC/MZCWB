@@ -7,10 +7,11 @@
 //
 
 import UIKit
-
+import QorumLogs
 class MZCHomePopViewController: UIViewController {
     
     override func viewDidLoad() {
+        QL1("")
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
