@@ -14,14 +14,15 @@ class MZCHomePopTransition: MZCBaseTransition {
     //显示时调用
     override func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning?{
         
-        NSNotificationCenter.defaultCenter().postNotificationName(MZCHomeTitleButtonDidChange, object: nil)
+        MZCNSNotificationCenterMessage.shareInstance.post_homeTitleButtonDidChange()
+        
         return self
     }
     
     //消失时调用
     override func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning?{
         
-        NSNotificationCenter.defaultCenter().postNotificationName(MZCHomeTitleButtonDidChange, object: nil)
+        MZCNSNotificationCenterMessage.shareInstance.post_homeTitleButtonDidChange()
         
         return self
     }

@@ -101,7 +101,7 @@ class MZCAlamofire : NSObject{
                         finished(tokenDic: tokenDic, userDic: userDic, error: nil)
                         
                         //登录成功发送通知更换UIWindow
-                        NSNotificationCenter.defaultCenter().postNotificationName(IsNewVersionCollectionViewControllerWillChange, object: nil)
+                        MZCNSNotificationCenterMessage.shareInstance.post_uiWindowOfNewVersion()
                     }
                 case .Failure(let error):
                     finished(tokenDic : nil , userDic : nil, error: error)

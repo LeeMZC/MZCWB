@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2711D3CF1D47F4DB00F3D57C /* MZCNSNotificationCenterMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2711D3CE1D47F4DB00F3D57C /* MZCNSNotificationCenterMessage.swift */; };
 		27140D6F1D3E5397003224EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27140D6E1D3E5397003224EF /* Assets.xcassets */; };
 		27140D721D3E5397003224EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27140D701D3E5397003224EF /* LaunchScreen.storyboard */; };
 		27140D7D1D3E5397003224EF /* MZCWBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27140D7C1D3E5397003224EF /* MZCWBTests.swift */; };
@@ -77,6 +78,7 @@
 
 /* Begin PBXFileReference section */
 		1602D8B090804EAE840C7D47 /* Pods-MZCWB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MZCWB.release.xcconfig"; path = "Pods/Target Support Files/Pods-MZCWB/Pods-MZCWB.release.xcconfig"; sourceTree = "<group>"; };
+		2711D3CE1D47F4DB00F3D57C /* MZCNSNotificationCenterMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCNSNotificationCenterMessage.swift; sourceTree = "<group>"; };
 		27140D641D3E5397003224EF /* MZCWB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MZCWB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27140D6E1D3E5397003224EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		27140D711D3E5397003224EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -161,6 +163,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2711D3CD1D47F4B700F3D57C /* 通知管理中心 */ = {
+			isa = PBXGroup;
+			children = (
+				2711D3CE1D47F4DB00F3D57C /* MZCNSNotificationCenterMessage.swift */,
+			);
+			name = "通知管理中心";
+			path = NSNotificationCenterMessage;
+			sourceTree = "<group>";
+		};
 		27140D5B1D3E5397003224EF = {
 			isa = PBXGroup;
 			children = (
@@ -390,6 +401,7 @@
 		27D5C6131D3E6A3E00854F55 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				2711D3CD1D47F4B700F3D57C /* 通知管理中心 */,
 				27B734441D46060E00ABE27F /* Mode */,
 				2735F6101D4520F9000C3FA5 /* NetWork */,
 				27C594381D42623800806D5E /* Base */,
@@ -774,6 +786,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2741B3FF1D4287ED003DAD8B /* MZCHomePopTransition.swift in Sources */,
+				2711D3CF1D47F4DB00F3D57C /* MZCNSNotificationCenterMessage.swift in Sources */,
 				279792301D42B28000EB604D /* MZCNavigationController.swift in Sources */,
 				27F61EA91D47C60500B54231 /* MZCWelcomeViewController.swift in Sources */,
 				2735F6061D44DDF4000C3FA5 /* MZCSetupUILoginBase.swift in Sources */,

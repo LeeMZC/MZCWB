@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var baseTabBarController : MZCBaseTabBarViewController?
     
     deinit{
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        MZCNSNotificationCenterMessage.shareInstance.removeObserver(self)
     }
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -41,14 +41,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //MARK:- private函数
     private func addNotif(){
        
-        // 判断如果有新版本 切换新版本页面
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AppDelegate.uiWindowOfNewVersion), name: IsNewVersionCollectionViewControllerWillChange, object: nil)
+        MZCNSNotificationCenterMessage.shareInstance.uiWindowOfNewVersion(self, selector: #selector(AppDelegate.uiWindowOfNewVersion))
         
-        // 切换新版本页面
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AppDelegate.welcomeViewControllerWillChange), name: MZCWelcomeViewControllerWillChange, object: nil)
+        MZCNSNotificationCenterMessage.shareInstance.welcomeViewControllerWillChange(self, selector: #selector(AppDelegate.welcomeViewControllerWillChange))
         
-        // 切换主页面
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AppDelegate.mainUIWindowWillChange), name: MZCMainViewControllerWillChange, object: nil)
+        MZCNSNotificationCenterMessage.shareInstance.mainUIWindowWillChange(self, selector: #selector(AppDelegate.mainUIWindowWillChange))
+        
     }
     
     //MARK:根据逻辑切换UIWindow

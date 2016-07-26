@@ -27,7 +27,7 @@ class MZCHomeTitleButton: UIButton {
     
     private func setupNotificationCenter(){
         // 3.注册通知
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MZCHomeTitleButton.titleChange), name: MZCHomeTitleButtonDidChange, object: nil)
+        MZCNSNotificationCenterMessage.shareInstance.homeTitleButtonDidChange(self, selector: #selector(MZCHomeTitleButton.titleChange))
     }
     
     private func setupUI(){
@@ -70,6 +70,6 @@ class MZCHomeTitleButton: UIButton {
     
     deinit{
         // 移除通知
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        MZCNSNotificationCenterMessage.shareInstance.removeObserver(self)
     }
 }
