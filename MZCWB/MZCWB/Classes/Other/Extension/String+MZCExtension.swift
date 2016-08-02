@@ -43,4 +43,16 @@ extension String {
         
         return filePath
     }
+    //MARK:- 计算文字矩形
+    func mzc_stringSize(width awidth : CGFloat) -> CGSize {
+        
+        if self.characters.count > 0 {
+            
+            let textMaxSize = CGSizeMake(CGFloat(awidth), CGFloat(MAXFLOAT))
+            let size = self.boundingRectWithSize(textMaxSize, options: [NSStringDrawingOptions.UsesLineFragmentOrigin , NSStringDrawingOptions.UsesFontLeading] , attributes: [NSFontAttributeName : MZCTopicfont], context: nil).size
+            return size
+        }
+        
+        return CGSizeZero
+    }
 }

@@ -97,7 +97,6 @@ class MZCAlamofire : NSObject{
                         
                         let userDic = userData as! [String : AnyObject]
                         // 获取数据核心 令牌数据 + 个人(我) 数据
-                        
                         finished(tokenDic: tokenDic, userDic: userDic, error: nil)
                         
                         //登录成功发送通知更换UIWindow
@@ -106,9 +105,37 @@ class MZCAlamofire : NSObject{
                 case .Failure(let error):
                     finished(tokenDic : nil , userDic : nil, error: error)
                 }
-                
         }
         
+    }
+    
+    //MARK:- HOME页数据请求
+    
+    func homeLoadData(finished : (datas : [[String: AnyObject]]? , error : NSError?)->()){
+        let urlString = baseURL + "2/statuses/home_timeline.json"
+        /// QL1("HOME请求地址 : \(urlString)")
+        let access_token = accountTokenMode!.access_token!
+        let parameters = ["access_token": access_token]
+        
+        Alamofire.request(.GET, urlString, parameters: parameters)
+            .responseJSON { response in
+                
+                switch response.result {
+                case .Success:
+                    if let homeData = response.result.value {
+                        let datas = JSON(homeData)["statuses"].arrayObject as? [[String: AnyObject]]
+                        finished(datas: datas, error: nil)
+                    }
+                case .Failure(let error):
+                    finished(datas: nil, error: error)
+                }
+        }
+    }
+    
+    //MARK:- 将数组写入桌面
+    func mzc_writeToFile(arr: [[String:AnyObject]]){
+        let arrNS = arr as NSArray
+        arrNS.writeToFile(MZCPath, atomically: true)
     }
 
 }

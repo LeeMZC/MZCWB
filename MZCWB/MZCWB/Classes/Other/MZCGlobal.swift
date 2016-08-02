@@ -26,4 +26,35 @@ let MZCAppSecret = "54aaa1cbb48b667391c4d853adfd8071"
 let MZCRedirect = "http://www.baidu.com"
 
 //MARK:- 存储令牌序列化路径
-let tokenModefilePath: String = "accountTokenMode.plist".cachesDir()
+let MZCTokenModefilePath: String = "accountTokenMode.plist".cachesDir()
+
+//MARK:- 用户信息(自己)
+var accountTokenMode : MZCAccountTokenMode?
+
+//MARK:- 间距
+let MZCMargin : CGFloat = 10.0
+let MZCMinMargin : CGFloat = 1.0
+
+//MARK:- 欢迎动画时长
+let MZCWelcomeAniTimer = 0.3
+
+//MARK:- 主题内容文字大小
+let MZCTopicfont : UIFont = UIFont.systemFontOfSize(15)
+//MARK:- 头像宽高
+let MZCHeadIconWH : CGFloat = 60
+//MARK:- 主题TabBarView高度
+let MZCTopicTabBarH : CGFloat = 50
+//MARK:- 主题贴图格子宽高
+let MZCTopicBoxWH : CGFloat = 90
+//MARK:- 原创内容最大宽度
+let MZCTopicContentMAXWidth = UIScreen.mainScreen().bounds.size.width - MZCMargin * 3 - MZCHeadIconWH
+//MARK:- 屏幕size
+let MZCScreenSize = UIScreen.mainScreen().bounds.size
+
+//MARK:- 随机色
+var MZCRandomColor : UIColor {
+    return UIColor(red: CGFloat(arc4random_uniform(255)) / 255.0, green: CGFloat(arc4random_uniform(255)) / 255.0, blue: CGFloat(arc4random_uniform(255)) / 255.0, alpha: 1)
+}
+
+//MARK:- 桌面路径
+let MZCPath = "/Users/mzc/Desktop/json.text"

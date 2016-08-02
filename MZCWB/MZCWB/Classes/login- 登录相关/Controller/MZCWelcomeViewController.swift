@@ -24,6 +24,11 @@ class MZCWelcomeViewController: UIViewController {
         QL1("")
         super.viewDidLoad()
         
+        setupUI()
+        
+    }
+    
+    func setupUI(){
         guard let accountTokenMode = MZCAccountTokenMode.accountToKen() else {
             return
         }
@@ -38,19 +43,18 @@ class MZCWelcomeViewController: UIViewController {
         welcome_label.alpha = 0
         let iconOffset = view.bounds.size.height - iconButtom_layout.constant
         
-        UIView.animateWithDuration(2, animations: {
-                //开始动画
-                self.iconButtom_layout.constant = iconOffset
-                self.view.layoutIfNeeded()
-            }) { (true) in
-                UIView.animateWithDuration(1, animations: { 
-                    self.welcome_label.alpha = 1
-                    }, completion: { (_) in
-                        //通知更换UIWindow
-                        MZCNSNotificationCenterMessage.shareInstance.post_mainUIWindowWillChange()
-                })
+        UIView.animateWithDuration(MZCWelcomeAniTimer, animations: {
+            //开始动画
+            self.iconButtom_layout.constant = iconOffset
+            self.view.layoutIfNeeded()
+        }) { (true) in
+            UIView.animateWithDuration(MZCWelcomeAniTimer, animations: {
+                self.welcome_label.alpha = 1
+                }, completion: { (_) in
+                    //通知更换UIWindow
+                    MZCNSNotificationCenterMessage.shareInstance.post_mainUIWindowWillChange()
+            })
         }
-        
     }
 
     override func didReceiveMemoryWarning() {

@@ -49,17 +49,6 @@ class MZCNewVersionCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
     
-    //MARK:- 自定义public
-    func startAniButton(){
-        goInButton.userInteractionEnabled = false
-        goInButton.transform = CGAffineTransformMakeScale(0.0, 0.0)
-        
-        UIView.animateWithDuration(2.0, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 10.0, options: UIViewAnimationOptions(rawValue: 0), animations: { () -> Void in
-           self.goInButton.transform = CGAffineTransformIdentity
-            }, completion: { (_) -> Void in
-               self.goInButton.userInteractionEnabled = true
-        })
-    }
 }
 //MARK:- event
 extension MZCNewVersionCollectionViewCell {

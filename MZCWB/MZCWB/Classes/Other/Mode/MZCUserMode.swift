@@ -10,9 +10,20 @@ import UIKit
 
 class MZCUserMode: NSObject ,NSCoding{
     
+    /// 用户UID
     var id = 0
+    /// 用户名称
     var screen_name : String?
+    /// 用户头像地址 用户头像地址（大图），180×180像素
     var avatar_large : String?
+    /// 用户头像地址（中图），50×50像素
+    var profile_image_url: String?
+    /// 用户认证类型
+    var verified_type: Int = -1
+    /// 字符串型的用户UID
+    var idstr: String?
+    /// 会员等级 ,取值范围 1~6
+    var mbrank: Int = -1
     
     init(dict: [String: AnyObject]) {
         super.init()

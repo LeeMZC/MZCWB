@@ -26,4 +26,5 @@ extension UIButton{
         self.addTarget(target!, action: action, forControlEvents: UIControlEvents.TouchUpInside)
         
     }
+    
 }

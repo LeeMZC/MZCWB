@@ -38,7 +38,9 @@ class MZCNewVersionCollectionViewController: UICollectionViewController {
         
         collectionView!.registerNib(UINib(nibName: "MZCNewVersionCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
     }
-    
+}
+
+extension MZCNewVersionCollectionViewController {
     //MARK:- UICollectionViewDataSource
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -72,7 +74,7 @@ class MZCNewVersionCollectionViewController: UICollectionViewController {
         let cell = collectionView.cellForItemAtIndexPath(path) as! MZCNewVersionCollectionViewCell
         
         if (path.item == itemCount - 1){
-            cell.startAniButton()
+            cell.goInButton.vibrationAni()
         }
     }
 }

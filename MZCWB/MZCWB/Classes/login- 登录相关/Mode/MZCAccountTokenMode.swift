@@ -49,12 +49,12 @@ class MZCAccountTokenMode: NSObject , NSCoding{
     //MARK:- 自定义函数
     func saveAccountToKen() -> Bool{
         
-        return NSKeyedArchiver.archiveRootObject(self, toFile: tokenModefilePath)
+        return NSKeyedArchiver.archiveRootObject(self, toFile: MZCTokenModefilePath)
     }
     
     class func accountToKen() -> MZCAccountTokenMode?{
-        
-        guard let accountToKen = NSKeyedUnarchiver.unarchiveObjectWithFile(tokenModefilePath) as? MZCAccountTokenMode else
+        QL1(MZCTokenModefilePath)
+        guard let accountToKen = NSKeyedUnarchiver.unarchiveObjectWithFile(MZCTokenModefilePath) as? MZCAccountTokenMode else
         {
             return  nil
         }
@@ -64,6 +64,7 @@ class MZCAccountTokenMode: NSObject , NSCoding{
         {
             return nil
         }
+        accountTokenMode = accountToKen
         return accountToKen
     }
     

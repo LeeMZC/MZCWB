@@ -8,4 +8,5 @@ pod 'SnapKit'
 pod 'Alamofire'
 pod 'SwiftyJSON'
 pod 'YYWebImage'
+pod 'R.swift'
 end

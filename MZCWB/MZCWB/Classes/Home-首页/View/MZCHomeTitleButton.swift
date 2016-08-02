@@ -19,6 +19,7 @@ class MZCHomeTitleButton: UIButton {
         setupNotificationCenter()
         
         setupUI()
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -31,9 +32,9 @@ class MZCHomeTitleButton: UIButton {
     }
     
     private func setupUI(){
-        
+        assert(accountTokenMode != nil, "用户信息无法获取")
         self.setImage(UIImage(named: "navigationbar_arrow_up"), forState: UIControlState.Normal)
-        self.setTitle("MZC", forState: UIControlState.Normal)
+        self.setTitle(accountTokenMode!.user?.screen_name, forState: UIControlState.Normal)
         self.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
         self.sizeToFit()
         self.frame.size.width += (CGFloat)(spacing)
