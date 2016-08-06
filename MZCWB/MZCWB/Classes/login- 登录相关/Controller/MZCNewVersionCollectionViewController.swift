@@ -69,6 +69,8 @@ extension MZCNewVersionCollectionViewController {
     //当cell完全展示完毕时调用
     override func collectionView(collectionView: UICollectionView, didEndDisplayingCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath){
         
+        
+        
         let path = collectionView.indexPathsForVisibleItems().last!
         
         let cell = collectionView.cellForItemAtIndexPath(path) as! MZCNewVersionCollectionViewCell

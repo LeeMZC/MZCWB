@@ -31,7 +31,7 @@ class MZCHomeForwardTopicView: UIView {
             source_forward_label.text = nil
         }
         
-        forwardChartletCollectionView.chartletSetupUI(mode, isOriginal: false)
+        forwardChartletCollectionView.mode = mode
     }
 }
 

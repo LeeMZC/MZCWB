@@ -111,13 +111,11 @@ class MZCAlamofire : NSObject{
     
     //MARK:- HOME页数据请求
     
-    func homeLoadData(finished : (datas : [[String: AnyObject]]? , error : NSError?)->()){
+    func homeLoadData(parameters aParameters : [String : String],finished : (datas : [[String: AnyObject]]? , error : NSError?)->()){
         let urlString = baseURL + "2/statuses/home_timeline.json"
         /// QL1("HOME请求地址 : \(urlString)")
-        let access_token = accountTokenMode!.access_token!
-        let parameters = ["access_token": access_token]
         
-        Alamofire.request(.GET, urlString, parameters: parameters)
+        Alamofire.request(.GET, urlString, parameters: aParameters)
             .responseJSON { response in
                 
                 switch response.result {

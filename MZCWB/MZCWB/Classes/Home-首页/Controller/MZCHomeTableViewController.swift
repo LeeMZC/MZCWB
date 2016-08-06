@@ -11,16 +11,41 @@ import QorumLogs
 import Rswift
 import SwiftyJSON
 import YYWebImage
+import MJRefresh
 
 private let Identifier = "HomeCell"
 
-class MZCHomeTableViewController: UITableViewController {
+public enum MZCRequestDataState : Int {
+    
+    /// 普通状态
+    case normal
+    /// 请求新数据状态
+    case newData
+    /// 请求老数据状态
+    case oldData
+}
 
+class MZCHomeTableViewController: UITableViewController {
+    
+    
+    
     //MARK:- 属性
+    var requestDataState = MZCRequestDataState.normal
+    
     var homeDataArr : [MZCHomeViewMode] = [] {
         didSet{
-            dispatch_async(dispatch_get_main_queue(), {
-                self.tableView.reloadData()
+            dispatch_async(dispatch_get_main_queue(), { [weak self] () in
+                
+                guard let weakSelf = self else {return }
+                
+                let oldCount = oldValue.count ?? 0
+                let newIdCount = weakSelf.homeDataArr.count ?? 0
+                weakSelf.noMoreDataTipsView.ani(newIdCount - oldCount)
+                
+                weakSelf.endRefreshing()
+                
+                weakSelf.tableView.reloadData()
+                
             })
         }
     }
@@ -28,14 +53,34 @@ class MZCHomeTableViewController: UITableViewController {
     //MARK:- viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupUI()
     }
+
+    
     
     func setupUI(){
+        
         registerCell()
         setupNavUI()
-        loadData()
         
+        self.tableView.mj_header = MZCRefreshStateHeader {[weak self] () in
+            guard let weakSelf = self else {return }
+            if weakSelf.requestDataState != MZCRequestDataState.normal {return }
+            weakSelf.loadNewData()
+        }
+        self.tableView.mj_header.beginRefreshing()
+        
+        self.tableView.mj_footer = MZCRefreshAutoFooter(refreshingBlock: {[weak self] () in
+            guard let weakSelf = self else {return }
+            if weakSelf.requestDataState != MZCRequestDataState.normal {return }
+            weakSelf.loadOldData()
+        })
+        
+        let view = UIView()
+        view.bounds = tableView.bounds
+        view.backgroundColor = UIColor.grayColor()
+        tableView.backgroundView = view
         tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         tableView.backgroundColor = UIColor.clearColor()
     }
@@ -46,13 +91,52 @@ class MZCHomeTableViewController: UITableViewController {
         tableView.registerNib(cellNib, forCellReuseIdentifier: Identifier)
     }
     
-    //MARK: 加载数据
-    private func loadData(){
-        MZCAlamofire.shareInstance.homeLoadData { (datas, error) in
+    //MARK:- 加载更多数据
+    private var since_id : String {
+        return homeDataArr.first?.modeSource?.idstr ?? "0"
+    }
+    
+    private var max_id : String {
+        let t_idstr = homeDataArr.last?.modeSource?.idstr ?? "0"
+        var idstr = ""
+        if t_idstr != "0" {
+            idstr = "\(Int(t_idstr)! - 1)"
+        }else{
+            idstr = "0"
+        }
+        
+        return idstr
+    }
+    
+    private func loadNewData(){
+        requestDataState = MZCRequestDataState.newData
+        let access_token = accountTokenMode!.access_token!
+        let parameters = ["access_token": access_token,
+                          "since_id" : since_id]
+        
+        loadData(parameters: parameters)
+    }
+    
+    private func loadOldData(){
+        requestDataState = MZCRequestDataState.oldData
+        let access_token = accountTokenMode!.access_token!
+        let parameters = ["access_token": access_token,
+                          "max_id" : max_id]
+        
+        loadData(parameters: parameters)
+    }
+    
+    private func loadData(parameters aParameters : [String : String]){
+        MZCAlamofire.shareInstance.homeLoadData(parameters: aParameters) {[weak self] (datas, error) in
+            guard let weakSelf = self else {return }
             
-            if error != nil {return}
+            if error != nil {
+                weakSelf.endRefreshing()
+                return
+            }
             
             guard let t_datas = datas else {
+                weakSelf.endRefreshing()
                 return
             }
             
@@ -60,14 +144,30 @@ class MZCHomeTableViewController: UITableViewController {
             for dict in t_datas {
                 
                 let homeMode = MZCHomeMode(dict: dict)
-            
+                
                 t_homeModeArr.append(MZCHomeViewMode(mode: homeMode))
             }
             
-            self.cachesImages(t_homeModeArr)
-
+            weakSelf.cachesImages(t_homeModeArr)
         }
     }
+    
+    private func endRefreshing(){
+    
+        switch self.requestDataState {
+        case .newData:
+            tableView.mj_header.endRefreshing()
+        case .oldData:
+            tableView.mj_footer.endRefreshing()
+        default:
+            break
+        }
+        
+        requestDataState = MZCRequestDataState.normal
+        
+    }
+    
+    
     //MARK:- 缓存贴图img
     private func cachesImages(modes : [MZCHomeViewMode]) {
         
@@ -95,10 +195,29 @@ class MZCHomeTableViewController: UITableViewController {
             }
         }
         
+        
+        
         dispatch_group_notify(group, dispatch_get_main_queue()) { 
-            self.homeDataArr = modes
+            
+            switch self.requestDataState {
+            case .newData:
+                self.homeDataArr = modes + self.homeDataArr
+            case .oldData:
+                self.homeDataArr = self.homeDataArr + modes
+            default:
+                break
+            }
         }
+        
     }
+    
+    private lazy var noMoreDataTipsView : MZCNoMoreDataTipsView = {
+        let navBarView = self.navigationController?.navigationBar
+        let frame = navBarView?.bounds
+        let view = MZCNoMoreDataTipsView(frame: frame!)
+        navBarView?.insertSubview(view, atIndex: 0)
+        return view
+    }()
     
     //MARK: 设置navigationUI
     private func setupNavUI(){
@@ -139,6 +258,7 @@ extension MZCHomeTableViewController{
         let homeViewMode = homeDataArr[indexPath.row]
         
         homeCell.mode = homeViewMode
+//        homeCell.backgroundColor = MZCRandomColor
 
         return homeCell
     }

@@ -38,7 +38,7 @@ class MZCTabBarController: MZCBaseTabBarViewController {
             return nil
         }
     }
-    
+
     
     //MARK:- 设置登录后UI
     private func setupUI() {
@@ -47,10 +47,10 @@ class MZCTabBarController: MZCBaseTabBarViewController {
             addDefaultSubController()
             return
         }
-        
+
         addNetWorkDataController(tempDatas)
-        
     }
+    
     
     private func addDefaultSubController(){
         let homeViewController = createClass("MZCHomeTableViewController")

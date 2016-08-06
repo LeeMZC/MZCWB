@@ -9,4 +9,5 @@ pod 'Alamofire'
 pod 'SwiftyJSON'
 pod 'YYWebImage'
 pod 'R.swift'
+pod 'MJRefresh'
 end

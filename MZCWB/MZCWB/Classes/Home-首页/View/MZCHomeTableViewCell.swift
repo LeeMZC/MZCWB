@@ -9,7 +9,7 @@
 import UIKit
 import YYWebImage
 import QorumLogs
-private let MZCPictureCell = "MZCPictureCell"
+
 
 class MZCHomeTableViewCell: UITableViewCell {
 
@@ -62,7 +62,7 @@ class MZCHomeTableViewCell: UITableViewCell {
                 
             }else {
                 self.forwardTopicView.hidden = true
-                originalChartletView!.chartletSetupUI(t_mode, isOriginal: true)
+                originalChartletView!.mode = t_mode
             }
             
         }
@@ -75,8 +75,6 @@ class MZCHomeTableViewCell: UITableViewCell {
         }
         
         let view = MZCHomeChartletCollectionView(frame: mode.forwardViewFrame, collectionViewLayout: MZCHomeChartViewLayout())
-        view.registerClass(MZCHomeChartletViewCell.self, forCellWithReuseIdentifier: MZCPictureCell)
-        view.dataSource = self
         self.addSubview(view)
         return view
     }()
@@ -86,8 +84,6 @@ class MZCHomeTableViewCell: UITableViewCell {
     private lazy var forwardTopicView : MZCHomeForwardTopicView = {
         let view = MZCHomeForwardTopicView.forwardTopicView()
         let forwardChartletCollectionView = view.forwardChartletCollectionView
-        forwardChartletCollectionView.registerClass(MZCHomeChartletViewCell.self, forCellWithReuseIdentifier: MZCPictureCell)
-        forwardChartletCollectionView.dataSource = self
         self.addSubview(view)
         return view
     }()
@@ -110,36 +106,10 @@ class MZCHomeTableViewCell: UITableViewCell {
     override var frame: CGRect {
         didSet {
             var newFrame = frame
-            newFrame.size.height -= MZCMinMargin
+            newFrame.size.height -= MZCMargin
             super.frame = newFrame
         }
     }
-}
-
-// MARK: - 贴图代理
-extension MZCHomeTableViewCell : UICollectionViewDataSource {
     
-
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        guard let pic_urls = mode?.pic_urls_ViewMode else{
-            return 0
-        }
-        
-        return pic_urls.count
-    }
-    
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(MZCPictureCell, forIndexPath: indexPath) as! MZCHomeChartletViewCell
-        
-        guard let urls = mode?.pic_urls_ViewMode where urls.count > 0 else {
-            return cell
-        }
-        let url = urls[indexPath.item]
-        cell.url = url
-        
-        return cell
-    }
 }
 

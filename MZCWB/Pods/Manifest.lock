@@ -15,6 +15,7 @@ PODS:
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
   - Alamofire (3.4.1)
+  - MJRefresh (3.1.9)
   - QorumLogs (0.8)
   - R.swift (2.3.0):
     - R.swift.Library (~> 2.1.0)
@@ -36,6 +37,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking
   - Alamofire
+  - MJRefresh
   - QorumLogs
   - R.swift
   - SDWebImage
@@ -47,6 +49,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
+  MJRefresh: c5f1f1653e5a1b932c90f78074f2bc86f3f9bd5e
   QorumLogs: d971b31d343ac0ecf4904adc29c1d32f0e46d6a4
   R.swift: 38b2191a603c3d491a09baddfb4ccc7aa9be4d9d
   R.swift.Library: e5e077ed04f6867a95676af491650091b23518e9
@@ -58,6 +61,6 @@ SPEC CHECKSUMS:
   YYImage: 2cc79ed49b9549b71c6715cefe7b0f5ab3d33abf
   YYWebImage: 0431ed108e104527669b86f75efd58958425cca2
 
-PODFILE CHECKSUM: e972a4a1f97c488f9506e7c8e85066f0fcf03465
+PODFILE CHECKSUM: 7049584d9a3cf89b648bcf810fa41dd302acef93
 
 COCOAPODS: 1.0.0.rc.2

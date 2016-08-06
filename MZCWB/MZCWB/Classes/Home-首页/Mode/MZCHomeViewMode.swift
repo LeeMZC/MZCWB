@@ -153,18 +153,21 @@ class MZCHomeViewMode: NSObject {
     /// cell高度计算
     lazy var height : CGFloat = {
         
-        let t_height = self.topHight + MZCMargin + self.bottomHight + MZCMinMargin
+        var t_height = self.topHight + MZCMargin + self.bottomHight + MZCMinMargin
         
         if self.isForward {
             /// 是转发  +转发高度 +间距
             /// 不是转发 + 0
-            return t_height + self.forwardViewFrame.size.height + MZCMargin
+            t_height = t_height + self.forwardViewFrame.size.height + MZCMargin
         }else{
             /// 有原创贴图 +原创贴图高度 +间距
             /// 没有原创贴图 +0
             let centersHeight = self.centersSize.contentSize.height
-            return self.isShowChartlet ? t_height + centersHeight + MZCMargin : t_height
+            t_height = self.isShowChartlet ? t_height + centersHeight + MZCMargin : t_height
         }
+        /// cell 间距
+        t_height = t_height + MZCMargin
+        return t_height
     }()
     
     /// 计算cell top高度

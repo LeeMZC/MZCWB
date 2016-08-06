@@ -12,6 +12,8 @@
 		27140D721D3E5397003224EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27140D701D3E5397003224EF /* LaunchScreen.storyboard */; };
 		27140D7D1D3E5397003224EF /* MZCWBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27140D7C1D3E5397003224EF /* MZCWBTests.swift */; };
 		27140D881D3E5397003224EF /* MZCWBUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27140D871D3E5397003224EF /* MZCWBUITests.swift */; };
+		27198BAA1D55B0EE00188568 /* MZCNoMoreDataTipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27198BA91D55B0EE00188568 /* MZCNoMoreDataTipsView.swift */; };
+		27198BAC1D55D42E00188568 /* MZCRefreshAutoFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27198BAB1D55D42E00188568 /* MZCRefreshAutoFooter.swift */; };
 		2735F6031D44DDF4000C3FA5 /* MZCLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2735F5F91D44DDF4000C3FA5 /* MZCLoginViewController.swift */; };
 		2735F6041D44DDF4000C3FA5 /* MZCLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2735F5FA1D44DDF4000C3FA5 /* MZCLoginViewController.xib */; };
 		2735F6051D44DDF4000C3FA5 /* MZCSetupUIHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2735F5FC1D44DDF4000C3FA5 /* MZCSetupUIHome.swift */; };
@@ -35,6 +37,7 @@
 		279792301D42B28000EB604D /* MZCNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2797922F1D42B28000EB604D /* MZCNavigationController.swift */; };
 		2797923F1D42CC6E00EB604D /* MZCScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2797923D1D42CC6E00EB604D /* MZCScanViewController.swift */; };
 		279792401D42CC6E00EB604D /* MZCScanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2797923E1D42CC6E00EB604D /* MZCScanViewController.xib */; };
+		27B5D8CE1D55960E00567DDB /* MZCRefreshStateHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B5D8CD1D55960E00567DDB /* MZCRefreshStateHeader.swift */; };
 		27B734431D45FB0900ABE27F /* NSObject+MZCExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B734421D45FB0900ABE27F /* NSObject+MZCExtension.swift */; };
 		27B734461D46061800ABE27F /* MZCUserMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B734451D46061800ABE27F /* MZCUserMode.swift */; };
 		27B734481D46786F00ABE27F /* String+MZCExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B734471D46786F00ABE27F /* String+MZCExtension.swift */; };
@@ -100,6 +103,8 @@
 		27140D831D3E5397003224EF /* MZCWBUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MZCWBUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		27140D871D3E5397003224EF /* MZCWBUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MZCWBUITests.swift; sourceTree = "<group>"; };
 		27140D891D3E5397003224EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27198BA91D55B0EE00188568 /* MZCNoMoreDataTipsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCNoMoreDataTipsView.swift; sourceTree = "<group>"; };
+		27198BAB1D55D42E00188568 /* MZCRefreshAutoFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCRefreshAutoFooter.swift; sourceTree = "<group>"; };
 		2735F5F91D44DDF4000C3FA5 /* MZCLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCLoginViewController.swift; sourceTree = "<group>"; };
 		2735F5FA1D44DDF4000C3FA5 /* MZCLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MZCLoginViewController.xib; sourceTree = "<group>"; };
 		2735F5FC1D44DDF4000C3FA5 /* MZCSetupUIHome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCSetupUIHome.swift; sourceTree = "<group>"; };
@@ -123,6 +128,7 @@
 		2797922F1D42B28000EB604D /* MZCNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCNavigationController.swift; sourceTree = "<group>"; };
 		2797923D1D42CC6E00EB604D /* MZCScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCScanViewController.swift; sourceTree = "<group>"; };
 		2797923E1D42CC6E00EB604D /* MZCScanViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MZCScanViewController.xib; sourceTree = "<group>"; };
+		27B5D8CD1D55960E00567DDB /* MZCRefreshStateHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCRefreshStateHeader.swift; sourceTree = "<group>"; };
 		27B734421D45FB0900ABE27F /* NSObject+MZCExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+MZCExtension.swift"; sourceTree = "<group>"; };
 		27B734451D46061800ABE27F /* MZCUserMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCUserMode.swift; sourceTree = "<group>"; };
 		27B734471D46786F00ABE27F /* String+MZCExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+MZCExtension.swift"; sourceTree = "<group>"; };
@@ -467,7 +473,10 @@
 		27E2DC991D3F29B50080D995 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				27B5D8CD1D55960E00567DDB /* MZCRefreshStateHeader.swift */,
 				27E2DCC41D3F813F0080D995 /* MZCTabBarView.swift */,
+				27198BA91D55B0EE00188568 /* MZCNoMoreDataTipsView.swift */,
+				27198BAB1D55D42E00188568 /* MZCRefreshAutoFooter.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -851,6 +860,8 @@
 				2735F6061D44DDF4000C3FA5 /* MZCSetupUILoginBase.swift in Sources */,
 				27E5ACE41D4E7606004EEC6E /* MZCHomeChartletCollectionView.swift in Sources */,
 				2741B4061D42882F003DAD8B /* MZCHomeTableViewController.swift in Sources */,
+				27B5D8CE1D55960E00567DDB /* MZCRefreshStateHeader.swift in Sources */,
+				27198BAA1D55B0EE00188568 /* MZCNoMoreDataTipsView.swift in Sources */,
 				27E5ACE81D4EA9ED004EEC6E /* MZCHomeForwardTopicView.swift in Sources */,
 				27B7344E1D4688AA00ABE27F /* MZCNewVersionCollectionViewController.swift in Sources */,
 				27B734511D46908B00ABE27F /* MZCNewVersionCollectionViewCell.swift in Sources */,
@@ -872,6 +883,7 @@
 				27E2DCB41D3F48EC0080D995 /* MZCMeTableViewController.swift in Sources */,
 				27FFCE951D43E3C600775DF4 /* MZCQRCode.swift in Sources */,
 				27E2DCC51D3F813F0080D995 /* MZCTabBarView.swift in Sources */,
+				27198BAC1D55D42E00188568 /* MZCRefreshAutoFooter.swift in Sources */,
 				2735F60F1D450CFA000C3FA5 /* MZCTokenLoginWebViewController.swift in Sources */,
 				2735F6071D44DDF4000C3FA5 /* MZCSetupUIMe.swift in Sources */,
 				2741B3F01D4273D6003DAD8B /* MZCPresentationController.swift in Sources */,
