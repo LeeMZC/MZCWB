@@ -8,7 +8,6 @@
 
 import UIKit
 import QorumLogs
-import Rswift
 import SwiftyJSON
 import YYWebImage
 import MJRefresh

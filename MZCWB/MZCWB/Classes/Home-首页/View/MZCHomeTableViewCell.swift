@@ -55,35 +55,30 @@ class MZCHomeTableViewCell: UITableViewCell {
             
             /// 是否是转发
             if t_mode.isForward {
-                originalChartletView!.hidden = true
-                forwardTopicView.hidden = false
-                
-                forwardTopicView.forwardSetupUI(t_mode)
-                
+                chartletMiddleView.hidden = true
+                forwardMiddleView.hidden = false
+                forwardMiddleView.frame = t_mode.middleFrame
+                forwardMiddleView.mode = t_mode
             }else {
-                self.forwardTopicView.hidden = true
-                originalChartletView!.mode = t_mode
+                forwardMiddleView.hidden = true
+                chartletMiddleView.hidden = false
+                chartletMiddleView.frame = t_mode.middleFrame
+                chartletMiddleView.mode = t_mode
             }
             
         }
     }
     //MARK:- 创建原创贴图视图
-    private lazy var originalChartletView : MZCHomeChartletCollectionView? = {
-        
-        guard let mode = self.mode else {
-            return nil
-        }
-        
-        let view = MZCHomeChartletCollectionView(frame: mode.forwardViewFrame, collectionViewLayout: MZCHomeChartViewLayout())
+    private lazy var chartletMiddleView : MZCHomeChartletMiddleView = {
+        let view = MZCHomeChartletMiddleView.chartletMiddleView()
         self.addSubview(view)
         return view
     }()
     
     
     //MARK:- 创建转发视图
-    private lazy var forwardTopicView : MZCHomeForwardTopicView = {
-        let view = MZCHomeForwardTopicView.forwardTopicView()
-        let forwardChartletCollectionView = view.forwardChartletCollectionView
+    private lazy var forwardMiddleView : MZCHomeForwardMiddleView = {
+        let view = MZCHomeForwardMiddleView.forwardMiddleView()
         self.addSubview(view)
         return view
     }()

@@ -17,9 +17,6 @@ PODS:
   - Alamofire (3.4.1)
   - MJRefresh (3.1.9)
   - QorumLogs (0.8)
-  - R.swift (2.3.0):
-    - R.swift.Library (~> 2.1.0)
-  - R.swift.Library (2.1.0)
   - SDWebImage (3.8.1):
     - SDWebImage/Core (= 3.8.1)
   - SDWebImage/Core (3.8.1)
@@ -39,7 +36,6 @@ DEPENDENCIES:
   - Alamofire
   - MJRefresh
   - QorumLogs
-  - R.swift
   - SDWebImage
   - SnapKit
   - SVProgressHUD
@@ -51,8 +47,6 @@ SPEC CHECKSUMS:
   Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
   MJRefresh: c5f1f1653e5a1b932c90f78074f2bc86f3f9bd5e
   QorumLogs: d971b31d343ac0ecf4904adc29c1d32f0e46d6a4
-  R.swift: 38b2191a603c3d491a09baddfb4ccc7aa9be4d9d
-  R.swift.Library: e5e077ed04f6867a95676af491650091b23518e9
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
   SnapKit: bbad04cb016c7cead63965f16b00c09318d271ee
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
@@ -61,6 +55,6 @@ SPEC CHECKSUMS:
   YYImage: 2cc79ed49b9549b71c6715cefe7b0f5ab3d33abf
   YYWebImage: 0431ed108e104527669b86f75efd58958425cca2
 
-PODFILE CHECKSUM: 7049584d9a3cf89b648bcf810fa41dd302acef93
+PODFILE CHECKSUM: 964c20fbc3c85568009e3aadd8433576318cdcfc
 
 COCOAPODS: 1.0.0.rc.2

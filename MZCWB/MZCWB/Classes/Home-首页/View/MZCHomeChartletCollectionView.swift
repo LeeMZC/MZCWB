@@ -19,41 +19,75 @@ class MZCHomeChartletCollectionView: UICollectionView {
     
     var chartletViewType : MZCChartletViewType?
     
-    override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
-        chartletViewType = MZCChartletViewType.originalType
-        super.init(frame: frame, collectionViewLayout: MZCHomeChartViewLayout())
-        
-        setupUI()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+    override func awakeFromNib() {
         chartletViewType = MZCChartletViewType.forwardType
+        super.awakeFromNib()
+        autoresizingMask = UIViewAutoresizing.None
         setupUI()
     }
     
     var mode : MZCHomeViewMode? {
         didSet {
             if mode!.isShowChartlet {
-                hidden = false
-                let (itemSize,contentSize) = mode!.centersSize
-                
-                self.contentSize = contentSize
+                self.hidden = false
                 
                 let chartViewLayout = collectionViewLayout as! MZCHomeChartViewLayout
+                chartViewLayout.itemSize = self.centersSize.itemSize
                 
-                chartViewLayout.itemSize = itemSize
-
-                if chartletViewType == MZCChartletViewType.originalType {
-                    frame = mode!.originalChartletViewFrame
-                }
                 self.dataSource = self
+                
                 reloadData()
-            }else {
-                hidden = true
+            }else{
+                self.hidden = true
             }
+            
         }
     }
+    
+    /// 贴图视图大小
+    lazy var centersSize : (itemSize : CGSize, contentSize : CGSize) = {
+        
+        let count = self.mode!.pic_urls_ViewMode!.count ?? 0
+        /*
+         没有配图: cell = zero, collectionview = zero
+         一张配图: cell = image.size, collectionview = image.size
+         四张配图: cell = {90, 90}, collectionview = {2*w+m, 2*h+m}
+         其他张配图: cell = {90, 90}, collectionview =
+         */
+        var itemSize : CGSize!
+        var contentSize : CGSize!
+        
+        if count == 1 {
+            let urlStr = self.mode!.pic_urls_ViewMode?.first?.absoluteString
+            let img = YYWebImageManager.sharedManager().cache?.getImageForKey(urlStr!)
+            guard let t_img = img else{
+                return (itemSize,contentSize)
+            }
+            itemSize = t_img.size
+            contentSize = t_img.size
+            return (itemSize,contentSize)
+        }
+        
+        if count == 4{
+            itemSize = CGSizeMake(MZCTopicBoxWH, MZCTopicBoxWH)
+            let contentW = itemSize.width * 2 + MZCMinMargin
+            let contentH = itemSize.height * 2 + MZCMinMargin
+            contentSize = CGSizeMake(contentW, contentH)
+            return (itemSize,contentSize)
+        }
+        
+        let col : Int = 3
+        let row : Int = (count - 1) / col + 1
+        itemSize = CGSizeMake(MZCTopicBoxWH, MZCTopicBoxWH)
+        let contentW = CGFloat(col) * itemSize.width + (CGFloat(col) - 1) * MZCMinMargin
+        let contentH = CGFloat(row) * itemSize.height + (CGFloat(row) - 1) * MZCMinMargin
+        contentSize = CGSizeMake(contentW, contentH)
+        
+        
+        return (itemSize,contentSize)
+        
+        
+    }()
     
     private func setupUI(){
         registerClass(MZCHomeChartletViewCell.self, forCellWithReuseIdentifier: MZCPictureCell)
@@ -70,8 +104,8 @@ class MZCHomeChartViewLayout: UICollectionViewFlowLayout
         super.prepareLayout()
         // 1.设置每个cell的尺寸
         // 2.设置cell之间的间隙
-        minimumInteritemSpacing = 1.0
-        minimumLineSpacing = 1.0
+        minimumInteritemSpacing = MZCMinMargin
+        minimumLineSpacing = MZCMinMargin
         // 5.禁用回弹
         collectionView?.bounces = false
         // 6.取出滚动条
@@ -110,6 +144,7 @@ extension MZCHomeChartletCollectionView : UICollectionViewDataSource {
         }
         
         return pic_urls.count
+        
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -121,7 +156,6 @@ extension MZCHomeChartletCollectionView : UICollectionViewDataSource {
         }
         let url = urls[indexPath.item]
         cell.url = url
-
         return cell
     }
 }

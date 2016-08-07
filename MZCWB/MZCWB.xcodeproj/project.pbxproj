@@ -33,7 +33,10 @@
 		275512E31D408BA8002508E8 /* UIButton+MZCExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275512E21D408BA8002508E8 /* UIButton+MZCExtension.swift */; };
 		275512EA1D40929D002508E8 /* MZCHomeTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275512E91D40929D002508E8 /* MZCHomeTitleButton.swift */; };
 		2756A53C1D456E2D0051155F /* MZCAccountTokenMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2756A53B1D456E2D0051155F /* MZCAccountTokenMode.swift */; };
-		275E69301D503923003A0710 /* MZCHomeForwardTopicView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 275E692F1D503923003A0710 /* MZCHomeForwardTopicView.xib */; };
+		2790F39F1D56EE1500C33CB6 /* MZCHomeChartletMiddleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2790F39E1D56EE1500C33CB6 /* MZCHomeChartletMiddleView.swift */; };
+		2790F3A11D56EE2B00C33CB6 /* MZCHomeChartletMiddleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2790F3A01D56EE2B00C33CB6 /* MZCHomeChartletMiddleView.xib */; };
+		2790F3A31D56EE4700C33CB6 /* MZCHomeForwardMiddleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2790F3A21D56EE4700C33CB6 /* MZCHomeForwardMiddleView.swift */; };
+		2790F3A51D56EE5D00C33CB6 /* MZCHomeForwardMiddleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2790F3A41D56EE5D00C33CB6 /* MZCHomeForwardMiddleView.xib */; };
 		279792301D42B28000EB604D /* MZCNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2797922F1D42B28000EB604D /* MZCNavigationController.swift */; };
 		2797923F1D42CC6E00EB604D /* MZCScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2797923D1D42CC6E00EB604D /* MZCScanViewController.swift */; };
 		279792401D42CC6E00EB604D /* MZCScanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2797923E1D42CC6E00EB604D /* MZCScanViewController.xib */; };
@@ -51,7 +54,6 @@
 		27D5C6151D3E6A3E00854F55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D5C6141D3E6A3E00854F55 /* AppDelegate.swift */; };
 		27E1818B1D4CA650009D45A3 /* MZCHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E181891D4CA650009D45A3 /* MZCHomeTableViewCell.swift */; };
 		27E1818C1D4CA650009D45A3 /* MZCHomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27E1818A1D4CA650009D45A3 /* MZCHomeTableViewCell.xib */; };
-		27E1818F1D4CBA80009D45A3 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E1818E1D4CBA80009D45A3 /* R.generated.swift */; };
 		27E181911D4CCFD0009D45A3 /* MZCHomeViewMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E181901D4CCFD0009D45A3 /* MZCHomeViewMode.swift */; };
 		27E181931D4CE861009D45A3 /* MZCTimeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E181921D4CE861009D45A3 /* MZCTimeDelegate.swift */; };
 		27E181951D4CF013009D45A3 /* NSDate+MZCExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E181941D4CF013009D45A3 /* NSDate+MZCExtension.swift */; };
@@ -64,7 +66,6 @@
 		27E2DCBF1D3F60B50080D995 /* MainVCSettings.json in Resources */ = {isa = PBXBuildFile; fileRef = 27E2DCBE1D3F60B50080D995 /* MainVCSettings.json */; };
 		27E2DCC51D3F813F0080D995 /* MZCTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E2DCC41D3F813F0080D995 /* MZCTabBarView.swift */; };
 		27E5ACE41D4E7606004EEC6E /* MZCHomeChartletCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E5ACE31D4E7606004EEC6E /* MZCHomeChartletCollectionView.swift */; };
-		27E5ACE81D4EA9ED004EEC6E /* MZCHomeForwardTopicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E5ACE71D4EA9ED004EEC6E /* MZCHomeForwardTopicView.swift */; };
 		27F61EA91D47C60500B54231 /* MZCWelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F61EA71D47C60500B54231 /* MZCWelcomeViewController.swift */; };
 		27F61EAA1D47C60500B54231 /* MZCWelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27F61EA81D47C60500B54231 /* MZCWelcomeViewController.xib */; };
 		27FFCE8F1D43531A00775DF4 /* MZCScanAniView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FFCE8E1D43531A00775DF4 /* MZCScanAniView.swift */; };
@@ -124,7 +125,10 @@
 		275512E21D408BA8002508E8 /* UIButton+MZCExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+MZCExtension.swift"; sourceTree = "<group>"; };
 		275512E91D40929D002508E8 /* MZCHomeTitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCHomeTitleButton.swift; sourceTree = "<group>"; };
 		2756A53B1D456E2D0051155F /* MZCAccountTokenMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCAccountTokenMode.swift; sourceTree = "<group>"; };
-		275E692F1D503923003A0710 /* MZCHomeForwardTopicView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MZCHomeForwardTopicView.xib; sourceTree = "<group>"; };
+		2790F39E1D56EE1500C33CB6 /* MZCHomeChartletMiddleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCHomeChartletMiddleView.swift; sourceTree = "<group>"; };
+		2790F3A01D56EE2B00C33CB6 /* MZCHomeChartletMiddleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MZCHomeChartletMiddleView.xib; sourceTree = "<group>"; };
+		2790F3A21D56EE4700C33CB6 /* MZCHomeForwardMiddleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCHomeForwardMiddleView.swift; sourceTree = "<group>"; };
+		2790F3A41D56EE5D00C33CB6 /* MZCHomeForwardMiddleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MZCHomeForwardMiddleView.xib; sourceTree = "<group>"; };
 		2797922F1D42B28000EB604D /* MZCNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCNavigationController.swift; sourceTree = "<group>"; };
 		2797923D1D42CC6E00EB604D /* MZCScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCScanViewController.swift; sourceTree = "<group>"; };
 		2797923E1D42CC6E00EB604D /* MZCScanViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MZCScanViewController.xib; sourceTree = "<group>"; };
@@ -142,7 +146,6 @@
 		27D5C6141D3E6A3E00854F55 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27E181891D4CA650009D45A3 /* MZCHomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCHomeTableViewCell.swift; sourceTree = "<group>"; };
 		27E1818A1D4CA650009D45A3 /* MZCHomeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MZCHomeTableViewCell.xib; sourceTree = "<group>"; };
-		27E1818E1D4CBA80009D45A3 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		27E181901D4CCFD0009D45A3 /* MZCHomeViewMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCHomeViewMode.swift; sourceTree = "<group>"; };
 		27E181921D4CE861009D45A3 /* MZCTimeDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCTimeDelegate.swift; sourceTree = "<group>"; };
 		27E181941D4CF013009D45A3 /* NSDate+MZCExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+MZCExtension.swift"; sourceTree = "<group>"; };
@@ -155,7 +158,6 @@
 		27E2DCBE1D3F60B50080D995 /* MainVCSettings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MainVCSettings.json; sourceTree = "<group>"; };
 		27E2DCC41D3F813F0080D995 /* MZCTabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCTabBarView.swift; sourceTree = "<group>"; };
 		27E5ACE31D4E7606004EEC6E /* MZCHomeChartletCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCHomeChartletCollectionView.swift; sourceTree = "<group>"; };
-		27E5ACE71D4EA9ED004EEC6E /* MZCHomeForwardTopicView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCHomeForwardTopicView.swift; sourceTree = "<group>"; };
 		27F61EA71D47C60500B54231 /* MZCWelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCWelcomeViewController.swift; sourceTree = "<group>"; };
 		27F61EA81D47C60500B54231 /* MZCWelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MZCWelcomeViewController.xib; sourceTree = "<group>"; };
 		27FFCE8E1D43531A00775DF4 /* MZCScanAniView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCScanAniView.swift; sourceTree = "<group>"; };
@@ -383,10 +385,12 @@
 			children = (
 				275512E91D40929D002508E8 /* MZCHomeTitleButton.swift */,
 				27E181891D4CA650009D45A3 /* MZCHomeTableViewCell.swift */,
-				27E5ACE31D4E7606004EEC6E /* MZCHomeChartletCollectionView.swift */,
-				27E5ACE71D4EA9ED004EEC6E /* MZCHomeForwardTopicView.swift */,
 				27E1818A1D4CA650009D45A3 /* MZCHomeTableViewCell.xib */,
-				275E692F1D503923003A0710 /* MZCHomeForwardTopicView.xib */,
+				27E5ACE31D4E7606004EEC6E /* MZCHomeChartletCollectionView.swift */,
+				2790F39E1D56EE1500C33CB6 /* MZCHomeChartletMiddleView.swift */,
+				2790F3A01D56EE2B00C33CB6 /* MZCHomeChartletMiddleView.xib */,
+				2790F3A21D56EE4700C33CB6 /* MZCHomeForwardMiddleView.swift */,
+				2790F3A41D56EE5D00C33CB6 /* MZCHomeForwardMiddleView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -455,7 +459,6 @@
 				27E2DC971D3F29B50080D995 /* Controller */,
 				27E2DC991D3F29B50080D995 /* View */,
 				27D5C6141D3E6A3E00854F55 /* AppDelegate.swift */,
-				27E1818E1D4CBA80009D45A3 /* R.generated.swift */,
 				2741B3FB1D4285B7003DAD8B /* MZCGlobal.swift */,
 			);
 			path = Other;
@@ -659,7 +662,6 @@
 				27140D621D3E5397003224EF /* Resources */,
 				11A1A5C072DBA55E2B2F1746 /* 📦 Embed Pods Frameworks */,
 				79769CE01FB18685BBE02B56 /* 📦 Copy Pods Resources */,
-				27E1818D1D4CB9E8009D45A3 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -757,7 +759,6 @@
 			files = (
 				2735F6041D44DDF4000C3FA5 /* MZCLoginViewController.xib in Resources */,
 				27140D721D3E5397003224EF /* LaunchScreen.storyboard in Resources */,
-				275E69301D503923003A0710 /* MZCHomeForwardTopicView.xib in Resources */,
 				27FFCE911D4353C800775DF4 /* MZCScanAniView.xib in Resources */,
 				279792401D42CC6E00EB604D /* MZCScanViewController.xib in Resources */,
 				27140D6F1D3E5397003224EF /* Assets.xcassets in Resources */,
@@ -765,6 +766,8 @@
 				27B734521D46908B00ABE27F /* MZCNewVersionCollectionViewCell.xib in Resources */,
 				27E1818C1D4CA650009D45A3 /* MZCHomeTableViewCell.xib in Resources */,
 				27E2DCBF1D3F60B50080D995 /* MainVCSettings.json in Resources */,
+				2790F3A51D56EE5D00C33CB6 /* MZCHomeForwardMiddleView.xib in Resources */,
+				2790F3A11D56EE2B00C33CB6 /* MZCHomeChartletMiddleView.xib in Resources */,
 				2741B4051D42882F003DAD8B /* MZCHomePopViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -800,19 +803,6 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MZCWB/Pods-MZCWB-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
-		};
-		27E1818D1D4CB9E8009D45A3 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"$PODS_ROOT/R.swift/rswift\" \"$SRCROOT\"";
 		};
 		3CDE11E7BA7D675779E7B194 /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -851,7 +841,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27E1818F1D4CBA80009D45A3 /* R.generated.swift in Sources */,
 				2741B3FF1D4287ED003DAD8B /* MZCHomePopTransition.swift in Sources */,
 				2711D3CF1D47F4DB00F3D57C /* MZCNSNotificationCenterMessage.swift in Sources */,
 				279792301D42B28000EB604D /* MZCNavigationController.swift in Sources */,
@@ -862,10 +851,10 @@
 				2741B4061D42882F003DAD8B /* MZCHomeTableViewController.swift in Sources */,
 				27B5D8CE1D55960E00567DDB /* MZCRefreshStateHeader.swift in Sources */,
 				27198BAA1D55B0EE00188568 /* MZCNoMoreDataTipsView.swift in Sources */,
-				27E5ACE81D4EA9ED004EEC6E /* MZCHomeForwardTopicView.swift in Sources */,
 				27B7344E1D4688AA00ABE27F /* MZCNewVersionCollectionViewController.swift in Sources */,
 				27B734511D46908B00ABE27F /* MZCNewVersionCollectionViewCell.swift in Sources */,
 				275512E11D4089F3002508E8 /* UIBarButtonItem+MZCExtension.swift in Sources */,
+				2790F39F1D56EE1500C33CB6 /* MZCHomeChartletMiddleView.swift in Sources */,
 				27B7344C1D46869D00ABE27F /* MZCLoginTabBarViewController.swift in Sources */,
 				27E2DCBA1D3F491E0080D995 /* MZCSendTwitterTableViewController.swift in Sources */,
 				27E2DCB81D3F490A0080D995 /* MZCPlazaTableViewController.swift in Sources */,
@@ -886,6 +875,7 @@
 				27198BAC1D55D42E00188568 /* MZCRefreshAutoFooter.swift in Sources */,
 				2735F60F1D450CFA000C3FA5 /* MZCTokenLoginWebViewController.swift in Sources */,
 				2735F6071D44DDF4000C3FA5 /* MZCSetupUIMe.swift in Sources */,
+				2790F3A31D56EE4700C33CB6 /* MZCHomeForwardMiddleView.swift in Sources */,
 				2741B3F01D4273D6003DAD8B /* MZCPresentationController.swift in Sources */,
 				27FFCE8F1D43531A00775DF4 /* MZCScanAniView.swift in Sources */,
 				2741B4041D42882F003DAD8B /* MZCHomePopViewController.swift in Sources */,

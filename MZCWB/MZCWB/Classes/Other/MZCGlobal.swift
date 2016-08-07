@@ -33,11 +33,12 @@ var accountTokenMode : MZCAccountTokenMode?
 
 //MARK:- 间距
 let MZCMargin : CGFloat = 10.0
-let MZCMinMargin : CGFloat = 1.0
+let MZCMinMargin : CGFloat = 5.0
 
 //MARK:- 欢迎动画时长
 let MZCWelcomeAniTimer = 0.3
-
+//MARK:- 屏幕size
+let MZCScreenSize = UIScreen.mainScreen().bounds.size
 //MARK:- 主题内容文字大小
 let MZCTopicfont : UIFont = UIFont.systemFontOfSize(15)
 //MARK:- 头像宽高
@@ -48,8 +49,7 @@ let MZCTopicTabBarH : CGFloat = 50
 let MZCTopicBoxWH : CGFloat = 90
 //MARK:- 原创内容最大宽度
 let MZCTopicContentMAXWidth = UIScreen.mainScreen().bounds.size.width - MZCMargin * 3 - MZCHeadIconWH
-//MARK:- 屏幕size
-let MZCScreenSize = UIScreen.mainScreen().bounds.size
+
 
 //MARK:- 随机色
 var MZCRandomColor : UIColor {

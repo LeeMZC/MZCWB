@@ -118,7 +118,8 @@ class MZCHomeViewMode: NSObject {
         }
         
         return urls
-        
+
+
     }()
     
     //MARK:- 转发文本
@@ -153,21 +154,8 @@ class MZCHomeViewMode: NSObject {
     /// cell高度计算
     lazy var height : CGFloat = {
         
-        var t_height = self.topHight + MZCMargin + self.bottomHight + MZCMinMargin
+        return self.topHight + self.middleHight + self.bottomHight + MZCMargin
         
-        if self.isForward {
-            /// 是转发  +转发高度 +间距
-            /// 不是转发 + 0
-            t_height = t_height + self.forwardViewFrame.size.height + MZCMargin
-        }else{
-            /// 有原创贴图 +原创贴图高度 +间距
-            /// 没有原创贴图 +0
-            let centersHeight = self.centersSize.contentSize.height
-            t_height = self.isShowChartlet ? t_height + centersHeight + MZCMargin : t_height
-        }
-        /// cell 间距
-        t_height = t_height + MZCMargin
-        return t_height
     }()
     
     /// 计算cell top高度
@@ -182,90 +170,65 @@ class MZCHomeViewMode: NSObject {
         }else{
             t_topHight = MZCMargin + MZCHeadIconWH
         }
+        t_topHight += MZCMargin
         return t_topHight
     }()
     
+    /// 计算中间高度
+    private lazy var middleHight : CGFloat = {
+        
+        var height : CGFloat = 0.0
+        /// 转发文字高度
+        if let text = self.source_forward_ViewMode {
+            let textMaxWidth = MZCTopicContentMAXWidth
+            height = text.mzc_stringSize(width: textMaxWidth).height + MZCMargin * 2
+        }
+        /// 贴图高度
+        if self.isShowChartlet {
+            let count = self.pic_urls_ViewMode?.count ?? 0
+            
+            switch count {
+            case 1:
+                let urlStr = self.pic_urls_ViewMode?.first?.absoluteString
+                let img = YYWebImageManager.sharedManager().cache?.getImageForKey(urlStr!)
+                
+                if let t_img = img {
+                    height += (t_img.size.height + MZCMargin)
+                }else {
+                    height = 0
+                }
+                
+            case 4:
+                height += (MZCTopicBoxWH * 2 + MZCMargin + MZCMinMargin)
+            default:
+                
+                let col : Int = 3
+                let row : Int = (count - 1) / col + 1
+                height += (CGFloat(row) * MZCTopicBoxWH + ((CGFloat(row) - 1)) * MZCMinMargin) 
+                
+                height += MZCMargin
+                break
+            }
+            
+        }
+        
+        return height
+    }()
     
     /// 计算cell bottom高度
     private lazy var bottomHight : CGFloat = {
         return MZCTopicTabBarH
     }()
     
-    /// 贴图视图大小
-    lazy var centersSize : (itemSize : CGSize, contentSize : CGSize) = {
+    /// 中间视图frame
+    lazy var middleFrame : CGRect = {
         
-        let count = self.pic_urls_ViewMode?.count ?? 0
-        /*
-         没有配图: cell = zero, collectionview = zero
-         一张配图: cell = image.size, collectionview = image.size
-         四张配图: cell = {90, 90}, collectionview = {2*w+m, 2*h+m}
-         其他张配图: cell = {90, 90}, collectionview =
-         */
-        var itemSize : CGSize = CGSizeZero
-        var contentSize : CGSize = CGSizeZero
+        let poi_x : CGFloat = 0.0
+        let poi_y : CGFloat = self.topHight
+        let width : CGFloat = MZCScreenSize.width
+        var height : CGFloat = self.middleHight
         
-        if count == 1 {
-            let urlStr = self.pic_urls_ViewMode?.first?.absoluteString
-            let img = YYWebImageManager.sharedManager().cache?.getImageForKey(urlStr!)
-            guard let t_img = img else{
-                return (itemSize,contentSize)
-            }
-            itemSize = t_img.size
-            contentSize = t_img.size
-            return (itemSize,contentSize)
-        }
-        
-        if count == 4{
-            itemSize = CGSizeMake(MZCTopicBoxWH, MZCTopicBoxWH)
-            let contentW = itemSize.width * 2 + MZCMinMargin
-            let contentH = itemSize.height * 2 + MZCMinMargin
-            contentSize = CGSizeMake(contentW, contentH)
-            return (itemSize,contentSize)
-        }
-        
-        let col : Int = 3
-        let row : Int = (count - 1) / col + 1
-        itemSize = CGSizeMake(MZCTopicBoxWH, MZCTopicBoxWH)
-        let contentW = CGFloat(col) * itemSize.width + (CGFloat(col) - 1)
-        let contentH = CGFloat(row) * itemSize.height + (CGFloat(row) - 1)
-        contentSize = CGSizeMake(contentW, contentH)
-        
-        
-        return (itemSize,contentSize)
-        
-        
-    }()
-    //MARK:- 设置转发视图大小
-     lazy var forwardViewFrame : CGRect = {
-        
-        let screenW = UIScreen.mainScreen().bounds.size.width
-        let x : CGFloat = 0
-        let y : CGFloat = self.topHight + MZCMargin
-        let width = screenW
-        var height : CGFloat = 0.0
-        /// 如果有内容 + 内容高度
-        if let text = self.source_forward_ViewMode {
-            let textMaxWidth = MZCTopicContentMAXWidth
-            height = text.mzc_stringSize(width: textMaxWidth).height + MZCMargin
-        }
-        /// 如果有贴图 + 贴图高度
-        if self.isShowChartlet {
-            height = height + self.centersSize.contentSize.height + MZCMargin
-        }
-        
-        
-        return CGRectMake(x, y, width, height)
-    }()
-    //MARK:- 原创视图大小
-    lazy var originalChartletViewFrame : CGRect = {
-        
-        let x = MZCMargin * 2 + MZCHeadIconWH
-        
-        let y = self.topHight + MZCMargin
-        
-        let size = self.centersSize.contentSize
-        
-        return CGRectMake(x, y, size.width, size.height)
+        return CGRectMake(poi_x, poi_y, width, height)
     }()
     
     //MARK:- 初始化
