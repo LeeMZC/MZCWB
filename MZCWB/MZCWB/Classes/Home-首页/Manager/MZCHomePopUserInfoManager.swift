@@ -1,36 +1,47 @@
 //
-//  MZCHomePopTransition.swift
+//  MZCHomePopUserInfoManager.swift
 //  MZCWB
 //
-//  Created by 马纵驰 on 16/7/22.
+//  Created by 马纵驰 on 16/8/10.
 //  Copyright © 2016年 马纵驰. All rights reserved.
 //
 
 import UIKit
 
-class MZCHomePopTransition: MZCBaseTransition {
+class MZCHomeUserInfoPresentationController: MZCBasePresentationController {
     
+    //MARK:- 开始弹出调用
+    override func containerViewWillLayoutSubviews()
+    {
+        super.containerViewWillLayoutSubviews()
+        containerView!.insertSubview(self.shadeView, atIndex: 0)
+        
+    }
+    
+    private lazy var shadeView : UIView = {
+        
+        let btn = UIButton(type: UIButtonType.Custom)
+        btn.frame = UIScreen.mainScreen().bounds
+        btn.backgroundColor = UIColor.clearColor()
+        btn.addTarget(self, action: #selector(MZCHomeUserInfoPresentationController.screenDidOnClick), forControlEvents: UIControlEvents.TouchUpInside)
+        
+        return btn
+    }()
+    
+    @objc private func screenDidOnClick(){
+        presentedViewController.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+}
 
-    //显示时调用
-    override func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning?{
-        
-        MZCNSNotificationCenterMessage.shareInstance.post_homeTitleButtonDidChange()
-        
-        return self
-    }
+//MARK:- AnimatedTransitioning
+class MZCHomeUserInfoPopManager : MZCBasePopManager{
     
-    //消失时调用
-    override func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning?{
-        
-        MZCNSNotificationCenterMessage.shareInstance.post_homeTitleButtonDidChange()
-        
-        return self
-    }
-    
+    //override 显示 和 消失 的动画时间
     override func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval{
         return 0.5
     }
-
+    
     /// 执行展现动画 override
     override func willPresentedController(transitionContext: UIViewControllerContextTransitioning)
     {
@@ -72,5 +83,4 @@ class MZCHomePopTransition: MZCBaseTransition {
                 transitionContext.completeTransition(true)
         })
     }
-    
 }

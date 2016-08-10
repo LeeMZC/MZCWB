@@ -255,15 +255,20 @@ class MZCHomeTableViewController: UITableViewController {
     }
     
     //MARK:- 过场动画代理对象
-    private lazy var presentAnimation : MZCBaseTransition = {
+    private lazy var presentAnimation : MZCBasePopManager = {
         //1. 创建转场对象
+        let popManager = MZCHomeUserInfoPopManager()
+        
         let mainScreenframe = UIScreen.mainScreen().bounds
         let width = mainScreenframe.size.width / 2
         let height = mainScreenframe.size.height / 3
         let x = (mainScreenframe.size.width - width) / 2
         
         let frame = CGRectMake(x, 64,width , height)
-        return MZCHomePopTransition(presentFrame: frame)
+        popManager.presentedViewFrame = frame
+        popManager.pc = MZCHomeUserInfoPresentationController.self
+        
+        return popManager
     }()
 
 }
@@ -313,7 +318,8 @@ extension MZCHomeTableViewController{
         let presentationView = MZCHomePopViewController()
         //2. 设置视图转场代理
         
-        presentationView.transitioningDelegate = self.presentAnimation
+        presentationView.transitioningDelegate = presentAnimation
+        
         //3. 设置视图转场样式
         presentationView.modalPresentationStyle = UIModalPresentationStyle.Custom
         //4. modal窗口
