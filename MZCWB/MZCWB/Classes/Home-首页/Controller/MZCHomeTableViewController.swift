@@ -52,17 +52,37 @@ class MZCHomeTableViewController: UITableViewController {
     //MARK:- viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        QL1("")
         setupUI()
-    }
-
-    
-    
-    func setupUI(){
         
+    }
+    
+    //MARK: did
+    deinit{
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    //MARK:- didReceiveMemoryWarning
+    override func didReceiveMemoryWarning() {
+        homeDataArr.removeAll()
+    }
+    
+    //MARK:- setup
+    func setupUI(){
+        setupNotification()
         registerCell()
         setupNavUI()
+        setupTabViewUI()
+        setupLoadData()
         
+        
+    }
+    
+    private func setupNotification(){
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MZCHomeTableViewController.pictureWillShow(notice:)), name: MZCPictureWillShow, object: nil)
+    }
+    
+    private func setupLoadData(){
         self.tableView.mj_header = MZCRefreshStateHeader {[weak self] () in
             guard let weakSelf = self else {return }
             if weakSelf.requestDataState != MZCRequestDataState.normal {return }
@@ -74,14 +94,17 @@ class MZCHomeTableViewController: UITableViewController {
             guard let weakSelf = self else {return }
             if weakSelf.requestDataState != MZCRequestDataState.normal {return }
             weakSelf.loadOldData()
-        })
-        
+            })
+    }
+    
+    private func setupTabViewUI(){
         let view = UIView()
         view.bounds = tableView.bounds
         view.backgroundColor = UIColor.grayColor()
         tableView.backgroundView = view
         tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         tableView.backgroundColor = UIColor.clearColor()
+    
     }
     
     //MARK:- private 注册cell
@@ -151,6 +174,7 @@ class MZCHomeTableViewController: UITableViewController {
         }
     }
     
+    //MARK:- 结束刷新
     private func endRefreshing(){
     
         switch self.requestDataState {
@@ -209,7 +233,7 @@ class MZCHomeTableViewController: UITableViewController {
         }
         
     }
-    
+    //MARK:- 弹出加载完成提示
     private lazy var noMoreDataTipsView : MZCNoMoreDataTipsView = {
         let navBarView = self.navigationController?.navigationBar
         let frame = navBarView?.bounds
@@ -218,7 +242,7 @@ class MZCHomeTableViewController: UITableViewController {
         return view
     }()
     
-    //MARK: 设置navigationUI
+    //MARK:- 设置navigationUI
     private func setupNavUI(){
         QL1("")
         navigationItem.leftBarButtonItem = UIBarButtonItem(imgName: "navigationbar_friendattention", target: self, action: #selector(MZCHomeTableViewController.leftDidOnClick));
@@ -230,7 +254,7 @@ class MZCHomeTableViewController: UITableViewController {
         titleView.addTarget(self, action: #selector(MZCHomeTableViewController.titleDidOnClick(titleBtn:)), forControlEvents: UIControlEvents.TouchUpInside)
     }
     
-    //MARK: 过场动画代理对象
+    //MARK:- 过场动画代理对象
     private lazy var presentAnimation : MZCBaseTransition = {
         //1. 创建转场对象
         let mainScreenframe = UIScreen.mainScreen().bounds
@@ -277,14 +301,14 @@ extension MZCHomeTableViewController{
     }
     
     @objc private func rightDidOnClick(){
-                
+        QL1("")        
         let scanViewController = UINavigationController(rootViewController: MZCScanViewController())
         
         presentViewController(scanViewController, animated: true, completion: nil)
     }
     
     @objc private func titleDidOnClick(titleBtn aDeTitleBtn : MZCHomeTitleButton){
-        
+        QL1("")
         //1. 创建视图
         let presentationView = MZCHomePopViewController()
         //2. 设置视图转场代理
@@ -295,5 +319,22 @@ extension MZCHomeTableViewController{
         //4. modal窗口
         presentViewController(presentationView, animated: true, completion: nil)
         
+    }
+    
+    @objc private func pictureWillShow(notice aNotice: NSNotification){
+        QL1("")
+        guard let urls = aNotice.userInfo!["bmiddle_pic"] where (urls as! [NSURL]).count > 0 else {
+            return
+        }
+    
+        guard let indexPath = aNotice.userInfo!["indexPath"] else {
+            return
+        }
+        
+        let viewController = MZCHomeImageBrowserCollectionViewController(bmiddle_pic: urls as! [NSURL], indexPath: indexPath as! NSIndexPath)
+        /**
+         *  弹出图片浏览器
+         */
+        presentViewController(viewController, animated: true, completion: nil)
     }
 }

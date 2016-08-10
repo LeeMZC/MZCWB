@@ -16,6 +16,7 @@ let MZCWelcomeViewControllerWillChange = "MZCWelcomeViewControllerWillChange"
 let MZCMainViewControllerWillChange = "MZCMainWindowWillChange"
 // 如果有新版本切换新版本页面
 let IsNewVersionCollectionViewControllerWillChange = "NewVersionCollectionViewControllerWillChange"
+let MZCPictureWillShow = "MZCPictureWillShow"
 
 //MARK:- baseURL
 let baseURL = "https://api.weibo.com/"

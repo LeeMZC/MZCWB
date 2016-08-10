@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageBrowserCellIdentifier" id="5Ys-9Z-ugU" customClass="MZCHomeImageBrowserCell" customModule="MZCWB" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="477"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="390" height="477"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IpK-l3-h6Q">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="477"/>
+                        <connections>
+                            <outlet property="delegate" destination="5Ys-9Z-ugU" id="4I8-05-5zc"/>
+                        </connections>
+                    </scrollView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TbS-Fh-Wiw">
+                        <rect key="frame" x="20" y="427" width="60" height="30"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="Zj8-dP-Mre"/>
+                            <constraint firstAttribute="height" constant="30" id="fqx-Kl-qdx"/>
+                        </constraints>
+                        <state key="normal" title="关闭">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="closeClick:" destination="5Ys-9Z-ugU" eventType="touchUpInside" id="qwt-Gv-kEh"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q9K-GP-iya">
+                        <rect key="frame" x="310" y="427" width="60" height="30"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="cfO-IU-2Wo"/>
+                            <constraint firstAttribute="width" constant="60" id="xpI-41-v4y"/>
+                        </constraints>
+                        <state key="normal" title="保存">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="saveClick:" destination="5Ys-9Z-ugU" eventType="touchUpInside" id="Y6n-G9-p14"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Q9K-GP-iya" secondAttribute="trailing" constant="20" id="GFV-6z-URH"/>
+                <constraint firstAttribute="bottom" secondItem="IpK-l3-h6Q" secondAttribute="bottom" id="Gfw-dh-3Ig"/>
+                <constraint firstItem="IpK-l3-h6Q" firstAttribute="top" secondItem="5Ys-9Z-ugU" secondAttribute="top" id="R53-1r-APa"/>
+                <constraint firstAttribute="bottom" secondItem="TbS-Fh-Wiw" secondAttribute="bottom" constant="20" id="bZW-NP-4LV"/>
+                <constraint firstAttribute="bottom" secondItem="Q9K-GP-iya" secondAttribute="bottom" constant="20" id="dwo-2d-apZ"/>
+                <constraint firstItem="TbS-Fh-Wiw" firstAttribute="leading" secondItem="5Ys-9Z-ugU" secondAttribute="leading" constant="20" id="eXw-gx-yih"/>
+                <constraint firstItem="IpK-l3-h6Q" firstAttribute="leading" secondItem="5Ys-9Z-ugU" secondAttribute="leading" id="ihb-G4-Jad"/>
+                <constraint firstItem="Q9K-GP-iya" firstAttribute="top" secondItem="IpK-l3-h6Q" secondAttribute="bottom" id="rvZ-Tx-QTy"/>
+                <constraint firstAttribute="trailing" secondItem="IpK-l3-h6Q" secondAttribute="trailing" id="sbW-sH-P5M"/>
+            </constraints>
+            <size key="customSize" width="390" height="477"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="rvZ-Tx-QTy"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="scrollView" destination="IpK-l3-h6Q" id="Zly-wK-OQX"/>
+            </connections>
+            <point key="canvasLocation" x="191" y="295.5"/>
+        </collectionViewCell>
+    </objects>
+</document>

@@ -23,11 +23,11 @@ class MZCHomeForwardMiddleView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         autoresizingMask = UIViewAutoresizing.None
+
     }
     
     var mode : MZCHomeViewMode? {
         didSet {
-            
             if let text = mode!.source_forward_ViewMode {
                 source_forward_label.text = text
                 source_forward_label.preferredMaxLayoutWidth = MZCTopicContentMAXWidth

@@ -35,6 +35,7 @@ class MZCHomeChartletCollectionView: UICollectionView {
                 chartViewLayout.itemSize = self.centersSize.itemSize
                 
                 self.dataSource = self
+                self.delegate = self
                 
                 reloadData()
             }else{
@@ -58,10 +59,11 @@ class MZCHomeChartletCollectionView: UICollectionView {
         var contentSize : CGSize!
         
         if count == 1 {
+            
             let urlStr = self.mode!.pic_urls_ViewMode?.first?.absoluteString
             let img = YYWebImageManager.sharedManager().cache?.getImageForKey(urlStr!)
             guard let t_img = img else{
-                return (itemSize,contentSize)
+                return (CGSizeZero,CGSizeZero)
             }
             itemSize = t_img.size
             contentSize = t_img.size
@@ -134,7 +136,7 @@ class MZCHomeChartletViewCell : UICollectionViewCell{
 }
 
 // MARK: - 贴图代理
-extension MZCHomeChartletCollectionView : UICollectionViewDataSource {
+extension MZCHomeChartletCollectionView : UICollectionViewDataSource , UICollectionViewDelegate{
     
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -157,5 +159,10 @@ extension MZCHomeChartletCollectionView : UICollectionViewDataSource {
         let url = urls[indexPath.item]
         cell.url = url
         return cell
+    }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        QL1("")
+        NSNotificationCenter.defaultCenter().postNotificationName(MZCPictureWillShow, object: self, userInfo: ["bmiddle_pic": (mode?.pic_urls_middle_ViewMode)!, "indexPath": indexPath])
     }
 }

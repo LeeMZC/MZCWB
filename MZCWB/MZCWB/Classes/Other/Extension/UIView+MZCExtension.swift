@@ -12,6 +12,7 @@ extension UIView{
     func vibrationAni(){
         self.userInteractionEnabled = false
         self.transform = CGAffineTransformMakeScale(0.0, 0.0)
+        
         /**
          震动动画
          

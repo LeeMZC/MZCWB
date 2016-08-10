@@ -114,13 +114,22 @@ class MZCHomeViewMode: NSObject {
             }
             // 2.2根据字符串创建URL
             let url = NSURL(string: urlStr)!
+            
             urls.append(url)
+            
+            // 添加中等图,用于图片浏览
+            var urlStr_ns = (urlStr as NSString).stringByReplacingOccurrencesOfString("thumbnail", withString: "mw690")
+            let urlMiddlePic = NSURL(string: urlStr_ns as String)
+            self.pic_urls_middle_ViewMode.append(urlMiddlePic!)
+            
         }
         
         return urls
 
-
+        
     }()
+    
+    var pic_urls_middle_ViewMode : [NSURL] = []
     
     //MARK:- 转发文本
     lazy var source_forward_ViewMode : String? = {
@@ -211,7 +220,10 @@ class MZCHomeViewMode: NSObject {
             }
             
         }
-        
+        /**
+         *  补齐差值
+         */
+        height += 0.5
         return height
     }()
     

@@ -25,10 +25,7 @@ class MZCHomeChartletMiddleView: UIView {
     
     var mode : MZCHomeViewMode? {
         didSet {
-            
-            
             chartletCollectionView.mode = mode
-            
         }
     }
 }

@@ -16,7 +16,7 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uGE-8X-VnQ">
                         <rect key="frame" x="0.0" y="0.0" width="296" height="315"/>
                     </imageView>
-                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NOI-8D-k0k">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NOI-8D-k0k">
                         <rect key="frame" x="171" y="259" width="105" height="36"/>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <state key="normal" title="跳过" backgroundImage="new_feature_finish_button"/>
