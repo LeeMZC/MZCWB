@@ -8,8 +8,14 @@
 
 import UIKit
 import QorumLogs
+
+protocol MZCTabBarViewDelegate : NSObjectProtocol {
+    func messageDidClick()
+}
+
 class MZCTabBarView: UITabBar {
     
+    weak var messageDelegate : MZCTabBarViewDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -25,7 +31,7 @@ class MZCTabBarView: UITabBar {
     
     lazy var button : UIButton = {
         
-        let addButton = UIButton(imgName: "tabbar_compose_icon_add", titleString: nil, target: self, action: #selector(MZCTabBarView.centerDidOnclick))
+        let addButton = UIButton(imgName: "tabbar_compose_icon_add", titleString: nil, target: self, action: #selector(MZCTabBarView.messageDidClick))
         
         // 设置背景图片
         addButton.setBackgroundImage(UIImage(named: "tabbar_compose_button"), forState: UIControlState.Normal)
@@ -66,7 +72,7 @@ class MZCTabBarView: UITabBar {
 }
 
 extension MZCTabBarView {
-    @objc private func centerDidOnclick(){
-        
+    @objc private func messageDidClick(){
+//        delegate!.messageDidClick()
     }
 }

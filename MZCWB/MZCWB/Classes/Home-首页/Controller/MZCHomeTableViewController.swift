@@ -254,27 +254,25 @@ class MZCHomeTableViewController: UITableViewController {
         titleView.addTarget(self, action: #selector(MZCHomeTableViewController.titleDidOnClick(titleBtn:)), forControlEvents: UIControlEvents.TouchUpInside)
     }
     
-    //MARK:- 过场动画代理对象
-    private lazy var presentAnimation : MZCBasePopManager = {
+    //MARK:- 用户信息动画代理对象
+    private lazy var userInfoPopManager : MZCHomeUserInfoPresentationController = {
         //1. 创建转场对象
-        let popManager = MZCHomeUserInfoPopManager()
-        
-        let mainScreenframe = UIScreen.mainScreen().bounds
-        let width = mainScreenframe.size.width / 2
-        let height = mainScreenframe.size.height / 3
-        let x = (mainScreenframe.size.width - width) / 2
-        
-        let frame = CGRectMake(x, 64,width , height)
-        popManager.presentedViewFrame = frame
-        popManager.pc = MZCHomeUserInfoPresentationController.self
-        
+        let popManager = MZCHomeUserInfoPresentationController()
+        popManager.dataSource = self
+        return popManager
+    }()
+    
+    //MARK:- 点击微博图片转场动画
+    private lazy var imageBrowserPopManager : MZCHomePopImageBrowserPresentationController = {
+        //1. 创建转场对象
+        let popManager = MZCHomePopImageBrowserPresentationController()
         return popManager
     }()
 
 }
 
 // MARK:- delegate
-extension MZCHomeTableViewController{
+extension MZCHomeTableViewController : MZCHomeUserInfoDataSource{
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return homeDataArr.count
     }
@@ -296,6 +294,13 @@ extension MZCHomeTableViewController{
         return homeViewMode.height
     }
     
+    func userInfoPresentationControllerRect() -> CGRect {
+        let mainScreenframe = UIScreen.mainScreen().bounds
+        let width = mainScreenframe.size.width / 2
+        let height = mainScreenframe.size.height / 3
+        let x = (mainScreenframe.size.width - width) / 2
+        return CGRectMake(x, 64,width , height)
+    }
 
 }
 
@@ -318,7 +323,7 @@ extension MZCHomeTableViewController{
         let presentationView = MZCHomePopViewController()
         //2. 设置视图转场代理
         
-        presentationView.transitioningDelegate = presentAnimation
+        presentationView.transitioningDelegate = userInfoPopManager
         
         //3. 设置视图转场样式
         presentationView.modalPresentationStyle = UIModalPresentationStyle.Custom
@@ -337,10 +342,23 @@ extension MZCHomeTableViewController{
             return
         }
         
-        let viewController = MZCHomeImageBrowserCollectionViewController(bmiddle_pic: urls as! [NSURL], indexPath: indexPath as! NSIndexPath)
+        imageBrowserPopManager.dataSource = aNotice.object as! MZCHomeChartletCollectionView
+        
+        let viewController = MZCHomeImageBrowserViewController(bmiddle_pic: urls as! [NSURL], indexPath: indexPath as! NSIndexPath)
+        
+        
+        viewController.transitioningDelegate = imageBrowserPopManager
+        
+        //3. 设置视图转场样式
+        viewController.modalPresentationStyle = UIModalPresentationStyle.Custom
+        
         /**
          *  弹出图片浏览器
          */
-        presentViewController(viewController, animated: true, completion: nil)
+        dispatch_async(dispatch_get_main_queue()) { 
+            self.presentViewController(viewController, animated: true, completion: nil)
+        }
+        
+        
     }
 }

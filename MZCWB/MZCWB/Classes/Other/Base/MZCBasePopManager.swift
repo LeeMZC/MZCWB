@@ -7,17 +7,19 @@
 //
 
 import UIKit
-//MARK:- 转场管理器父类
-class MZCBasePopManager: NSObject{
-    var isPresent = false
-    var presentedViewFrame : CGRect?
-    var pc : MZCBasePresentationController.Type?
-   
-}
-//MARK:- 转场控制器
-class MZCBasePresentationController: UIPresentationController {
+import QorumLogs
+
+
+//MARK:- 数据源代理
+protocol MZCBasePresentationControllerDataSource : NSObjectProtocol {
     
-    var presentedViewFrame : CGRect?
+}
+
+//MARK:- 转场控制器
+class MZCBasePresentationController: UIPresentationController,UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning{
+    var isPresent = false
+    weak var dataSource : MZCBasePresentationControllerDataSource?
+    
     
     /*
      1.如果不自定义转场modal出来的控制器会移除原有的控制器
@@ -26,35 +28,35 @@ class MZCBasePresentationController: UIPresentationController {
      4.如果自定义转场modal出来的控制器的尺寸我们可以自己在containerViewWillLayoutSubviews方法中控制
      5.containerView 非常重要, 容器视图, 所有modal出来的视图都是添加到containerView上的
      6.presentedView() 非常重要, 通过该方法能够拿到弹出的视图
-     */
-    
-    
-    required init(frame: CGRect,presentedViewController: UIViewController, presentingViewController: UIViewController) {
-        
-        super.init(presentedViewController: presentedViewController, presentingViewController: presentingViewController)
-        
-        self.presentedViewFrame = frame
-    }
+
     
     // 用于布局转场动画弹出的控件 即将弹出时调用一次
-    override func containerViewWillLayoutSubviews()
-    {
+//    override func containerViewWillLayoutSubviews()
+//    {
+//        super.containerViewWillLayoutSubviews()
+//    }
+ 
+    
+    required override init(presentedViewController: UIViewController, presentingViewController: UIViewController) {
         
-        assert(presentedViewFrame != nil , "弹出视图大小没有设置")
+        (presentedViewController: presentedViewController, presentingViewController: presentingViewController)
         
-        // 设置弹出视图的尺寸
-        presentedView()?.frame = presentedViewFrame!
     }
+    
+    required override init() {
+        super.init()
+    }
+ */
+    
 }
 //MARK:- UIViewControllerTransitioningDelegate
-extension MZCBasePopManager : UIViewControllerTransitioningDelegate{
+extension MZCBasePresentationController {
     //MARK:转场代理
     func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController?{
+        let pc = MZCBasePresentationController(presentedViewController: presented, presentingViewController: presenting)
         
-        assert(pc != nil , "对象类型错误")
-        assert(presentedViewFrame != nil , "弹出视图frame错误")
-        
-        return pc!.init(frame:presentedViewFrame!, presentedViewController: presented, presentingViewController: presenting)
+        pc.dataSource = dataSource
+        return pc
     }
     
     //显示时调用
@@ -69,14 +71,13 @@ extension MZCBasePopManager : UIViewControllerTransitioningDelegate{
 }
 
 //MARK:- UIViewControllerAnimatedTransitioning
-extension MZCBasePopManager : UIViewControllerAnimatedTransitioning {
+extension MZCBasePresentationController  {
     //override 显示 和 消失 的动画时间
     func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval{
         return 0.0
     }
     
     func animateTransition(transitionContext: UIViewControllerContextTransitioning){
-        
         isPresent ? willDismissedController(transitionContext) : willPresentedController(transitionContext)
         isPresent = !isPresent
     }

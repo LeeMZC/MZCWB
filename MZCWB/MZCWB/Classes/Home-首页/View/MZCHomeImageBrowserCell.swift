@@ -82,7 +82,7 @@ extension MZCHomeImageBrowserCell {
         
     }
     @IBAction func saveClick(sender: AnyObject) {
-        QL1("")
+        
     }
     
 }

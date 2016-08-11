@@ -32,7 +32,14 @@ class MZCHomeChartletCollectionView: UICollectionView {
                 self.hidden = false
                 
                 let chartViewLayout = collectionViewLayout as! MZCHomeChartViewLayout
+                
+                if self.centersSize.itemSize == CGSizeZero {
+                    return
+                }
+                
                 chartViewLayout.itemSize = self.centersSize.itemSize
+                
+                
                 
                 self.dataSource = self
                 self.delegate = self
@@ -46,7 +53,7 @@ class MZCHomeChartletCollectionView: UICollectionView {
     }
     
     /// 贴图视图大小
-    lazy var centersSize : (itemSize : CGSize, contentSize : CGSize) = {
+    var centersSize : (itemSize : CGSize, contentSize : CGSize)  {
         
         let count = self.mode!.pic_urls_ViewMode!.count ?? 0
         /*
@@ -89,7 +96,7 @@ class MZCHomeChartletCollectionView: UICollectionView {
         return (itemSize,contentSize)
         
         
-    }()
+    }
     
     private func setupUI(){
         registerClass(MZCHomeChartletViewCell.self, forCellWithReuseIdentifier: MZCPictureCell)
@@ -119,7 +126,7 @@ class MZCHomeChartViewLayout: UICollectionViewFlowLayout
 class MZCHomeChartletViewCell : UICollectionViewCell{
 
     private lazy var imgView : UIImageView = {
-        let view = UIImageView()
+        let view = YYAnimatedImageView()
         self.addSubview(view)
         return view
     }()
@@ -163,6 +170,29 @@ extension MZCHomeChartletCollectionView : UICollectionViewDataSource , UICollect
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         QL1("")
-        NSNotificationCenter.defaultCenter().postNotificationName(MZCPictureWillShow, object: self, userInfo: ["bmiddle_pic": (mode?.pic_urls_middle_ViewMode)!, "indexPath": indexPath])
+        
+        let url = (mode?.pic_urls_middle_ViewMode[indexPath.item])!
+        
+        YYWebImageManager.sharedManager().requestImageWithURL(url, options: YYWebImageOptions.ShowNetworkActivity, progress: nil, transform: nil) { (_, _, _, stage, _) in
+            if stage == YYWebImageStage.Finished {
+                NSNotificationCenter.defaultCenter().postNotificationName(MZCPictureWillShow, object: self, userInfo: ["bmiddle_pic": (self.mode?.pic_urls_middle_ViewMode)!, "indexPath": indexPath])
+            }
+        }
+    
+    }
+}
+
+extension MZCHomeChartletCollectionView : MZCHomePopImageBrowserDataSource {
+    
+    func imageBrowserData() -> UIImage? {
+        let selectedIndexPath : NSIndexPath = indexPathsForSelectedItems()!.first!
+        
+        let url = mode!.pic_urls_ViewMode![selectedIndexPath.item]
+        
+        guard let img = YYWebImageManager.sharedManager().cache?.getImageForKey(url.absoluteString) else {
+            fatalError("img不存在")
+        }
+        
+        return img
     }
 }

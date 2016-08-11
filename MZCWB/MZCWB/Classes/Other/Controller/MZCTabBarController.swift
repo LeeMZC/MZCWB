@@ -49,6 +49,9 @@ class MZCTabBarController: MZCBaseTabBarViewController {
         }
 
         addNetWorkDataController(tempDatas)
+        
+//        let tabBar = self.tabBar as! MZCTabBarView
+//        tabBar.messageDelegate = self
     }
     
     

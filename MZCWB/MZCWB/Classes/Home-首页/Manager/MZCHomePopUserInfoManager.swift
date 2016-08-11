@@ -7,16 +7,24 @@
 //
 
 import UIKit
+import QorumLogs
+protocol MZCHomeUserInfoDataSource : MZCBasePresentationControllerDataSource {
+    func userInfoPresentationControllerRect() -> CGRect
+}
 
 class MZCHomeUserInfoPresentationController: MZCBasePresentationController {
     
     //MARK:- 开始弹出调用
     override func containerViewWillLayoutSubviews()
     {
+        assert(dataSource != nil , "没有数据源")
         super.containerViewWillLayoutSubviews()
         containerView!.insertSubview(self.shadeView, atIndex: 0)
         
+        let data = dataSource as! MZCHomeUserInfoDataSource
+        presentedView()?.frame = data.userInfoPresentationControllerRect()
     }
+    
     
     private lazy var shadeView : UIView = {
         
@@ -35,7 +43,7 @@ class MZCHomeUserInfoPresentationController: MZCBasePresentationController {
 }
 
 //MARK:- AnimatedTransitioning
-class MZCHomeUserInfoPopManager : MZCBasePopManager{
+extension MZCHomeUserInfoPresentationController {
     
     //override 显示 和 消失 的动画时间
     override func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval{
@@ -84,3 +92,12 @@ class MZCHomeUserInfoPopManager : MZCBasePopManager{
         })
     }
 }
+
+extension MZCHomeUserInfoPresentationController {
+    override func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController?{
+        let pc = MZCHomeUserInfoPresentationController(presentedViewController: presented, presentingViewController: presenting)
+        pc.dataSource = dataSource
+        return pc
+    }
+}
+
