@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MZCEditMessageViewController" customModule="MZCWB" customModuleProvider="target">
+            <connections>
+                <outlet property="KeyBoardToolBarbottom" destination="EcE-qv-bjw" id="7J9-kO-07a"/>
+                <outlet property="customContentTextView" destination="0Zy-73-pPi" id="U9I-Nx-JSs"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0Zy-73-pPi" customClass="MZCEditMessageCustomContentTextView" customModule="MZCWB" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LOU-42-qud">
+                    <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="44" id="0t4-Hc-qdT"/>
+                        <constraint firstAttribute="height" constant="44" id="dcY-z8-QSu"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="fEo-7t-3ys"/>
+                    </constraints>
+                    <items>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="0Va-Wz-Zf2"/>
+                        <barButtonItem image="compose_toolbar_picture" style="plain" id="Ov2-TI-YBY"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="29p-hC-5gL"/>
+                        <barButtonItem image="compose_mentionbutton_background" id="hfl-8P-6si"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="S3v-n9-NFx"/>
+                        <barButtonItem image="compose_trendbutton_background" id="JFL-pg-7e7"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="r5c-Sg-6V7"/>
+                        <barButtonItem image="compose_emoticonbutton_background" id="TFh-p5-n8h">
+                            <connections>
+                                <action selector="keyBoardWillChange:" destination="-1" id="d3n-DW-sBb"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Qek-aA-GNk"/>
+                        <barButtonItem image="compose_addbutton_background" id="Fpr-fc-Vwq"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="5IV-Pc-zkI"/>
+                    </items>
+                    <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                </toolbar>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="0Zy-73-pPi" secondAttribute="bottom" id="AUF-0c-3IJ"/>
+                <constraint firstItem="0Zy-73-pPi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="DKq-WH-HQN"/>
+                <constraint firstAttribute="bottom" secondItem="LOU-42-qud" secondAttribute="bottom" id="EcE-qv-bjw"/>
+                <constraint firstItem="0Zy-73-pPi" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="UFf-bT-33P"/>
+                <constraint firstItem="LOU-42-qud" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="WGn-Hz-j0g"/>
+                <constraint firstAttribute="trailing" secondItem="0Zy-73-pPi" secondAttribute="trailing" id="g5S-UJ-71e"/>
+                <constraint firstAttribute="trailing" secondItem="LOU-42-qud" secondAttribute="trailing" id="xaT-Xi-1Gh"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="compose_addbutton_background" width="24" height="24"/>
+        <image name="compose_emoticonbutton_background" width="24" height="24"/>
+        <image name="compose_mentionbutton_background" width="24" height="24"/>
+        <image name="compose_toolbar_picture" width="24" height="24"/>
+        <image name="compose_trendbutton_background" width="24" height="24"/>
+    </resources>
+</document>

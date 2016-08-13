@@ -52,7 +52,7 @@ class MZCWelcomeViewController: UIViewController {
                 self.welcome_label.alpha = 1
                 }, completion: { (_) in
                     //通知更换UIWindow
-                    MZCNSNotificationCenterMessage.shareInstance.post_mainUIWindowWillChange()
+                    NSNotificationCenter.defaultCenter().postNotificationName(MZCMainViewControllerWillChange, object: nil)
             })
         }
     }

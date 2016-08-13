@@ -115,7 +115,7 @@ extension MZCNewVersionCollectionViewController : MZCNewVersionDelegate {
     
     func goInClick() {
         QL1("")
-        MZCNSNotificationCenterMessage.shareInstance.post_welcomeViewControllerWillChange()
+        NSNotificationCenter.defaultCenter().postNotificationName(MZCWelcomeViewControllerWillChange, object: nil)
     }
 }
 

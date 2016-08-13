@@ -2,14 +2,14 @@
 //  MZCMessageTableViewController.swift
 //  MZCWB
 //
-//  Created by 马纵驰 on 16/7/20.
+//  Created by 马纵驰 on 16/8/14.
 //  Copyright © 2016年 马纵驰. All rights reserved.
 //
 
 import UIKit
 
 class MZCMessageTableViewController: UITableViewController {
-
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -91,5 +91,5 @@ class MZCMessageTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
 }

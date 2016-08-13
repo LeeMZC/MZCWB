@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import QorumLogs
 class MZCTabBarController: MZCBaseTabBarViewController {
     
     private var isLogin = false;
@@ -50,8 +50,8 @@ class MZCTabBarController: MZCBaseTabBarViewController {
 
         addNetWorkDataController(tempDatas)
         
-//        let tabBar = self.tabBar as! MZCTabBarView
-//        tabBar.messageDelegate = self
+        let tabBar = self.tabBar as! MZCTabBarView
+        tabBar.messageDelegate = self
     }
     
     
@@ -86,6 +86,15 @@ class MZCTabBarController: MZCBaseTabBarViewController {
     }
     
     
+}
+
+extension MZCTabBarController : MZCTabBarViewDelegate {
+    func messageDidClick() {
+        
+        let vc = MZCEditMessageViewController()
+        let nav = UINavigationController(rootViewController: vc)
+        presentViewController(nav, animated: true, completion: nil)
+    }
 }
 
 

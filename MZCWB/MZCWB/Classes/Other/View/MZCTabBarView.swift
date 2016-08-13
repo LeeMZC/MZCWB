@@ -73,6 +73,6 @@ class MZCTabBarView: UITabBar {
 
 extension MZCTabBarView {
     @objc private func messageDidClick(){
-//        delegate!.messageDidClick()
+        messageDelegate!.messageDidClick()
     }
 }

@@ -19,12 +19,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var baseTabBarController : MZCBaseTabBarViewController?
     
     deinit{
-        MZCNSNotificationCenterMessage.shareInstance.removeObserver(self)
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        addNotif()
+        setupNotf()
         
         QorumLogs.enabled = true;
         // 1.创建window
@@ -32,6 +32,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.backgroundColor = UIColor.whiteColor()
         // 2.设置根控制器
         uiwindowRootVC()
+        
+//        testMessageViewController()
+        
         // 3.显示window
         window?.makeKeyAndVisible()
         
@@ -39,13 +42,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     //MARK:- private函数
-    private func addNotif(){
+    private func setupNotf(){
        
-        MZCNSNotificationCenterMessage.shareInstance.uiWindowOfNewVersion(self, selector: #selector(AppDelegate.uiWindowOfNewVersion))
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AppDelegate.uiWindowOfNewVersion), name: IsNewVersionCollectionViewControllerWillChange, object: nil)
         
-        MZCNSNotificationCenterMessage.shareInstance.welcomeViewControllerWillChange(self, selector: #selector(AppDelegate.welcomeViewControllerWillChange))
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AppDelegate.welcomeViewControllerWillChange), name: MZCWelcomeViewControllerWillChange, object: nil)
         
-        MZCNSNotificationCenterMessage.shareInstance.mainUIWindowWillChange(self, selector: #selector(AppDelegate.mainUIWindowWillChange))
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AppDelegate.mainUIWindowWillChange), name: MZCMainViewControllerWillChange, object: nil)
         
     }
     

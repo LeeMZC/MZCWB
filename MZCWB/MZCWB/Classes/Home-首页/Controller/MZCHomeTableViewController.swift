@@ -54,7 +54,6 @@ class MZCHomeTableViewController: UITableViewController {
         super.viewDidLoad()
         QL1("")
         setupUI()
-        
     }
     
     //MARK: did
