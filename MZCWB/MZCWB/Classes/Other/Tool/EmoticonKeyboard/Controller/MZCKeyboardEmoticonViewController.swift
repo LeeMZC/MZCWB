@@ -18,6 +18,8 @@ class MZCKeyboardEmoticonViewController: UIViewController {
     
     private lazy var modes : [MZCEmoticonGroup] = MZCEmoticonGroup.loadData()
     
+    var insertEmoticonBlock : (emoticon : MZCEmoticonMode)->()?
+    
     //MARK:- lazy
     
     //MARK:- 生命周期
@@ -29,6 +31,16 @@ class MZCKeyboardEmoticonViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    init( insertEmoticon : (emoticon : MZCEmoticonMode)->()){
+        
+        self.insertEmoticonBlock = insertEmoticon
+        super.init(nibName: "MZCKeyboardEmoticonViewController", bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
 }
@@ -65,9 +77,8 @@ extension MZCKeyboardEmoticonViewController {
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath){
         
         let mode = modes[indexPath.section].groupModes![indexPath.item]
-        if mode.cellType == MZCEmoticonCellType.Delete { return }
-        
         mode.clickCount += 1
+        insertEmoticonBlock(emoticon: mode)
         modes[0].appendFavoriteEmoticon(mode: mode)
         
     }

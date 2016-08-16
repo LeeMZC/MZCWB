@@ -23,12 +23,12 @@ class MZCKeyboardEmoticonCell: UICollectionViewCell {
             
             let name = t_mode.sourceName
             
-            switch t_mode.cellType! {
-            case MZCEmoticonCellType.Emoji:
+            switch t_mode.emoticonType! {
+            case MZCEmoticonType.Emoji:
                 emoticonBtn.setTitle(name, forState: UIControlState.Normal)
-            case MZCEmoticonCellType.Img:
+            case MZCEmoticonType.Img:
                 emoticonBtn.setImage(UIImage(named: name), forState: UIControlState.Normal)
-            case MZCEmoticonCellType.Delete:
+            case MZCEmoticonType.Delete:
                 emoticonBtn.setImage(UIImage(named: name), forState: UIControlState.Normal)
                 emoticonBtn.setImage(UIImage(named: name + "_highlighted"), forState: UIControlState.Highlighted)
                 

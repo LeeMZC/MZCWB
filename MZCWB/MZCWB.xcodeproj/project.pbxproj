@@ -52,7 +52,6 @@
 		27C6A8831D5F830E005E8960 /* MZCKeyboardEmoticonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C6A87D1D5F830E005E8960 /* MZCKeyboardEmoticonCell.swift */; };
 		27C6A8841D5F830E005E8960 /* MZCKeyboardEmoticonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27C6A87E1D5F830E005E8960 /* MZCKeyboardEmoticonCell.xib */; };
 		27C6A88A1D5F8593005E8960 /* Emoticons.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 27C6A8891D5F8593005E8960 /* Emoticons.bundle */; };
-		27C6A8971D5F8FD9005E8960 /* MZCEditMessageCustomContentTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C6A8931D5F8FD9005E8960 /* MZCEditMessageCustomContentTextView.swift */; };
 		27C6A8981D5F8FD9005E8960 /* MZCEditMessageCustomNavTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C6A8941D5F8FD9005E8960 /* MZCEditMessageCustomNavTitleView.swift */; };
 		27C6A89B1D5F9479005E8960 /* MZCMessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C6A8991D5F9479005E8960 /* MZCMessageTableViewController.swift */; };
 		27C6A89C1D5F9479005E8960 /* MZCMessageTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27C6A89A1D5F9479005E8960 /* MZCMessageTableViewController.xib */; };
@@ -70,6 +69,7 @@
 		27E2DCBC1D3F49660080D995 /* MZCTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E2DCBB1D3F49660080D995 /* MZCTabBarController.swift */; };
 		27E2DCBF1D3F60B50080D995 /* MainVCSettings.json in Resources */ = {isa = PBXBuildFile; fileRef = 27E2DCBE1D3F60B50080D995 /* MainVCSettings.json */; };
 		27E2DCC51D3F813F0080D995 /* MZCTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E2DCC41D3F813F0080D995 /* MZCTabBarView.swift */; };
+		27F03B1F1D62F2C800F61B73 /* MZCEmoticonTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F03B1E1D62F2C800F61B73 /* MZCEmoticonTextView.swift */; };
 		27F61EA91D47C60500B54231 /* MZCWelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F61EA71D47C60500B54231 /* MZCWelcomeViewController.swift */; };
 		27F61EAA1D47C60500B54231 /* MZCWelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27F61EA81D47C60500B54231 /* MZCWelcomeViewController.xib */; };
 		27FB00221D5D9DA100A49020 /* MZCBasePopManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FB00121D5D9DA100A49020 /* MZCBasePopManager.swift */; };
@@ -160,7 +160,6 @@
 		27C6A87D1D5F830E005E8960 /* MZCKeyboardEmoticonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCKeyboardEmoticonCell.swift; sourceTree = "<group>"; };
 		27C6A87E1D5F830E005E8960 /* MZCKeyboardEmoticonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MZCKeyboardEmoticonCell.xib; sourceTree = "<group>"; };
 		27C6A8891D5F8593005E8960 /* Emoticons.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Emoticons.bundle; sourceTree = "<group>"; };
-		27C6A8931D5F8FD9005E8960 /* MZCEditMessageCustomContentTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCEditMessageCustomContentTextView.swift; sourceTree = "<group>"; };
 		27C6A8941D5F8FD9005E8960 /* MZCEditMessageCustomNavTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCEditMessageCustomNavTitleView.swift; sourceTree = "<group>"; };
 		27C6A8991D5F9479005E8960 /* MZCMessageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCMessageTableViewController.swift; sourceTree = "<group>"; };
 		27C6A89A1D5F9479005E8960 /* MZCMessageTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MZCMessageTableViewController.xib; sourceTree = "<group>"; };
@@ -178,6 +177,7 @@
 		27E2DCBB1D3F49660080D995 /* MZCTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCTabBarController.swift; sourceTree = "<group>"; };
 		27E2DCBE1D3F60B50080D995 /* MainVCSettings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MainVCSettings.json; sourceTree = "<group>"; };
 		27E2DCC41D3F813F0080D995 /* MZCTabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCTabBarView.swift; sourceTree = "<group>"; };
+		27F03B1E1D62F2C800F61B73 /* MZCEmoticonTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCEmoticonTextView.swift; sourceTree = "<group>"; };
 		27F61EA71D47C60500B54231 /* MZCWelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCWelcomeViewController.swift; sourceTree = "<group>"; };
 		27F61EA81D47C60500B54231 /* MZCWelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MZCWelcomeViewController.xib; sourceTree = "<group>"; };
 		27FB00121D5D9DA100A49020 /* MZCBasePopManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZCBasePopManager.swift; sourceTree = "<group>"; };
@@ -471,6 +471,7 @@
 		27C6A87C1D5F830E005E8960 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				27F03B1E1D62F2C800F61B73 /* MZCEmoticonTextView.swift */,
 				27C6A87D1D5F830E005E8960 /* MZCKeyboardEmoticonCell.swift */,
 				27C6A87E1D5F830E005E8960 /* MZCKeyboardEmoticonCell.xib */,
 			);
@@ -506,7 +507,6 @@
 		27C6A8921D5F8FD9005E8960 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				27C6A8931D5F8FD9005E8960 /* MZCEditMessageCustomContentTextView.swift */,
 				27C6A8941D5F8FD9005E8960 /* MZCEditMessageCustomNavTitleView.swift */,
 			);
 			path = View;
@@ -981,6 +981,7 @@
 				2735F60F1D450CFA000C3FA5 /* MZCTokenLoginWebViewController.swift in Sources */,
 				27FB00261D5D9DA100A49020 /* String+MZCExtension.swift in Sources */,
 				2735F6071D44DDF4000C3FA5 /* MZCSetupUIMe.swift in Sources */,
+				27F03B1F1D62F2C800F61B73 /* MZCEmoticonTextView.swift in Sources */,
 				27FB00221D5D9DA100A49020 /* MZCBasePopManager.swift in Sources */,
 				2790F3A31D56EE4700C33CB6 /* MZCHomeForwardMiddleView.swift in Sources */,
 				27C9A5771D5AB9FA00B91DCC /* MZCHomePopViewController.swift in Sources */,
@@ -1001,7 +1002,6 @@
 				27C6A8981D5F8FD9005E8960 /* MZCEditMessageCustomNavTitleView.swift in Sources */,
 				27C6A8831D5F830E005E8960 /* MZCKeyboardEmoticonCell.swift in Sources */,
 				27C366401D4B389400481D8F /* MZCHomeMode.swift in Sources */,
-				27C6A8971D5F8FD9005E8960 /* MZCEditMessageCustomContentTextView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

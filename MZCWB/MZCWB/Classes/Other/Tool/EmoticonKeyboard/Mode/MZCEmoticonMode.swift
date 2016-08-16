@@ -8,7 +8,7 @@
 
 import UIKit
 
-public enum MZCEmoticonCellType {
+public enum MZCEmoticonType {
     
     case Empty
     case Delete
@@ -24,25 +24,25 @@ class MZCEmoticonMode: NSObject {
     var type : String?
     var code : String?
     var clickCount : Int = 0
-    var cellType : MZCEmoticonCellType?
+    var emoticonType : MZCEmoticonType?
     
     lazy var sourceName : String = {
         
-        guard let type = self.cellType else {
+        guard let type = self.emoticonType else {
             fatalError("cell类型不确定")
         }
         
         switch type {
-        case MZCEmoticonCellType.Empty:
+        case MZCEmoticonType.Empty:
             return ""
-        case MZCEmoticonCellType.Delete:
+        case MZCEmoticonType.Delete:
             return "compose_emotion_delete"
-        case MZCEmoticonCellType.Emoji:
+        case MZCEmoticonType.Emoji:
             guard let code = self.code else {
                 fatalError("code无值")
             }
             return code.mzc_stringOfHexadecimal()
-        case MZCEmoticonCellType.Img:
+        case MZCEmoticonType.Img:
             guard let pngName = self.png else {
                 fatalError("png无值")
             }
@@ -51,13 +51,13 @@ class MZCEmoticonMode: NSObject {
         
     }()
     
-    init(dict: [String: AnyObject]? , type : MZCEmoticonCellType)
+    init(dict: [String: AnyObject]? , type : MZCEmoticonType)
     {
         super.init()
         if let t_dict = dict {
             self.setValuesForKeysWithDictionary(t_dict)
         }
-        cellType = type
+        emoticonType = type
 
     }
     

@@ -48,6 +48,8 @@ extension MZCEmoticonGroup {
     
     func appendFavoriteEmoticon(mode aMode :MZCEmoticonMode) {
         
+        if aMode.emoticonType == MZCEmoticonType.Delete{return }
+        
         groupModes?.removeLast()
         
         if !groupModes!.contains(aMode) {
@@ -60,7 +62,7 @@ extension MZCEmoticonGroup {
         })
         
         groupModes = sortNewGroup
-        groupModes?.append(MZCEmoticonMode(dict: nil, type: MZCEmoticonCellType.Delete))
+        groupModes?.append(MZCEmoticonMode(dict: nil, type: MZCEmoticonType.Delete))
         
     }
 }
@@ -87,9 +89,9 @@ extension MZCEmoticonGroup {
                 /** 添加数据 */
                 let dict = arr[index] as [String : AnyObject]
                 if self.id == "com.apple.emoji" {
-                    mode = MZCEmoticonMode(dict: dict, type: MZCEmoticonCellType.Emoji)
+                    mode = MZCEmoticonMode(dict: dict, type: MZCEmoticonType.Emoji)
                 }else {
-                    mode = MZCEmoticonMode(dict: dict, type: MZCEmoticonCellType.Img)
+                    mode = MZCEmoticonMode(dict: dict, type: MZCEmoticonType.Img)
                 }
                 
                 t_modes.append(mode)
@@ -107,7 +109,7 @@ extension MZCEmoticonGroup {
     //MARK:-  每页个数 - 1 每页倒数第二个后面添加一个删除按钮
     private func appendDeleteEmoticon(inout modes : [MZCEmoticonMode] , index aIndex : Int ) {
         if aIndex % (groupCount - 1) == 0  && aIndex != 0{
-            modes.append(MZCEmoticonMode(dict: nil, type: MZCEmoticonCellType.Delete))
+            modes.append(MZCEmoticonMode(dict: nil, type: MZCEmoticonType.Delete))
         }
     }
     //MARK:- 不够一页个数补齐 (一页个数 - 总数 % 每页个数)
@@ -117,9 +119,9 @@ extension MZCEmoticonGroup {
         {
             /** 如果是最后一个添加删除按钮 */
             if index == placeholderCount - 1  {
-                modes.append(MZCEmoticonMode(dict: nil, type: MZCEmoticonCellType.Delete))
+                modes.append(MZCEmoticonMode(dict: nil, type: MZCEmoticonType.Delete))
             }else {
-                modes.append(MZCEmoticonMode(dict: nil, type: MZCEmoticonCellType.Empty))
+                modes.append(MZCEmoticonMode(dict: nil, type: MZCEmoticonType.Empty))
             }
             
         }

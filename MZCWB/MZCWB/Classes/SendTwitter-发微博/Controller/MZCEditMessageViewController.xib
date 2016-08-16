@@ -8,7 +8,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MZCEditMessageViewController" customModule="MZCWB" customModuleProvider="target">
             <connections>
                 <outlet property="KeyBoardToolBarbottom" destination="EcE-qv-bjw" id="7J9-kO-07a"/>
-                <outlet property="customContentTextView" destination="0Zy-73-pPi" id="U9I-Nx-JSs"/>
+                <outlet property="emoticonTextView" destination="0Zy-73-pPi" id="XLu-NL-lSH"/>
+                <outlet property="tipCountLabel" destination="6Gi-Fk-7Cd" id="MFc-mz-CSo"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,12 +18,12 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0Zy-73-pPi" customClass="MZCEditMessageCustomContentTextView" customModule="MZCWB" customModuleProvider="target">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0Zy-73-pPi" customClass="MZCEmoticonTextView" customModule="MZCWB" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
-                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LOU-42-qud">
+                <toolbar autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LOU-42-qud">
                     <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                     <constraints>
                         <constraint firstAttribute="height" relation="lessThanOrEqual" constant="44" id="0t4-Hc-qdT"/>
@@ -48,15 +49,23 @@
                     </items>
                     <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                 </toolbar>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="150" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Gi-Fk-7Cd">
+                    <rect key="frame" x="562" y="525" width="28" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="6Gi-Fk-7Cd" secondAttribute="trailing" constant="10" id="4Ej-KS-l6A"/>
                 <constraint firstAttribute="bottom" secondItem="0Zy-73-pPi" secondAttribute="bottom" id="AUF-0c-3IJ"/>
                 <constraint firstItem="0Zy-73-pPi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="DKq-WH-HQN"/>
                 <constraint firstAttribute="bottom" secondItem="LOU-42-qud" secondAttribute="bottom" id="EcE-qv-bjw"/>
                 <constraint firstItem="0Zy-73-pPi" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="UFf-bT-33P"/>
                 <constraint firstItem="LOU-42-qud" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="WGn-Hz-j0g"/>
                 <constraint firstAttribute="trailing" secondItem="0Zy-73-pPi" secondAttribute="trailing" id="g5S-UJ-71e"/>
+                <constraint firstItem="LOU-42-qud" firstAttribute="top" secondItem="6Gi-Fk-7Cd" secondAttribute="bottom" constant="10" id="vtg-ne-9HT"/>
                 <constraint firstAttribute="trailing" secondItem="LOU-42-qud" secondAttribute="trailing" id="xaT-Xi-1Gh"/>
             </constraints>
         </view>
