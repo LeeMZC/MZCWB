@@ -10,24 +10,18 @@ import UIKit
 import QorumLogs
 class MZCEditMessageViewController: UIViewController {
     
-    //MARK:- IB属性
+    //MARK:- 属性
     @IBOutlet weak var KeyBoardToolBarbottom: NSLayoutConstraint!
     
     @IBOutlet weak var emoticonTextView: MZCEmoticonTextView!
     
-    
     @IBOutlet weak var tipCountLabel: UILabel!
     
-    //MARK:- 工厂
-    class func editMessageViewController() -> MZCEditMessageViewController {
-        return NSBundle.mainBundle().loadNibNamed("MZCEditMessageViewController", owner: nil, options: nil).last as! MZCEditMessageViewController
-    }
+    @IBOutlet weak var pictureHLayout: NSLayoutConstraint!
     
-    //MARK:- lazy
-    private lazy var customNavTextView : MZCEditMessageCustomNavTitleView = {
-        let view = MZCEditMessageCustomNavTitleView()
-        return view
-    }()
+    @IBOutlet weak var pictureView: UIView!
+    
+    private lazy var customNavTextView : MZCEditMessageCustomNavTitleView = MZCEditMessageCustomNavTitleView()
     
     private lazy var keyboardEmoticonViewController : MZCKeyboardEmoticonViewController = {
         
@@ -37,6 +31,8 @@ class MZCEditMessageViewController: UIViewController {
             self.textViewDidChange(self.emoticonTextView)
         }
     }()
+    
+    
     
     //MARK:- 生命周期
     override func viewDidLoad() {
@@ -59,6 +55,11 @@ class MZCEditMessageViewController: UIViewController {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
+    //MARK:- 工厂
+    class func editMessageViewController() -> MZCEditMessageViewController {
+        return NSBundle.mainBundle().loadNibNamed("MZCEditMessageViewController", owner: nil, options: nil).last as! MZCEditMessageViewController
+    }
+    
 }
 
 //MARK:- private
@@ -68,6 +69,7 @@ extension MZCEditMessageViewController {
         setupNavUI()
         setupNotf()
         setupKeyBoardUI()
+        setupPictureViewUI()
         emoticonTextView.delegate = self
     }
     /** navigationUI */
@@ -96,6 +98,13 @@ extension MZCEditMessageViewController {
         tipCountLabel.text = "\(count)"
         tipCountLabel.textColor = flg ? UIColor.grayColor() : UIColor.redColor()
         return flg
+    }
+    
+    private func setupPictureViewUI() {
+        let vc = MZCEditMessagePictureCollectionViewController()
+        vc.collectionView!.frame = pictureView.bounds
+        addChildViewController(vc)
+        pictureView.addSubview(vc.collectionView!)
     }
 }
 
@@ -134,7 +143,7 @@ extension MZCEditMessageViewController {
     }
     
     /** 切换键盘 */
-    @IBAction func keyBoardWillChange(sender: AnyObject) {
+    @IBAction func emoticonKeyBoardWillChange(sender: AnyObject) {
         /** 切换键盘需要先将键盘关闭,然后在打开 */
         emoticonTextView.resignFirstResponder()
         
@@ -148,6 +157,21 @@ extension MZCEditMessageViewController {
         }
         /** 切换键盘需要先将键盘关闭,然后在打开 */
         emoticonTextView.becomeFirstResponder()
+        
+    }
+    
+    
+    @IBAction func pictureKeyBoardWillChange(sender: AnyObject) {
+        
+        let flg = pictureHLayout.constant == 0
+        
+        pictureHLayout.constant = flg ? self.view.bounds.height * 0.65 : 0
+        
+        UIView.animateWithDuration(0.3) {
+            self.view.layoutIfNeeded()
+        }
+        
+        emoticonTextView.resignFirstResponder()
         
     }
     

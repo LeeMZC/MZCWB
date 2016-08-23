@@ -9,6 +9,8 @@
             <connections>
                 <outlet property="KeyBoardToolBarbottom" destination="EcE-qv-bjw" id="7J9-kO-07a"/>
                 <outlet property="emoticonTextView" destination="0Zy-73-pPi" id="XLu-NL-lSH"/>
+                <outlet property="pictureHLayout" destination="orq-Qo-vLn" id="klZ-KM-o3S"/>
+                <outlet property="pictureView" destination="r3k-ZV-dny" id="oL5-C6-Tby"/>
                 <outlet property="tipCountLabel" destination="6Gi-Fk-7Cd" id="MFc-mz-CSo"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -23,6 +25,13 @@
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r3k-ZV-dny">
+                    <rect key="frame" x="0.0" y="600" width="600" height="0.0"/>
+                    <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="0.65967133620689655" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" id="orq-Qo-vLn"/>
+                    </constraints>
+                </view>
                 <toolbar autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LOU-42-qud">
                     <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                     <constraints>
@@ -32,7 +41,11 @@
                     </constraints>
                     <items>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="0Va-Wz-Zf2"/>
-                        <barButtonItem image="compose_toolbar_picture" style="plain" id="Ov2-TI-YBY"/>
+                        <barButtonItem image="compose_toolbar_picture" style="plain" id="Ov2-TI-YBY">
+                            <connections>
+                                <action selector="pictureKeyBoardWillChange:" destination="-1" id="peI-3E-9BV"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="29p-hC-5gL"/>
                         <barButtonItem image="compose_mentionbutton_background" id="hfl-8P-6si"/>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="S3v-n9-NFx"/>
@@ -40,7 +53,7 @@
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="r5c-Sg-6V7"/>
                         <barButtonItem image="compose_emoticonbutton_background" id="TFh-p5-n8h">
                             <connections>
-                                <action selector="keyBoardWillChange:" destination="-1" id="d3n-DW-sBb"/>
+                                <action selector="emoticonKeyBoardWillChange:" destination="-1" id="6fw-Bu-7GA"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="Qek-aA-GNk"/>
@@ -56,15 +69,18 @@
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="6Gi-Fk-7Cd" secondAttribute="trailing" constant="10" id="4Ej-KS-l6A"/>
                 <constraint firstAttribute="bottom" secondItem="0Zy-73-pPi" secondAttribute="bottom" id="AUF-0c-3IJ"/>
                 <constraint firstItem="0Zy-73-pPi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="DKq-WH-HQN"/>
                 <constraint firstAttribute="bottom" secondItem="LOU-42-qud" secondAttribute="bottom" id="EcE-qv-bjw"/>
+                <constraint firstAttribute="trailing" secondItem="r3k-ZV-dny" secondAttribute="trailing" id="Jkf-Nj-8As"/>
+                <constraint firstAttribute="bottom" secondItem="r3k-ZV-dny" secondAttribute="bottom" id="PAy-U9-Hqk"/>
                 <constraint firstItem="0Zy-73-pPi" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="UFf-bT-33P"/>
                 <constraint firstItem="LOU-42-qud" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="WGn-Hz-j0g"/>
                 <constraint firstAttribute="trailing" secondItem="0Zy-73-pPi" secondAttribute="trailing" id="g5S-UJ-71e"/>
+                <constraint firstItem="r3k-ZV-dny" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="pAV-tD-p4a"/>
                 <constraint firstItem="LOU-42-qud" firstAttribute="top" secondItem="6Gi-Fk-7Cd" secondAttribute="bottom" constant="10" id="vtg-ne-9HT"/>
                 <constraint firstAttribute="trailing" secondItem="LOU-42-qud" secondAttribute="trailing" id="xaT-Xi-1Gh"/>
             </constraints>
