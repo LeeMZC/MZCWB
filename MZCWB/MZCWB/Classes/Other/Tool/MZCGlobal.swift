@@ -32,6 +32,7 @@ let MZCTokenModefilePath: String = "accountTokenMode.plist".cachesDir()
 //MARK:- 用户信息(自己)
 var accountTokenMode : MZCAccountTokenMode?
 let MZCDefaultFont : UIFont = UIFont.systemFontOfSize(17)
+let MZCTextFont : UIFont = UIFont.systemFontOfSize(15)
 //MARK:- 间距
 let MZCMargin : CGFloat = 10.0
 let MZCMinMargin : CGFloat = 5.0
@@ -49,7 +50,7 @@ let MZCTopicTabBarH : CGFloat = 50
 //MARK:- 主题贴图格子宽高
 let MZCTopicBoxWH : CGFloat = 90
 //MARK:- 原创内容最大宽度
-let MZCTopicContentMAXWidth = UIScreen.mainScreen().bounds.size.width - MZCMargin * 3 - MZCHeadIconWH
+let MZCTopicContentMAXWidth = MZCScreenSize.width - MZCMargin * 3 - MZCHeadIconWH
 
 
 //MARK:- 随机色

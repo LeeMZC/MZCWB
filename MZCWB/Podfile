@@ -7,6 +7,6 @@ pod 'SDWebImage'
 pod 'SnapKit'
 pod 'Alamofire'
 pod 'SwiftyJSON'
-pod 'YYWebImage'
+pod 'YYKit'
 pod 'MJRefresh'
 end

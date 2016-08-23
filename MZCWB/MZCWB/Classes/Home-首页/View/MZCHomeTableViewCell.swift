@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import YYWebImage
+import YYKit
 import QorumLogs
 
 
@@ -27,7 +27,9 @@ class MZCHomeTableViewCell: UITableViewCell {
     /// 微博来源
     @IBOutlet weak var source_Label: UILabel!
     /// 微博信息内容
-    @IBOutlet weak var text_Label: UILabel!
+    
+    @IBOutlet weak var text_Label: YYLabel!
+    
     
     
     //MARK:- setMode
@@ -51,7 +53,9 @@ class MZCHomeTableViewCell: UITableViewCell {
             
             source_Label.text = t_mode.source_ViewMode
             
-            text_Label.text = t_mode.modeSource?.text
+            text_Label.size = t_mode.textLayout_ViewMode.textBoundingSize
+            text_Label.textLayout = t_mode.textLayout_ViewMode
+            
             
             /// 是否是转发
             if t_mode.isForward {
@@ -93,9 +97,10 @@ class MZCHomeTableViewCell: UITableViewCell {
         /**
          *  原创内容如果有内容设置内容最大宽度
          */
-        if text_Label.text?.characters.count > 0 {
+//        if text_Label.text?.characters.count > 0 {
             text_Label.preferredMaxLayoutWidth = MZCTopicContentMAXWidth
-        }
+//        }
+
     }
     //MARK:- 设置Cell间距 拦截frame
     override var frame: CGRect {

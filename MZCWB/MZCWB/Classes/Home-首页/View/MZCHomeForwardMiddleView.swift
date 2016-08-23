@@ -8,11 +8,13 @@
 //
 
 import UIKit
-
+import YYKit
 class MZCHomeForwardMiddleView: UIView {
 
     @IBOutlet weak var bottomMarginCollectionView: NSLayoutConstraint!
-    @IBOutlet weak var source_forward_label: UILabel!
+
+    @IBOutlet weak var source_forward_label: YYLabel!
+    
     @IBOutlet weak var chartletCollectionView: MZCHomeChartletCollectionView!
     
     
@@ -28,11 +30,14 @@ class MZCHomeForwardMiddleView: UIView {
     
     var mode : MZCHomeViewMode? {
         didSet {
-            if let text = mode!.source_forward_ViewMode {
-                source_forward_label.text = text
+            if let layout = mode!.textLayout_forward_ViewMode {
+                
+                source_forward_label.size = layout.textBoundingSize
+                source_forward_label.textLayout = layout
                 source_forward_label.preferredMaxLayoutWidth = MZCTopicContentMAXWidth
+                
             }else{
-                source_forward_label.text = nil
+                source_forward_label.textLayout = nil
             }
             
             if !mode!.isShowChartlet {

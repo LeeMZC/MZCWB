@@ -8,7 +8,7 @@
 
 import UIKit
 import QorumLogs
-import YYWebImage
+import YYKit
 class MZCHomeViewMode: NSObject {
     // mode源对象
     var modeSource : MZCHomeMode?
@@ -131,8 +131,20 @@ class MZCHomeViewMode: NSObject {
     
     var pic_urls_middle_ViewMode : [NSURL] = []
     
+    //MARK:- 文本
+    lazy var textLayout_ViewMode : YYTextLayout = {
+        
+        let mAttrStr = NSMutableAttributedString(string: (self.modeSource?.text)!)
+        MZCParseMutableAttributedString.shareInstance.parseString(mAttrStr)
+        
+        let size = CGSizeMake(MZCTopicContentMAXWidth, CGFloat(MAXFLOAT))
+        let layout = YYTextLayout(containerSize: size, text: mAttrStr)
+        
+        return layout!
+    }()
+    
     //MARK:- 转发文本
-    lazy var source_forward_ViewMode : String? = {
+    lazy var textLayout_forward_ViewMode : YYTextLayout? = {
         
         guard let forwardMode = self.modeSource?.retweeted_status else {
             return nil
@@ -143,7 +155,15 @@ class MZCHomeViewMode: NSObject {
         }
         
         let name = self.modeSource!.retweeted_status!.user?.screen_name ?? ""
-        return "@" + name + ": " + text
+        let name_text = "@" + name + ": " + text
+        
+        let mAttrStr = NSMutableAttributedString(string: name_text)
+        MZCParseMutableAttributedString.shareInstance.parseString(mAttrStr)
+        let size = CGSizeMake(MZCTopicContentMAXWidth, CGFloat(MAXFLOAT))
+        let layout = YYTextLayout(containerSize: size, text: mAttrStr)
+        
+        return layout!
+        
     }()
     
     /// 是否显示原创中的贴图
@@ -169,12 +189,14 @@ class MZCHomeViewMode: NSObject {
     
     /// 计算cell top高度
     lazy var topHight : CGFloat = {
-        let screenW = UIScreen.mainScreen().bounds.size.width
+        
         var t_topHight : CGFloat = 0
-        let textMaxW = screenW - MZCMargin * 3 - MZCHeadIconWH
+        
         
         if self.modeSource!.text!.characters.count > 0 {
-            let size = self.modeSource!.text!.mzc_stringSize(width: textMaxW)
+            
+            let size = self.textLayout_ViewMode.textBoundingSize
+            
             t_topHight = MZCMargin * 2 + MZCHeadIconWH + size.height
         }else{
             t_topHight = MZCMargin + MZCHeadIconWH
@@ -188,9 +210,9 @@ class MZCHomeViewMode: NSObject {
         
         var height : CGFloat = 0.0
         /// 转发文字高度
-        if let text = self.source_forward_ViewMode {
-            let textMaxWidth = MZCTopicContentMAXWidth
-            height = text.mzc_stringSize(width: textMaxWidth).height + MZCMargin * 2
+        if let layout = self.textLayout_forward_ViewMode {
+            
+            height = layout.textBoundingSize.height + MZCMargin * 2
         }
         /// 贴图高度
         if self.isShowChartlet {

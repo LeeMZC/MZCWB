@@ -8,7 +8,7 @@
 
 import UIKit
 import QorumLogs
-import YYWebImage
+import YYKit
 
 protocol MZCHomeImageBrowserCellDelegate : NSObjectProtocol {
     func closeClick()
@@ -43,11 +43,9 @@ class MZCHomeImageBrowserCell: UICollectionViewCell {
                 return
             }
             
-            
-            
             recoveryFrame()
             
-            imgView.yy_setImageWithURL(t_url, placeholder: nil, options: YYWebImageOptions.SetImageWithFadeAnimation) { (img, url, type, stage, error) in
+            imgView.setImageWithURL(t_url, placeholder: nil, options: YYWebImageOptions.SetImageWithFadeAnimation) { (img, url, type, stage, error) in
                 if stage == YYWebImageStage.Finished {
                     
                     if img?.size.height > MZCScreenSize.height {

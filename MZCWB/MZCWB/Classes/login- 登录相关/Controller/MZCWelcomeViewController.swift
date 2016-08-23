@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import YYWebImage
+import YYKit
 import QorumLogs
 
 class MZCWelcomeViewController: UIViewController {

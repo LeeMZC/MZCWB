@@ -8,7 +8,7 @@
 
 import UIKit
 import QorumLogs
-import YYWebImage
+import YYKit
 
 protocol MZCHomePopImageBrowserDataSource : MZCBasePresentationControllerDataSource {
     func imageBrowserData() -> UIImage?

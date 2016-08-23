@@ -88,22 +88,20 @@
                             <constraint firstItem="9u4-IA-AnQ" firstAttribute="centerY" secondItem="gj5-1Z-ORP" secondAttribute="centerY" id="vkb-0d-rIW"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FMs-8E-yfB">
-                        <rect key="frame" x="80" y="80" width="37.5" height="18"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="miu-t0-dhP" customClass="YYLabel">
+                        <rect key="frame" x="80" y="80" width="394" height="0.0"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
                     <constraint firstItem="ic4-Rh-5gh" firstAttribute="leading" secondItem="oRd-6O-eNa" secondAttribute="trailing" constant="10" id="CGi-ci-9NN"/>
                     <constraint firstItem="gj5-1Z-ORP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="GAx-kJ-d2O"/>
+                    <constraint firstItem="miu-t0-dhP" firstAttribute="top" secondItem="oRd-6O-eNa" secondAttribute="bottom" constant="10" id="IzM-rT-2fq"/>
                     <constraint firstItem="vrW-Sh-Crw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="M8H-Dx-jtd"/>
                     <constraint firstItem="XYO-yD-eFG" firstAttribute="leading" secondItem="P3y-cW-0j4" secondAttribute="trailing" constant="5" id="MR6-ni-fIr"/>
                     <constraint firstItem="vrW-Sh-Crw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="U23-wx-Jwx"/>
-                    <constraint firstItem="FMs-8E-yfB" firstAttribute="leading" secondItem="oRd-6O-eNa" secondAttribute="leading" id="V9Q-Se-orF"/>
-                    <constraint firstItem="FMs-8E-yfB" firstAttribute="top" secondItem="oRd-6O-eNa" secondAttribute="bottom" constant="10" id="X7J-NY-XoP"/>
+                    <constraint firstItem="miu-t0-dhP" firstAttribute="leading" secondItem="oRd-6O-eNa" secondAttribute="leading" id="VpZ-9p-Dk2"/>
                     <constraint firstItem="XYO-yD-eFG" firstAttribute="centerY" secondItem="P3y-cW-0j4" secondAttribute="centerY" id="Zom-aL-MKv"/>
                     <constraint firstItem="oRd-6O-eNa" firstAttribute="bottom" secondItem="vrW-Sh-Crw" secondAttribute="bottom" id="dEd-Xf-yay"/>
                     <constraint firstAttribute="trailing" secondItem="gj5-1Z-ORP" secondAttribute="trailing" id="eK4-DW-TtO"/>
@@ -114,6 +112,7 @@
                     <constraint firstItem="8cK-Mn-8Cu" firstAttribute="top" secondItem="vrW-Sh-Crw" secondAttribute="top" id="lDl-cR-fGc"/>
                     <constraint firstItem="8cK-Mn-8Cu" firstAttribute="leading" secondItem="vrW-Sh-Crw" secondAttribute="trailing" constant="10" id="m6P-q5-xBu"/>
                     <constraint firstItem="P3y-cW-0j4" firstAttribute="leading" secondItem="8cK-Mn-8Cu" secondAttribute="trailing" constant="5" id="wLX-Og-LMb"/>
+                    <constraint firstAttribute="trailing" secondItem="miu-t0-dhP" secondAttribute="trailing" constant="10" id="zTw-ml-XPX"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -123,7 +122,7 @@
                 <outlet property="profile_image_url_ImageView" destination="vrW-Sh-Crw" id="C0P-jq-Mhf"/>
                 <outlet property="screen_name_Label" destination="8cK-Mn-8Cu" id="3CW-Ku-taQ"/>
                 <outlet property="source_Label" destination="ic4-Rh-5gh" id="GKB-ZT-G1e"/>
-                <outlet property="text_Label" destination="FMs-8E-yfB" id="hjm-pa-5aw"/>
+                <outlet property="text_Label" destination="miu-t0-dhP" id="4jA-62-yt8"/>
                 <outlet property="verified_type_ImageView" destination="P3y-cW-0j4" id="rfI-xc-3Ar"/>
             </connections>
             <point key="canvasLocation" x="311" y="202"/>

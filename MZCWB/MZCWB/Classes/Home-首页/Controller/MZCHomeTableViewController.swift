@@ -9,7 +9,7 @@
 import UIKit
 import QorumLogs
 import SwiftyJSON
-import YYWebImage
+import YYKit
 import MJRefresh
 
 private let Identifier = "HomeCell"

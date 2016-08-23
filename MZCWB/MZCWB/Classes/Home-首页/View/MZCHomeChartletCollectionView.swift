@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import YYWebImage
+import YYKit
 import QorumLogs
 private let MZCPictureCell = "MZCPictureCell"
 enum MZCChartletViewType : Int {

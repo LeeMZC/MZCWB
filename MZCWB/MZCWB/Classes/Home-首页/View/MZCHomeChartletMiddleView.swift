@@ -19,8 +19,8 @@ class MZCHomeChartletMiddleView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-
-        autoresizingMask = UIViewAutoresizing.None
+        
+        autoresizingMask = .None
     }
     
     var mode : MZCHomeViewMode? {
